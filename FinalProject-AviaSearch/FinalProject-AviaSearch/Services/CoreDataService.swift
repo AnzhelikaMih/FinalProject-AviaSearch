@@ -14,7 +14,7 @@ final class CoreDataService {
     private init() {}
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Models")
+        let container = NSPersistentContainer(name: "CoreDataModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -28,6 +28,7 @@ final class CoreDataService {
     }
     
     func saveTicketToFavourite(with ticket: TicketInfo) {
+        
         let favTicket = Ticket(context: self.context)
         favTicket.airplane = ticket.airplane
         favTicket.arrivalTime = ticket.arrivalTime
@@ -37,7 +38,7 @@ final class CoreDataService {
         favTicket.departureCode = ticket.departureCode
         favTicket.departureTime = ticket.departureTime
         favTicket.destination = ticket.destination
-        favTicket.destinationCode = ticket.departureCode
+        favTicket.destinationCode = ticket.destinationCode
         favTicket.eTicketNumber = ticket.eTicketNumber
         favTicket.flightNumber = ticket.flightNumber
         favTicket.passenger = ticket.passenger
@@ -46,6 +47,7 @@ final class CoreDataService {
         favTicket.price = ticket.price
         favTicket.seatNumber = ticket.seatNumber
         favTicket.terminal = ticket.terminal
+        favTicket.journeyTime = ticket.journeyTime
 
         saveContext()
     }
@@ -55,6 +57,22 @@ final class CoreDataService {
         guard let favTickets = try? context.fetch(request) else { return [] }
         let ticketViewModels = favTickets.compactMap { return TicketInfo(departure: $0.departure ?? "nil", departureCode: $0.departureCode ?? "nil", destination: $0.destination ?? "nil", destinationCode: $0.destinationCode ?? "nil", aviaOperator: $0.aviaOperator ?? "nil", flightNumber: $0.flightNumber ?? "nil", terminal: $0.terminal ?? "nil", airplane: $0.airplane ?? "nil", date: $0.date ?? "nil", departureTime: $0.departureTime ?? "nil", arrivalTime: $0.arrivalTime ?? "nil", journeyTime: $0.journeyTime ?? "nil", seatNumber: $0.seatNumber ?? "nil", passenger: $0.passenger ?? "nil", passportNumber: $0.passportNumber ?? "nil", eTicketNumber: $0.eTicketNumber ?? "nil", payment: $0.payment ?? "nil", price: $0.price ?? "nil") }
         return ticketViewModels
+    }
+    
+    func deleteTicket(ticket: TicketInfo) {
+        let request = NSFetchRequest<Ticket>(entityName: "Ticket")
+        request.predicate = NSPredicate(format: "eTicketNumber == %@", ticket.eTicketNumber)
+
+        do {
+            let matchingTickets = try context.fetch(request)
+
+            if let ticketToDelete = matchingTickets.first {
+                context.delete(ticketToDelete)
+                saveContext()
+            }
+        } catch {
+            print("Ошибка при удалении билета: \(error.localizedDescription)")
+        }
     }
     
     private func saveContext () {

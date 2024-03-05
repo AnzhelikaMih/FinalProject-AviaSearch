@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		420145F82B8DC26700A39403 /* TicketInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420145F72B8DC26700A39403 /* TicketInfoViewController.swift */; };
-		422502FA2B90EAD900A7281A /* Ticket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422502F82B90EAD900A7281A /* Ticket+CoreDataClass.swift */; };
-		422502FB2B90EAD900A7281A /* Ticket+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422502F92B90EAD900A7281A /* Ticket+CoreDataProperties.swift */; };
 		422502FF2B90ECEA00A7281A /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422502FE2B90ECEA00A7281A /* CoreDataService.swift */; };
+		423C4A8E2B90FB830090A75A /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 423C4A8C2B90FB830090A75A /* CoreDataModel.xcdatamodeld */; };
+		4243135B2B973DB2008DA612 /* Ticket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */; };
+		4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */; };
+		4243135E2B9742F5008DA612 /* FavouriteTicketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */; };
+		424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */; };
+		424313622B974C33008DA612 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313612B974C33008DA612 /* TabBarViewController.swift */; };
+		424313642B9758E1008DA612 /* FavouriteTicketInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */; };
+		424313662B975A30008DA612 /* FavouriteTicketInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */; };
 		42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA5622B87755200CF3291 /* AppDelegate.swift */; };
 		42BCA5652B87755200CF3291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA5642B87755200CF3291 /* SceneDelegate.swift */; };
 		42BCA5672B87755200CF3291 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA5662B87755200CF3291 /* MainViewController.swift */; };
 		42BCA56A2B87755200CF3291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA5682B87755200CF3291 /* Main.storyboard */; };
-		42BCA56D2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA56B2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodeld */; };
 		42BCA56F2B87755400CF3291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA56E2B87755400CF3291 /* Assets.xcassets */; };
 		42BCA5722B87755400CF3291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA5702B87755400CF3291 /* LaunchScreen.storyboard */; };
 		42BCA57C2B87A9B800CF3291 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA57B2B87A9B800CF3291 /* NetworkService.swift */; };
@@ -33,15 +38,20 @@
 
 /* Begin PBXFileReference section */
 		420145F72B8DC26700A39403 /* TicketInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoViewController.swift; sourceTree = "<group>"; };
-		422502F82B90EAD900A7281A /* Ticket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataClass.swift"; sourceTree = "<group>"; };
-		422502F92B90EAD900A7281A /* Ticket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		422502FE2B90ECEA00A7281A /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		423C4A8D2B90FB830090A75A /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketList.storyboard; sourceTree = "<group>"; };
+		4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketListViewController.swift; sourceTree = "<group>"; };
+		424313612B974C33008DA612 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketInfo.storyboard; sourceTree = "<group>"; };
+		424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketInfoViewController.swift; sourceTree = "<group>"; };
 		42BCA55F2B87755200CF3291 /* FinalProject-AviaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FinalProject-AviaSearch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BCA5622B87755200CF3291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42BCA5642B87755200CF3291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		42BCA5662B87755200CF3291 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		42BCA5692B87755200CF3291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42BCA56C2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinalProject_AviaSearch.xcdatamodel; sourceTree = "<group>"; };
 		42BCA56E2B87755400CF3291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42BCA5712B87755400CF3291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42BCA5732B87755400CF3291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,13 +119,15 @@
 			children = (
 				422502FC2B90EC6C00A7281A /* Services */,
 				42BCA5662B87755200CF3291 /* MainViewController.swift */,
+				424313612B974C33008DA612 /* TabBarViewController.swift */,
 				42BCA5682B87755200CF3291 /* Main.storyboard */,
 				42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */,
+				4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */,
 				42BCA57B2B87A9B800CF3291 /* NetworkService.swift */,
-				42BCA5732B87755400CF3291 /* Info.plist */,
 				42C26AE12B8C8F0D00F270F8 /* Model */,
-				422502FD2B90EC9000A7281A /* Resourse */,
 				42C26AE82B8C981700F270F8 /* ViewModel */,
+				42BCA5732B87755400CF3291 /* Info.plist */,
+				422502FD2B90EC9000A7281A /* Resourse */,
 				42C26AE02B8C8EDD00F270F8 /* Data */,
 			);
 			path = "FinalProject-AviaSearch";
@@ -134,10 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				42C26AE22B8C8F2700F270F8 /* TicketList.swift */,
+				423C4A8C2B90FB830090A75A /* CoreDataModel.xcdatamodeld */,
 				42C26AE42B8C8F3E00F270F8 /* TicketInfo.swift */,
-				42BCA56B2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodeld */,
-				422502F82B90EAD900A7281A /* Ticket+CoreDataClass.swift */,
-				422502F92B90EAD900A7281A /* Ticket+CoreDataProperties.swift */,
+				424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */,
+				4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,8 +159,11 @@
 			children = (
 				42C26AE62B8C980500F270F8 /* TicketListViewModel.swift */,
 				42C26AE92B8C991A00F270F8 /* TicketListView.swift */,
+				4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */,
+				424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */,
 				42C26AF12B8D03F500F270F8 /* TicketInfo.storyboard */,
 				420145F72B8DC26700A39403 /* TicketInfoViewController.swift */,
+				424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */,
 				42C26AEB2B8C99A600F270F8 /* TicketListTableViewCell.swift */,
 				42C26AEF2B8CD25000F270F8 /* TicketListTableViewCell.xib */,
 			);
@@ -215,6 +230,8 @@
 			files = (
 				42BCA5722B87755400CF3291 /* LaunchScreen.storyboard in Resources */,
 				42BCA57E2B87AF3100CF3291 /* TicketList.storyboard in Resources */,
+				424313642B9758E1008DA612 /* FavouriteTicketInfo.storyboard in Resources */,
+				4243135E2B9742F5008DA612 /* FavouriteTicketList.storyboard in Resources */,
 				42BCA56F2B87755400CF3291 /* Assets.xcassets in Resources */,
 				42C26AF02B8CD25000F270F8 /* TicketListTableViewCell.xib in Resources */,
 				42C26AF22B8D03F500F270F8 /* TicketInfo.storyboard in Resources */,
@@ -232,19 +249,22 @@
 			files = (
 				42BCA57C2B87A9B800CF3291 /* NetworkService.swift in Sources */,
 				42C26AEC2B8C99A600F270F8 /* TicketListTableViewCell.swift in Sources */,
+				424313662B975A30008DA612 /* FavouriteTicketInfoViewController.swift in Sources */,
 				42BCA5672B87755200CF3291 /* MainViewController.swift in Sources */,
-				422502FB2B90EAD900A7281A /* Ticket+CoreDataProperties.swift in Sources */,
+				4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */,
 				422502FF2B90ECEA00A7281A /* CoreDataService.swift in Sources */,
 				42C26AE52B8C8F3E00F270F8 /* TicketInfo.swift in Sources */,
+				424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */,
 				42C26ADF2B8C8ED900F270F8 /* TicketFetcher.swift in Sources */,
 				42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */,
+				424313622B974C33008DA612 /* TabBarViewController.swift in Sources */,
 				42BCA5652B87755200CF3291 /* SceneDelegate.swift in Sources */,
 				42C26AE72B8C980500F270F8 /* TicketListViewModel.swift in Sources */,
 				42C26AE32B8C8F2700F270F8 /* TicketList.swift in Sources */,
 				42C26AEA2B8C991A00F270F8 /* TicketListView.swift in Sources */,
-				422502FA2B90EAD900A7281A /* Ticket+CoreDataClass.swift in Sources */,
+				4243135B2B973DB2008DA612 /* Ticket+CoreDataClass.swift in Sources */,
 				420145F82B8DC26700A39403 /* TicketInfoViewController.swift in Sources */,
-				42BCA56D2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodeld in Sources */,
+				423C4A8E2B90FB830090A75A /* CoreDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,13 +489,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		42BCA56B2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodeld */ = {
+		423C4A8C2B90FB830090A75A /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				42BCA56C2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodel */,
+				423C4A8D2B90FB830090A75A /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 42BCA56C2B87755300CF3291 /* FinalProject_AviaSearch.xcdatamodel */;
-			path = FinalProject_AviaSearch.xcdatamodeld;
+			currentVersion = 423C4A8D2B90FB830090A75A /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

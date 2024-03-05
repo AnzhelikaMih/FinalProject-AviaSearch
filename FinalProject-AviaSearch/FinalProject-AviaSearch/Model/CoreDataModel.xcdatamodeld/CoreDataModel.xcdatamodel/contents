@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier=""/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Ticket" representedClassName="Ticket" syncable="YES">
+        <attribute name="airplane" optional="YES" attributeType="String"/>
+        <attribute name="arrivalTime" optional="YES" attributeType="String"/>
+        <attribute name="aviaOperator" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="departure" optional="YES" attributeType="String"/>
+        <attribute name="departureCode" optional="YES" attributeType="String"/>
+        <attribute name="departureTime" optional="YES" attributeType="String"/>
+        <attribute name="destination" optional="YES" attributeType="String"/>
+        <attribute name="destinationCode" optional="YES" attributeType="String"/>
+        <attribute name="eTicketNumber" optional="YES" attributeType="String"/>
+        <attribute name="flightNumber" optional="YES" attributeType="String"/>
+        <attribute name="journeyTime" optional="YES" attributeType="String"/>
+        <attribute name="passenger" optional="YES" attributeType="String"/>
+        <attribute name="passportNumber" optional="YES" attributeType="String"/>
+        <attribute name="payment" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="seatNumber" optional="YES" attributeType="String"/>
+        <attribute name="terminal" optional="YES" attributeType="String"/>
+    </entity>
+</model>

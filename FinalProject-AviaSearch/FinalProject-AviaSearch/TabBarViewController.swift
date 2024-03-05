@@ -7,23 +7,21 @@
 
 import UIKit
 
-class TabBarViewController: UIViewController {
-
+class MainTabBarController: UITabBarController {
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let ticketListVC = TicketListViewController()
+        let favouriteTicketListVC = FavouriteTicketListViewController()
+        let mainVC = MainViewController()
+        
+        ticketListVC.tabBarItem = UITabBarItem(title: "Tickets", image: UIImage(named: "tickets_icon"), tag: 0)
+        favouriteTicketListVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "favorites_icon"), tag: 1)
+        mainVC.tabBarItem = UITabBarItem(title: "Main", image: UIImage(named: "main_icon"), tag: 2)
+        
+        viewControllers = [ticketListVC, favouriteTicketListVC, mainVC]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

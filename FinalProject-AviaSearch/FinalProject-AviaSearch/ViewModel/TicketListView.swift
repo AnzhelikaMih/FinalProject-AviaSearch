@@ -10,6 +10,7 @@ import UIKit
 final class TicketListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var heartButton: UIButton!
     
     private var ticketList = [TicketInfo]() {
         didSet {
@@ -36,6 +37,14 @@ final class TicketListViewController: UIViewController {
             
         }
     }
+    
+    @IBAction private func heartButtonDidTap () {
+        
+        let storyboard = UIStoryboard(name: "FavouriteTicketList", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "FavouriteTicketListViewController") as? FavouriteTicketListViewController else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension TicketListViewController: UITableViewDataSource {
