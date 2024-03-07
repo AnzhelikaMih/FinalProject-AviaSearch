@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FavouriteTicketInfoDelegate: AnyObject {
+    func didDeleteTicket ()
+}
+
 final class FavouriteTicketInfoViewController: UIViewController {
     
     private var ticketInfo: TicketInfo?
@@ -36,6 +40,8 @@ final class FavouriteTicketInfoViewController: UIViewController {
     
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    weak var delegate: FavouriteTicketInfoDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,12 +73,13 @@ final class FavouriteTicketInfoViewController: UIViewController {
     @IBAction private func deleteButtonDidTap(_ sender: Any) {
         guard let ticketInfo = ticketInfo else { return }
         CoreDataService.shared.deleteTicket(ticket: ticketInfo)
-        navigationController?.popViewController(animated: true)
+        delegate?.didDeleteTicket()
+        dismiss(animated: true)
     }
 
 
     @IBAction private func cancelButtonDidTap(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
         
     

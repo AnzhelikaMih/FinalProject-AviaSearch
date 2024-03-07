@@ -14,7 +14,6 @@
 		4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */; };
 		4243135E2B9742F5008DA612 /* FavouriteTicketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */; };
 		424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */; };
-		424313622B974C33008DA612 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313612B974C33008DA612 /* TabBarViewController.swift */; };
 		424313642B9758E1008DA612 /* FavouriteTicketInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */; };
 		424313662B975A30008DA612 /* FavouriteTicketInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */; };
 		42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA5622B87755200CF3291 /* AppDelegate.swift */; };
@@ -25,6 +24,7 @@
 		42BCA5722B87755400CF3291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA5702B87755400CF3291 /* LaunchScreen.storyboard */; };
 		42BCA57C2B87A9B800CF3291 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA57B2B87A9B800CF3291 /* NetworkService.swift */; };
 		42BCA57E2B87AF3100CF3291 /* TicketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */; };
+		42BFD4A42B9A3FD300D4F424 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42BFD4A62B9A3FD300D4F424 /* Localization.strings */; };
 		42C26ADD2B8C8EAD00F270F8 /* TicketList.json in Resources */ = {isa = PBXBuildFile; fileRef = 42C26ADC2B8C8EAD00F270F8 /* TicketList.json */; };
 		42C26ADF2B8C8ED900F270F8 /* TicketFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26ADE2B8C8ED900F270F8 /* TicketFetcher.swift */; };
 		42C26AE32B8C8F2700F270F8 /* TicketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE22B8C8F2700F270F8 /* TicketList.swift */; };
@@ -44,7 +44,6 @@
 		4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketList.storyboard; sourceTree = "<group>"; };
 		4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketListViewController.swift; sourceTree = "<group>"; };
-		424313612B974C33008DA612 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketInfo.storyboard; sourceTree = "<group>"; };
 		424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketInfoViewController.swift; sourceTree = "<group>"; };
 		42BCA55F2B87755200CF3291 /* FinalProject-AviaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FinalProject-AviaSearch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +56,13 @@
 		42BCA5732B87755400CF3291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42BCA57B2B87A9B800CF3291 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TicketList.storyboard; sourceTree = "<group>"; };
+		42BFD4A52B9A3FD300D4F424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		42BFD4A72B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		42BFD4A82B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		42BFD4A92B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
+		42BFD4AA2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Main.strings; sourceTree = "<group>"; };
+		42BFD4AB2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		42BFD4AC2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localization.strings; sourceTree = "<group>"; };
 		42C26ADC2B8C8EAD00F270F8 /* TicketList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TicketList.json; sourceTree = "<group>"; };
 		42C26ADE2B8C8ED900F270F8 /* TicketFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFetcher.swift; sourceTree = "<group>"; };
 		42C26AE22B8C8F2700F270F8 /* TicketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketList.swift; sourceTree = "<group>"; };
@@ -119,7 +125,6 @@
 			children = (
 				422502FC2B90EC6C00A7281A /* Services */,
 				42BCA5662B87755200CF3291 /* MainViewController.swift */,
-				424313612B974C33008DA612 /* TabBarViewController.swift */,
 				42BCA5682B87755200CF3291 /* Main.storyboard */,
 				42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */,
 				4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */,
@@ -136,6 +141,7 @@
 		42C26AE02B8C8EDD00F270F8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				42BFD4A62B9A3FD300D4F424 /* Localization.strings */,
 				42C26ADE2B8C8ED900F270F8 /* TicketFetcher.swift */,
 				42C26ADC2B8C8EAD00F270F8 /* TicketList.json */,
 			);
@@ -212,6 +218,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				be,
 			);
 			mainGroup = 42BCA5562B87755200CF3291;
 			productRefGroup = 42BCA5602B87755200CF3291 /* Products */;
@@ -233,6 +241,7 @@
 				424313642B9758E1008DA612 /* FavouriteTicketInfo.storyboard in Resources */,
 				4243135E2B9742F5008DA612 /* FavouriteTicketList.storyboard in Resources */,
 				42BCA56F2B87755400CF3291 /* Assets.xcassets in Resources */,
+				42BFD4A42B9A3FD300D4F424 /* Localization.strings in Resources */,
 				42C26AF02B8CD25000F270F8 /* TicketListTableViewCell.xib in Resources */,
 				42C26AF22B8D03F500F270F8 /* TicketInfo.storyboard in Resources */,
 				42BCA56A2B87755200CF3291 /* Main.storyboard in Resources */,
@@ -257,7 +266,6 @@
 				424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */,
 				42C26ADF2B8C8ED900F270F8 /* TicketFetcher.swift in Sources */,
 				42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */,
-				424313622B974C33008DA612 /* TabBarViewController.swift in Sources */,
 				42BCA5652B87755200CF3291 /* SceneDelegate.swift in Sources */,
 				42C26AE72B8C980500F270F8 /* TicketListViewModel.swift in Sources */,
 				42C26AE32B8C8F2700F270F8 /* TicketList.swift in Sources */,
@@ -275,6 +283,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				42BCA5692B87755200CF3291 /* Base */,
+				42BFD4A72B9A406400D4F424 /* ru */,
+				42BFD4AA2B9A407500D4F424 /* be */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -283,8 +293,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				42BCA5712B87755400CF3291 /* Base */,
+				42BFD4A82B9A406400D4F424 /* ru */,
+				42BFD4AB2B9A407500D4F424 /* be */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		42BFD4A62B9A3FD300D4F424 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42BFD4A52B9A3FD300D4F424 /* en */,
+				42BFD4A92B9A406400D4F424 /* ru */,
+				42BFD4AC2B9A407500D4F424 /* be */,
+			);
+			name = Localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -295,6 +317,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -358,6 +381,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

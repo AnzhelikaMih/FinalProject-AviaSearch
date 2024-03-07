@@ -9,20 +9,49 @@ import UIKit
 
 final class TicketListViewController: UIViewController {
     
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var heartButton: UIButton!
+    private var datePicker: UIDatePicker!
     
     private var ticketList = [TicketInfo]() {
         didSet {
             tableView.reloadData()
         }
     }
+    private var selectedDate: Date?
+    private var dateString: String?
+    
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var heartButton: UIButton!
+    @IBOutlet private weak var textFieldDate: UITextField!
+    @IBOutlet private weak var checkMarkButton: UIButton!
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        datePicker = generateDatePicker(with: .date)
+        textFieldDate.inputView = datePicker
         fetchTicketList()
     }
+    
+    private func generateDatePicker(with mode: UIDatePicker.Mode) -> UIDatePicker {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = mode
+        datePicker.preferredDatePickerStyle = .inline
+        datePicker.addTarget(self, action: #selector(dateDidChanged(_:)), for: .valueChanged)
+        return datePicker
+    }
+    
+    @objc private func dateDidChanged(_ sender: UIDatePicker) {
+        let selectedDate = sender.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        textFieldDate.text = dateFormatter.string(from: selectedDate)
+        self.selectedDate = selectedDate
+        }
+    
     
     private func setupTableView() {
         let nib = UINib(nibName: "TicketListTableViewCell", bundle: nil)
@@ -45,6 +74,20 @@ final class TicketListViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction private func checkMarkButtonDidTap() {
+            textFieldDate.resignFirstResponder()
+        if let selectedDate = self.selectedDate {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd.MM.yyyy"
+                    let dateString = dateFormatter.string(from: selectedDate)
+                    for cell in tableView.visibleCells {
+                        if let ticketCell = cell as? TicketListTableViewCell {
+                            ticketCell.setDataLabel(dateString)
+                        }
+                    }
+                }
+            }
+    
 }
 
 extension TicketListViewController: UITableViewDataSource {
@@ -60,6 +103,7 @@ extension TicketListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TicketListTableViewCell", for: indexPath) as! TicketListTableViewCell
         let ticketInfo = ticketList[indexPath.row]
         cell.configure(with: ticketInfo)
+        cell.setDate()
         return cell
     }
 }
@@ -71,8 +115,14 @@ extension TicketListViewController: UITableViewDelegate {
         if let vc = storyboard.instantiateViewController(withIdentifier: "TicketInfoViewController") as? TicketInfoViewController {
             
            vc.loadView()
-           vc.configureTicketInfo(with: ticketInfo)
-           navigationController?.pushViewController(vc, animated: true)
+
+            if let selectedDate = self.selectedDate {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+                let dateString = dateFormatter.string(from: selectedDate)
+                vc.selectedDate = dateString }
+            vc.configureTicketInfo(with: ticketInfo)
+           present(vc, animated: true)
         }
     }
 }

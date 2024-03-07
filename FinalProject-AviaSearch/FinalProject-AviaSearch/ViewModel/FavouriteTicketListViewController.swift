@@ -64,8 +64,16 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
         if let vc = storyboard.instantiateViewController(withIdentifier: "FavouriteTicketInfoViewController") as? FavouriteTicketInfoViewController {
             
            vc.loadView()
+            vc.delegate = self
            vc.configureTicketInfo(with: ticketInfo)
-           navigationController?.pushViewController(vc, animated: true)
+            present(vc, animated: true)
+
         }
+    }
+}
+
+extension FavouriteTicketListViewController: FavouriteTicketInfoDelegate {
+    func didDeleteTicket() {
+        fetchData()
     }
 }

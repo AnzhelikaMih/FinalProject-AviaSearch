@@ -11,7 +11,8 @@ final class TicketListTableViewCell: UITableViewCell {
     
     private var ticketInfo: TicketInfo?
     
-    @IBOutlet private weak var dataLabel: UILabel!
+    
+    @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet private weak var departure: UILabel!
     @IBOutlet private weak var departureCode: UILabel!
     @IBOutlet private weak var destination: UILabel!
@@ -22,13 +23,26 @@ final class TicketListTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    func setDate() {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let currentDateString = dateFormatter.string(from: currentDate)
+        dataLabel.text = currentDateString
+    }
+    
+    func setDataLabel(_ dateString: String) {
+            dataLabel.text = dateString
+        }
+    
     func configure(with ticketInfo: TicketInfo) {
-        dataLabel.text = ticketInfo.date
         departure.text = ticketInfo.departure
         departureCode.text = ticketInfo.departureCode
         destination.text = ticketInfo.destination
         destinationCode.text = ticketInfo.destinationCode
+        dataLabel.text = ticketInfo.date
     }
+    
  
     
 }

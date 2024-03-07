@@ -39,7 +39,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="blN-5V-4yi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -48,7 +48,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WWo-Ss-dfg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                         <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -61,7 +61,7 @@
                                         <color key="tintColor" red="1" green="0.99607843159999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Пачаць">
-                                            <fontDescription key="titleFontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -82,6 +82,7 @@
                                     <constraint firstItem="Q3L-fW-ZgO" firstAttribute="top" secondItem="UzA-g3-xYW" secondAttribute="top" constant="55" id="JS7-vn-2NH"/>
                                     <constraint firstItem="XbU-q2-B4Y" firstAttribute="leading" secondItem="UzA-g3-xYW" secondAttribute="leading" constant="40" id="KdM-Lw-qK0"/>
                                     <constraint firstAttribute="bottom" secondItem="9Cf-If-hfj" secondAttribute="bottom" constant="80" id="LQ1-d6-rUJ"/>
+                                    <constraint firstItem="9Cf-If-hfj" firstAttribute="top" secondItem="XbU-q2-B4Y" secondAttribute="bottom" constant="46" id="fXE-Fv-fuP"/>
                                     <constraint firstAttribute="trailing" secondItem="XbU-q2-B4Y" secondAttribute="trailing" constant="40" id="mWA-HA-47r"/>
                                     <constraint firstAttribute="trailing" secondItem="Q3L-fW-ZgO" secondAttribute="trailing" constant="55" id="skd-PD-0iq"/>
                                 </constraints>
@@ -103,6 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="o4t-d3-QSk"/>
                     <connections>
+                        <outlet property="airplane" destination="wUm-gX-kL2" id="Kta-NW-4mV"/>
                         <outlet property="startButton" destination="9Cf-If-hfj" id="bQM-fF-78n"/>
                     </connections>
                 </viewController>
@@ -113,10 +115,12 @@
         <!--Navigation Controller-->
         <scene sceneID="u3Y-Zy-P5d">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="H4I-bd-Uq9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H4I-bd-Uq9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8nz-cL-ZIg">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K7l-l0-3iM">
