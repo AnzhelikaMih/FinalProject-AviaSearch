@@ -34,13 +34,16 @@ final class TicketListViewController: UIViewController {
         datePicker = generateDatePicker(with: .date)
         textFieldDate.inputView = datePicker
         fetchTicketList()
+        setupCurrentDate()
     }
     
     private func generateDatePicker(with mode: UIDatePicker.Mode) -> UIDatePicker {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = mode
         datePicker.preferredDatePickerStyle = .inline
-        datePicker.addTarget(self, action: #selector(dateDidChanged(_:)), for: .valueChanged)
+        datePicker.addTarget(self, 
+                             action: #selector(dateDidChanged(_:)),
+                             for: .valueChanged)
         return datePicker
     }
     
@@ -54,8 +57,19 @@ final class TicketListViewController: UIViewController {
     
     
     private func setupTableView() {
-        let nib = UINib(nibName: "TicketListTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "TicketListTableViewCell")
+        let nib = UINib(nibName: "TicketListTableViewCell", 
+                        bundle: nil)
+        tableView.register(nib, 
+                           forCellReuseIdentifier: "TicketListTableViewCell")
+    }
+    
+    private func setupCurrentDate() {
+        selectedDate = Date()
+        if let selectedDate = selectedDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            textFieldDate.text = dateFormatter.string(from: selectedDate)
+        }
     }
     
     private func fetchTicketList() {
@@ -69,7 +83,8 @@ final class TicketListViewController: UIViewController {
     
     @IBAction private func heartButtonDidTap () {
         
-        let storyboard = UIStoryboard(name: "FavouriteTicketList", bundle: nil)
+        let storyboard = UIStoryboard(name: "FavouriteTicketList", 
+                                      bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: "FavouriteTicketListViewController") as? FavouriteTicketListViewController else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -87,6 +102,29 @@ final class TicketListViewController: UIViewController {
                     }
                 }
             }
+    @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            let filteredTickets = ticketList.filter { $0.departureCode == "MSQ" }
+            displayFilteredTickets(filteredTickets)
+        case 1:
+            resetFilter()
+        case 2:
+            let filteredTickets = ticketList.filter { $0.destinationCode == "MSQ" }
+            displayFilteredTickets(filteredTickets)
+        default:
+            break
+        }
+    }
+
+    private func resetFilter() {
+        fetchTicketList()
+        tableView.reloadData()
+    }
+    
+    private func displayFilteredTickets(_ tickets: [TicketInfo]) {
+        ticketList = tickets
+    }
     
 }
 

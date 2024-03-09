@@ -35,8 +35,8 @@ final class TicketInfoViewController: UIViewController {
     @IBOutlet private weak var payment: UILabel!
     @IBOutlet private weak var price: UILabel!
     
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
