@@ -80,7 +80,7 @@
                                     <segment title="" image="arrowshape.backward.fill" catalog="system"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentedControlValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="UVl-KC-UMs"/>
+                                    <action selector="segmentedControlValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="2wa-kP-JKa"/>
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выбраць дату" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ih-0y-zZ0">

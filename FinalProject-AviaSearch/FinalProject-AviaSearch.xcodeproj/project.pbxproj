@@ -147,8 +147,8 @@
 		42C26AE12B8C8F0D00F270F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				42C26AE22B8C8F2700F270F8 /* TicketList.swift */,
 				423C4A8C2B90FB830090A75A /* CoreDataModel.xcdatamodeld */,
+				42C26AE22B8C8F2700F270F8 /* TicketList.swift */,
 				42C26AE42B8C8F3E00F270F8 /* TicketInfo.swift */,
 				424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */,
 				4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */,

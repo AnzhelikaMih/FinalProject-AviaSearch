@@ -16,6 +16,7 @@ final class TicketListViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
     private var selectedDate: Date?
     private var dateString: String?
     
@@ -25,23 +26,21 @@ final class TicketListViewController: UIViewController {
     @IBOutlet private weak var checkMarkButton: UIButton!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         datePicker = generateDatePicker(with: .date)
         textFieldDate.inputView = datePicker
         fetchTicketList()
-        setupCurrentDate()
+        selectedDate = Date()
     }
     
     private func generateDatePicker(with mode: UIDatePicker.Mode) -> UIDatePicker {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = mode
         datePicker.preferredDatePickerStyle = .inline
-        datePicker.addTarget(self, 
+        datePicker.minimumDate = Date()
+        datePicker.addTarget(self,
                              action: #selector(dateDidChanged(_:)),
                              for: .valueChanged)
         return datePicker
@@ -55,7 +54,6 @@ final class TicketListViewController: UIViewController {
         self.selectedDate = selectedDate
         }
     
-    
     private func setupTableView() {
         let nib = UINib(nibName: "TicketListTableViewCell", 
                         bundle: nil)
@@ -63,26 +61,15 @@ final class TicketListViewController: UIViewController {
                            forCellReuseIdentifier: "TicketListTableViewCell")
     }
     
-    private func setupCurrentDate() {
-        selectedDate = Date()
-        if let selectedDate = selectedDate {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            textFieldDate.text = dateFormatter.string(from: selectedDate)
-        }
-    }
-    
     private func fetchTicketList() {
         let fetcher = TicketListFetcher()
         
         fetcher.fetch { [weak self] (data) in
             self?.ticketList = data
-            
         }
     }
     
     @IBAction private func heartButtonDidTap () {
-        
         let storyboard = UIStoryboard(name: "FavouriteTicketList", 
                                       bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: "FavouriteTicketListViewController") as? FavouriteTicketListViewController else { return }
@@ -92,16 +79,14 @@ final class TicketListViewController: UIViewController {
     @IBAction private func checkMarkButtonDidTap() {
             textFieldDate.resignFirstResponder()
         if let selectedDate = self.selectedDate {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd.MM.yyyy"
-                    let dateString = dateFormatter.string(from: selectedDate)
                     for cell in tableView.visibleCells {
-                        if let ticketCell = cell as? TicketListTableViewCell {
-                            ticketCell.setDataLabel(dateString)
+                        if let cell = cell as? TicketListTableViewCell {
+                            cell.setDataLabel(with: selectedDate)
                         }
                     }
                 }
             }
+    
     @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -141,7 +126,8 @@ extension TicketListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TicketListTableViewCell", for: indexPath) as! TicketListTableViewCell
         let ticketInfo = ticketList[indexPath.row]
         cell.configure(with: ticketInfo)
-        cell.setDate()
+        if let selectedDate = self.selectedDate {
+            cell.setDataLabel(with: selectedDate) }
         return cell
     }
 }
@@ -159,8 +145,9 @@ extension TicketListViewController: UITableViewDelegate {
                 dateFormatter.dateFormat = "dd.MM.yyyy"
                 let dateString = dateFormatter.string(from: selectedDate)
                 vc.selectedDate = dateString }
-            vc.configureTicketInfo(with: ticketInfo)
-           present(vc, animated: true)
+            
+                vc.configureTicketInfo(with: ticketInfo)
+            present(vc, animated: true)
         }
     }
 }

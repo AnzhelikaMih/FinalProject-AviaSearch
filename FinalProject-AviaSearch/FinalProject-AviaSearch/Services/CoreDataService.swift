@@ -29,39 +29,39 @@ final class CoreDataService {
     
     func saveTicketToFavourite(with ticket: TicketInfo) {
         
-        let favTicket = Ticket(context: self.context)
-        favTicket.airplane = ticket.airplane
-        favTicket.arrivalTime = ticket.arrivalTime
-        favTicket.aviaOperator = ticket.aviaOperator
-        favTicket.date = ticket.date
-        favTicket.departure = ticket.departure
-        favTicket.departureCode = ticket.departureCode
-        favTicket.departureTime = ticket.departureTime
-        favTicket.destination = ticket.destination
-        favTicket.destinationCode = ticket.destinationCode
-        favTicket.eTicketNumber = ticket.eTicketNumber
-        favTicket.flightNumber = ticket.flightNumber
-        favTicket.passenger = ticket.passenger
-        favTicket.passportNumber = ticket.passportNumber
-        favTicket.payment = ticket.payment
-        favTicket.price = ticket.price
-        favTicket.seatNumber = ticket.seatNumber
-        favTicket.terminal = ticket.terminal
-        favTicket.journeyTime = ticket.journeyTime
+        let myTicket = Ticket(context: self.context)
+        myTicket.airplane = ticket.airplane
+        myTicket.arrivalTime = ticket.arrivalTime
+        myTicket.aviaOperator = ticket.aviaOperator
+        myTicket.date = ticket.date
+        myTicket.departure = ticket.departure
+        myTicket.departureCode = ticket.departureCode
+        myTicket.departureTime = ticket.departureTime
+        myTicket.destination = ticket.destination
+        myTicket.destinationCode = ticket.destinationCode
+        myTicket.eTicketNumber = ticket.eTicketNumber
+        myTicket.flightNumber = ticket.flightNumber
+        myTicket.passenger = ticket.passenger
+        myTicket.passportNumber = ticket.passportNumber
+        myTicket.payment = ticket.payment
+        myTicket.price = ticket.price
+        myTicket.seatNumber = ticket.seatNumber
+        myTicket.terminal = ticket.terminal
+        myTicket.journeyTime = ticket.journeyTime
 
         saveContext()
     }
     
     func fetchFavouriteTickets() -> [TicketInfo] {
         let request = Ticket.fetchRequest()
-        guard let favTickets = try? context.fetch(request) else { return [] }
-        let ticketViewModels = favTickets.compactMap { return TicketInfo(departure: $0.departure ?? "nil", departureCode: $0.departureCode ?? "nil", destination: $0.destination ?? "nil", destinationCode: $0.destinationCode ?? "nil", aviaOperator: $0.aviaOperator ?? "nil", flightNumber: $0.flightNumber ?? "nil", terminal: $0.terminal ?? "nil", airplane: $0.airplane ?? "nil", date: $0.date ?? "nil", departureTime: $0.departureTime ?? "nil", arrivalTime: $0.arrivalTime ?? "nil", journeyTime: $0.journeyTime ?? "nil", seatNumber: $0.seatNumber ?? "nil", passenger: $0.passenger ?? "nil", passportNumber: $0.passportNumber ?? "nil", eTicketNumber: $0.eTicketNumber ?? "nil", payment: $0.payment ?? "nil", price: $0.price ?? "nil") }
+        guard let myTickets = try? context.fetch(request) else { return [] }
+        let ticketViewModels = myTickets.compactMap { return TicketInfo(departure: $0.departure ?? "nil", departureCode: $0.departureCode ?? "nil", destination: $0.destination ?? "nil", destinationCode: $0.destinationCode ?? "nil", aviaOperator: $0.aviaOperator ?? "nil", flightNumber: $0.flightNumber ?? "nil", terminal: $0.terminal ?? "nil", airplane: $0.airplane ?? "nil", date: $0.date ?? "nil", departureTime: $0.departureTime ?? "nil", arrivalTime: $0.arrivalTime ?? "nil", journeyTime: $0.journeyTime ?? "nil", seatNumber: $0.seatNumber ?? "nil", passenger: $0.passenger ?? "nil", passportNumber: $0.passportNumber ?? "nil", eTicketNumber: $0.eTicketNumber ?? "nil", payment: $0.payment ?? "nil", price: $0.price ?? "nil") }
         return ticketViewModels
     }
     
     func deleteTicket(ticket: TicketInfo) {
         let request = NSFetchRequest<Ticket>(entityName: "Ticket")
-        request.predicate = NSPredicate(format: "eTicketNumber == %@", ticket.eTicketNumber)
+        request.predicate = NSPredicate(format: "flightNumber == %@", ticket.flightNumber)
 
         do {
             let matchingTickets = try context.fetch(request)
@@ -85,5 +85,4 @@ final class CoreDataService {
             }
         }
     }
-
 }

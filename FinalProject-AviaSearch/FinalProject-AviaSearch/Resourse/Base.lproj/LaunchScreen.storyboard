@@ -31,9 +31,6 @@
                             <constraint firstItem="4jr-81-uB2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yE7-T2-zdN"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="4jr-81-uB2" id="LOy-Ab-fYb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

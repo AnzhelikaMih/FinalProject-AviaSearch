@@ -86,9 +86,9 @@ final class TicketInfoViewController: UIViewController {
               let date = date.text
         else { return }
         
-        let favTicket = TicketInfo(departure: departure, departureCode: departureCode, destination: destination, destinationCode: destinationCode, aviaOperator: aviaOperator, flightNumber: flightNumber, terminal: terminal, airplane: airplane, date: date, departureTime: departureTime, arrivalTime: "", journeyTime: journeyTime, seatNumber: seatNumber, passenger: passenger, passportNumber: passport, eTicketNumber: ticketNum, payment: payment, price: price)
+        let myTicket = TicketInfo(departure: departure, departureCode: departureCode, destination: destination, destinationCode: destinationCode, aviaOperator: aviaOperator, flightNumber: flightNumber, terminal: terminal, airplane: airplane, date: date, departureTime: departureTime, arrivalTime: "", journeyTime: journeyTime, seatNumber: seatNumber, passenger: passenger, passportNumber: passport, eTicketNumber: ticketNum, payment: payment, price: price)
         
-        CoreDataService.shared.saveTicketToFavourite(with: favTicket)
+        CoreDataService.shared.saveTicketToFavourite(with: myTicket)
         dismiss(animated: true)
         
     }
@@ -96,8 +96,4 @@ final class TicketInfoViewController: UIViewController {
     @IBAction private func cancelButtonDidTap(_ sender: Any) {
         dismiss(animated: true)
     }
-        
-    
-    
-
 }

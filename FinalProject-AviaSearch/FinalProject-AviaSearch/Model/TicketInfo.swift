@@ -17,7 +17,7 @@ struct TicketInfo: Decodable {
     let flightNumber: String
     let terminal: String
     let airplane: String
-    let date: String
+    var date: String
     let departureTime: String
     let arrivalTime: String
     let journeyTime: String

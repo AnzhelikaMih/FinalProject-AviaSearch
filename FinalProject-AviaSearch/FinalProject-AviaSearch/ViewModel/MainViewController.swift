@@ -30,7 +30,8 @@ final class MainViewController: UIViewController {
     }
     
     private func navigateToTicketList() {
-            let storyboard = UIStoryboard(name: "TicketList", bundle: nil)
+            let storyboard = UIStoryboard(name: "TicketList", 
+                                          bundle: nil)
             guard let ticketListViewController = storyboard.instantiateViewController(identifier: "TicketListViewController") as? TicketListViewController else {
                 return
             }
@@ -38,12 +39,14 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction private func startButtonDidTap () {
-        
-        UIView.animate(withDuration: 1.0, animations: {
+            UIView.animate(withDuration: 1.0, 
+                           animations: {
                     self.airplane.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6.3)
                 }) { _ in
-                    UIView.animate(withDuration: 1.0, animations: {
-                        self.airplane.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
+                    UIView.animate(withDuration: 1.0, 
+                                   animations: {
+                        self.airplane.transform = CGAffineTransform(translationX: self.view.bounds.width, 
+                                                                    y: 0)
                     }) { _ in
                         self.navigateToTicketList()
                     }

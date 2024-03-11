@@ -124,7 +124,7 @@
         {
             "departure": "MINSK",
             "departure_code": "MSQ",
-            "destination": "ST.Petersburg",
+            "destination": "ST.PETERSBURG",
             "destination_code": "LED",
             "avia_operator": "Belavia",
             "flight_number": "B2 941",

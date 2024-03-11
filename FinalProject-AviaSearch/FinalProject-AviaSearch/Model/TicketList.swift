@@ -8,6 +8,5 @@
 import Foundation
 
 struct TicketList: Decodable {
-    let title: String
-    let data: [TicketInfo]
+    var data: [TicketInfo]
 }
