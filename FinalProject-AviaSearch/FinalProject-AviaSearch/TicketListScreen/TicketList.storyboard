@@ -61,14 +61,6 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="yjV-MX-sS9"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hI5-5m-yLk">
-                                <rect key="frame" x="15" y="131.66666666666666" width="40" height="37"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="JoD-kM-W8O"/>
-                                    <constraint firstAttribute="height" constant="40" id="xcQ-ac-Ds0"/>
-                                </constraints>
-                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bSS-L6-9De">
                                 <rect key="frame" x="225" y="130" width="153" height="41"/>
                                 <constraints>
@@ -96,16 +88,28 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4D-NN-KMV">
                                 <rect key="frame" x="177" y="130" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="1cf-aP-eSI"/>
                                     <constraint firstAttribute="height" constant="40" id="3L3-we-Lvq"/>
                                     <constraint firstAttribute="width" constant="40" id="EJF-xS-hbC"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="cu8-Cd-dOx"/>
                                 </constraints>
                                 <color key="tintColor" red="0.094117648900000003" green="0.1215686351" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="checkMarkButtonDidTap" destination="Y6W-OH-hqX" eventType="touchUpInside" id="r1Q-QM-DgM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f8-lw-4ys">
+                                <rect key="frame" x="16" y="130" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="LXj-Nj-nf1"/>
+                                    <constraint firstAttribute="height" constant="40" id="r7I-8C-YAy"/>
+                                </constraints>
+                                <color key="tintColor" red="0.094117648900000003" green="0.1215686351" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="globe" catalog="system"/>
+                                <connections>
+                                    <action selector="checkMarkButtonDidTap" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WJY-RS-nOS"/>
+                                    <action selector="mapButtonDidTap" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7k9-ef-0ti"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,18 +120,18 @@
                             <constraint firstItem="bSS-L6-9De" firstAttribute="top" secondItem="CKZ-Bl-KnJ" secondAttribute="bottom" constant="10" id="96i-9E-enI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CxK-M5-iFk" secondAttribute="trailing" constant="16" id="9fi-Lo-rR1"/>
                             <constraint firstAttribute="bottom" secondItem="CxK-M5-iFk" secondAttribute="bottom" constant="15" id="CYb-Tk-Rvr"/>
-                            <constraint firstItem="hI5-5m-yLk" firstAttribute="top" secondItem="CKZ-Bl-KnJ" secondAttribute="bottom" constant="10" id="Gpa-c6-T4l"/>
+                            <constraint firstItem="5Ih-0y-zZ0" firstAttribute="leading" secondItem="1f8-lw-4ys" secondAttribute="trailing" constant="9" id="DTs-mI-z8D"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bSS-L6-9De" secondAttribute="trailing" constant="15" id="LXV-eR-PXV"/>
-                            <constraint firstItem="CxK-M5-iFk" firstAttribute="top" secondItem="hI5-5m-yLk" secondAttribute="bottom" constant="10" id="SNQ-jK-Tiv"/>
+                            <constraint firstItem="CxK-M5-iFk" firstAttribute="top" secondItem="w4D-NN-KMV" secondAttribute="bottom" constant="10" id="SBX-io-Zhc"/>
+                            <constraint firstItem="1f8-lw-4ys" firstAttribute="leading" secondItem="CxK-M5-iFk" secondAttribute="leading" id="SSx-pd-6yn"/>
                             <constraint firstItem="w4D-NN-KMV" firstAttribute="top" secondItem="CKZ-Bl-KnJ" secondAttribute="bottom" constant="10" id="V8f-a7-RfZ"/>
+                            <constraint firstItem="1f8-lw-4ys" firstAttribute="baseline" secondItem="w4D-NN-KMV" secondAttribute="baseline" id="a9T-hj-RNf"/>
                             <constraint firstItem="5Ih-0y-zZ0" firstAttribute="top" secondItem="CKZ-Bl-KnJ" secondAttribute="bottom" constant="10" id="dEr-Ru-bza"/>
                             <constraint firstItem="CxK-M5-iFk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="dgi-AH-qHX"/>
                             <constraint firstItem="CKZ-Bl-KnJ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="gFC-ID-gdE"/>
                             <constraint firstItem="CKZ-Bl-KnJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="h6Q-6A-bVJ"/>
-                            <constraint firstItem="hI5-5m-yLk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="kAu-0T-mNk"/>
-                            <constraint firstItem="w4D-NN-KMV" firstAttribute="leading" secondItem="hI5-5m-yLk" secondAttribute="trailing" constant="122" id="ocp-d0-UWy"/>
+                            <constraint firstItem="bSS-L6-9De" firstAttribute="leading" secondItem="w4D-NN-KMV" secondAttribute="trailing" constant="8" symbolic="YES" id="hiH-Ll-171"/>
                             <constraint firstItem="CxK-M5-iFk" firstAttribute="centerX" secondItem="CKZ-Bl-KnJ" secondAttribute="centerX" id="snu-9J-oC6"/>
-                            <constraint firstItem="5Ih-0y-zZ0" firstAttribute="leading" secondItem="hI5-5m-yLk" secondAttribute="trailing" constant="10" id="weB-T8-SRB"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -149,8 +153,8 @@
     <resources>
         <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
         <image name="arrowshape.right.fill" catalog="system" width="128" height="104"/>
-        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="globe" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

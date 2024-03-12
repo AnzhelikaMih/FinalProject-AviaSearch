@@ -1,21 +1,16 @@
 //
-//  FavouriteTicketInfoViewController.swift
+//  TicketInfoViewController.swift
 //  FinalProject-AviaSearch
 //
-//  Created by Анжелика on 5.03.24.
+//  Created by Анжелика on 27.02.24.
 //
 
 import UIKit
 
-protocol FavouriteTicketInfoDelegate: AnyObject {
-    func didDeleteTicket ()
-}
-
-final class FavouriteTicketInfoViewController: UIViewController {
+final class TicketInfoViewController: UIViewController {
     
-    private var ticketInfo: TicketInfo?
-    
-    weak var delegate: FavouriteTicketInfoDelegate?
+    private var ticketInfo: TicketInfo?  // вью модель ти
+    var selectedDate: String?  // вью модель ти
     
     @IBOutlet private weak var departureCode: UILabel!
     @IBOutlet private weak var departure: UILabel!
@@ -40,12 +35,13 @@ final class FavouriteTicketInfoViewController: UIViewController {
     @IBOutlet private weak var payment: UILabel!
     @IBOutlet private weak var price: UILabel!
     
-    @IBOutlet private weak var deleteButton: UIButton!
+    @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     
     func configureTicketInfo(with ticketInfo: TicketInfo) {
         
@@ -57,7 +53,6 @@ final class FavouriteTicketInfoViewController: UIViewController {
         flightNumber.text = ticketInfo.flightNumber
         terminal.text = ticketInfo.terminal
         airplane.text = ticketInfo.airplane
-        date.text = ticketInfo.date
         departureTime.text = ticketInfo.departureTime
         seatNumber.text = ticketInfo.seatNumber
         passenger.text = ticketInfo.passenger
@@ -66,23 +61,43 @@ final class FavouriteTicketInfoViewController: UIViewController {
         aviaOperator.text = ticketInfo.aviaOperator
         payment.text = ticketInfo.payment
         price.text = ticketInfo.price
-        
-        self.ticketInfo = ticketInfo
+        date.text = selectedDate
     }
+     
     
-    @IBAction private func deleteButtonDidTap(_ sender: Any) {
-        guard let ticketInfo = ticketInfo else { return }
-        CoreDataService.shared.deleteTicket(ticket: ticketInfo)
-        delegate?.didDeleteTicket()
+    @IBAction private func saveButtonDidTap(_ sender: Any) {
         
-        let alert = UIAlertController(title: "✕", message: "Ваш квiток выдален", preferredStyle: .alert)
+        guard let departure = departure.text, // вью модель ти
+              let departureCode = departureCode.text,
+              let journeyTime = journeyTime.text,
+              let destinationCode = destinationCode.text,
+              let destination = destination.text,
+              let flightNumber = flightNumber.text,
+              let terminal = terminal.text,
+              let airplane = airplane.text,
+              let departureTime = departureTime.text,
+              let seatNumber = seatNumber.text,
+              let passenger = passenger.text,
+              let passport = passport.text,
+              let ticketNum = ticketNum.text,
+              let aviaOperator = aviaOperator.text,
+              let payment = payment.text,
+              let price = price.text,
+              let date = date.text
+        else { return }
+        
+        let myTicket = TicketInfo(departure: departure, departureCode: departureCode, destination: destination, destinationCode: destinationCode, aviaOperator: aviaOperator, flightNumber: flightNumber, terminal: terminal, airplane: airplane, date: date, departureTime: departureTime, arrivalTime: "", journeyTime: journeyTime, seatNumber: seatNumber, passenger: passenger, passportNumber: passport, eTicketNumber: ticketNum, payment: payment, price: price)
+        
+        CoreDataService.shared.saveTicketToFavourite(with: myTicket)
+        
+        let alert = UIAlertController(title: "♡", message: "Ваш квiток захаван", preferredStyle: .alert)
         present(alert, animated: true)
         
         dismiss(animated: true)
+        
     }
-
+    
     @IBAction private func cancelButtonDidTap(_ sender: Any) {
         dismiss(animated: true)
     }
 }
-

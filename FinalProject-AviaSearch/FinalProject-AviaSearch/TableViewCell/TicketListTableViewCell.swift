@@ -26,14 +26,14 @@ final class TicketListTableViewCell: UITableViewCell {
     }
     
     func setDataLabel(with selectedDate: Date) {
-        let dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter() //extension dateformater
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let dateString = dateFormatter.string(from: selectedDate)
         dataLabel.text = dateString
     }
     
     func setDate() {
-        let selectedDate = Date()
+        let selectedDate = Date() //extension dateformater
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let currentDateString = dateFormatter.string(from: selectedDate)

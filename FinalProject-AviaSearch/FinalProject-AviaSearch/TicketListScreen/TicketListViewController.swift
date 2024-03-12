@@ -16,9 +16,10 @@ final class TicketListViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    // вью модель ти
     
-    private var selectedDate: Date?
-    private var dateString: String?
+    private var selectedDate: Date?  // вью модель ти
+    private var dateString: String? // вью модель ти
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var heartButton: UIButton!
@@ -31,7 +32,7 @@ final class TicketListViewController: UIViewController {
         setupTableView()
         datePicker = generateDatePicker(with: .date)
         textFieldDate.inputView = datePicker
-        loadTicketList()
+        loadTicketList()  // вью модель ти
         selectedDate = Date()
         segmentedControl.selectedSegmentIndex = 1
     }
@@ -47,7 +48,7 @@ final class TicketListViewController: UIViewController {
         return datePicker
     }
     
-    @objc private func dateDidChanged(_ sender: UIDatePicker) {
+    @objc private func dateDidChanged(_ sender: UIDatePicker) {  // вью модель ти
         let selectedDate = sender.date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
@@ -62,21 +63,20 @@ final class TicketListViewController: UIViewController {
                            forCellReuseIdentifier: "TicketListTableViewCell")
     }
     
-    private func loadTicketList() {
+    private func loadTicketList() {  // вью модель ти
         let fetcher = NetworkService()
-        
         fetcher.loadFlights { [weak self] data in
             self?.ticketList = data
         }
     }
     
     private func resetFilter() {
-        loadTicketList()
+        loadTicketList()  // вью модель ти
         tableView.reloadData()
     }
     
     private func displayFilteredTickets(_ tickets: [TicketInfo]) {
-        ticketList = tickets
+        ticketList = tickets  // вью модель ти
     }
     
     @IBAction private func heartButtonDidTap () {
@@ -111,6 +111,14 @@ final class TicketListViewController: UIViewController {
             break
         }
     }
+    
+    @IBAction private func mapButtonDidTap () {
+        let storyboard = UIStoryboard(name: "MapEarth",
+                                      bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "MapEarthViewController") as? MapEarthViewController
+        else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension TicketListViewController: UITableViewDataSource {
@@ -144,7 +152,7 @@ extension TicketListViewController: UITableViewDelegate {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd.MM.yyyy"
                 let dateString = dateFormatter.string(from: selectedDate)
-                vc.selectedDate = dateString }
+                vc.selectedDate = dateString }  // вью модель ти
             
             vc.configureTicketInfo(with: ticketInfo)
             present(vc, animated: true)

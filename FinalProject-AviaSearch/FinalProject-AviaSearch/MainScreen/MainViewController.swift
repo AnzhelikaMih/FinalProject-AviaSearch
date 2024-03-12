@@ -13,10 +13,6 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var airplane: UIImageView!
     @IBOutlet private weak var blueView: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         resetAirplanePosition()

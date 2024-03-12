@@ -60,10 +60,9 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
         let ticketInfo = ticketList[indexPath.row]
         let storyboard = UIStoryboard(name: "FavouriteTicketInfo", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "FavouriteTicketInfoViewController") as? FavouriteTicketInfoViewController {
-            vc.loadView()
+            present(vc, animated: true)
             vc.delegate = self
             vc.configureTicketInfo(with: ticketInfo)
-            present(vc, animated: true)
         }
     }
 }
