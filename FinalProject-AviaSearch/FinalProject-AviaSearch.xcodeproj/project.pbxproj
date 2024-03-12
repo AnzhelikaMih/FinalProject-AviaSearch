@@ -24,14 +24,10 @@
 		42BCA5722B87755400CF3291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA5702B87755400CF3291 /* LaunchScreen.storyboard */; };
 		42BCA57C2B87A9B800CF3291 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA57B2B87A9B800CF3291 /* NetworkService.swift */; };
 		42BCA57E2B87AF3100CF3291 /* TicketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */; };
-		42BFD4A42B9A3FD300D4F424 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42BFD4A62B9A3FD300D4F424 /* Localization.strings */; };
 		42BFD4AE2B9C84E500D4F424 /* TicketInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BFD4AD2B9C84E500D4F424 /* TicketInfo.storyboard */; };
-		42C26ADD2B8C8EAD00F270F8 /* TicketList.json in Resources */ = {isa = PBXBuildFile; fileRef = 42C26ADC2B8C8EAD00F270F8 /* TicketList.json */; };
-		42C26ADF2B8C8ED900F270F8 /* TicketFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26ADE2B8C8ED900F270F8 /* TicketFetcher.swift */; };
-		42C26AE32B8C8F2700F270F8 /* TicketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE22B8C8F2700F270F8 /* TicketList.swift */; };
-		42C26AE52B8C8F3E00F270F8 /* TicketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE42B8C8F3E00F270F8 /* TicketInfo.swift */; };
-		42C26AE72B8C980500F270F8 /* TicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE62B8C980500F270F8 /* TicketListViewModel.swift */; };
-		42C26AEA2B8C991A00F270F8 /* TicketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE92B8C991A00F270F8 /* TicketListView.swift */; };
+		42C26AE32B8C8F2700F270F8 /* TicketListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE22B8C8F2700F270F8 /* TicketListModel.swift */; };
+		42C26AE52B8C8F3E00F270F8 /* TicketInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE42B8C8F3E00F270F8 /* TicketInfoModel.swift */; };
+		42C26AEA2B8C991A00F270F8 /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */; };
 		42C26AEC2B8C99A600F270F8 /* TicketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AEB2B8C99A600F270F8 /* TicketListTableViewCell.swift */; };
 		42C26AF02B8CD25000F270F8 /* TicketListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C26AEF2B8CD25000F270F8 /* TicketListTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -56,20 +52,12 @@
 		42BCA5732B87755400CF3291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42BCA57B2B87A9B800CF3291 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TicketList.storyboard; sourceTree = "<group>"; };
-		42BFD4A52B9A3FD300D4F424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
-		42BFD4A72B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		42BFD4A82B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		42BFD4A92B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
-		42BFD4AA2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Main.strings; sourceTree = "<group>"; };
 		42BFD4AB2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		42BFD4AC2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localization.strings; sourceTree = "<group>"; };
 		42BFD4AD2B9C84E500D4F424 /* TicketInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TicketInfo.storyboard; sourceTree = "<group>"; };
-		42C26ADC2B8C8EAD00F270F8 /* TicketList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TicketList.json; sourceTree = "<group>"; };
-		42C26ADE2B8C8ED900F270F8 /* TicketFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFetcher.swift; sourceTree = "<group>"; };
-		42C26AE22B8C8F2700F270F8 /* TicketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketList.swift; sourceTree = "<group>"; };
-		42C26AE42B8C8F3E00F270F8 /* TicketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfo.swift; sourceTree = "<group>"; };
-		42C26AE62B8C980500F270F8 /* TicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewModel.swift; sourceTree = "<group>"; };
-		42C26AE92B8C991A00F270F8 /* TicketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListView.swift; sourceTree = "<group>"; };
+		42C26AE22B8C8F2700F270F8 /* TicketListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListModel.swift; sourceTree = "<group>"; };
+		42C26AE42B8C8F3E00F270F8 /* TicketInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoModel.swift; sourceTree = "<group>"; };
+		42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		42C26AEB2B8C99A600F270F8 /* TicketListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListTableViewCell.swift; sourceTree = "<group>"; };
 		42C26AEF2B8CD25000F270F8 /* TicketListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,32 +112,21 @@
 		42BCA5612B87755200CF3291 /* FinalProject-AviaSearch */ = {
 			isa = PBXGroup;
 			children = (
+				422502FD2B90EC9000A7281A /* Resourse */,
 				422502FC2B90EC6C00A7281A /* Services */,
 				42C26AE12B8C8F0D00F270F8 /* Model */,
 				42C26AE82B8C981700F270F8 /* ViewModel */,
 				42BCA5732B87755400CF3291 /* Info.plist */,
-				422502FD2B90EC9000A7281A /* Resourse */,
-				42C26AE02B8C8EDD00F270F8 /* Data */,
 			);
 			path = "FinalProject-AviaSearch";
-			sourceTree = "<group>";
-		};
-		42C26AE02B8C8EDD00F270F8 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				42BFD4A62B9A3FD300D4F424 /* Localization.strings */,
-				42C26ADE2B8C8ED900F270F8 /* TicketFetcher.swift */,
-				42C26ADC2B8C8EAD00F270F8 /* TicketList.json */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		42C26AE12B8C8F0D00F270F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				423C4A8C2B90FB830090A75A /* CoreDataModel.xcdatamodeld */,
-				42C26AE22B8C8F2700F270F8 /* TicketList.swift */,
-				42C26AE42B8C8F3E00F270F8 /* TicketInfo.swift */,
+				42C26AE22B8C8F2700F270F8 /* TicketListModel.swift */,
+				42C26AE42B8C8F3E00F270F8 /* TicketInfoModel.swift */,
 				424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */,
 				4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */,
 			);
@@ -161,9 +138,8 @@
 			children = (
 				42BCA5682B87755200CF3291 /* Main.storyboard */,
 				42BCA5662B87755200CF3291 /* MainViewController.swift */,
-				42C26AE62B8C980500F270F8 /* TicketListViewModel.swift */,
 				42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */,
-				42C26AE92B8C991A00F270F8 /* TicketListView.swift */,
+				42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */,
 				42BFD4AD2B9C84E500D4F424 /* TicketInfo.storyboard */,
 				420145F72B8DC26700A39403 /* TicketInfoViewController.swift */,
 				4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */,
@@ -241,11 +217,9 @@
 				424313642B9758E1008DA612 /* FavouriteTicketInfo.storyboard in Resources */,
 				4243135E2B9742F5008DA612 /* FavouriteTicketList.storyboard in Resources */,
 				42BCA56F2B87755400CF3291 /* Assets.xcassets in Resources */,
-				42BFD4A42B9A3FD300D4F424 /* Localization.strings in Resources */,
 				42C26AF02B8CD25000F270F8 /* TicketListTableViewCell.xib in Resources */,
 				42BCA56A2B87755200CF3291 /* Main.storyboard in Resources */,
 				42BFD4AE2B9C84E500D4F424 /* TicketInfo.storyboard in Resources */,
-				42C26ADD2B8C8EAD00F270F8 /* TicketList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +236,12 @@
 				42BCA5672B87755200CF3291 /* MainViewController.swift in Sources */,
 				4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */,
 				422502FF2B90ECEA00A7281A /* CoreDataService.swift in Sources */,
-				42C26AE52B8C8F3E00F270F8 /* TicketInfo.swift in Sources */,
+				42C26AE52B8C8F3E00F270F8 /* TicketInfoModel.swift in Sources */,
 				424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */,
-				42C26ADF2B8C8ED900F270F8 /* TicketFetcher.swift in Sources */,
 				42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */,
 				42BCA5652B87755200CF3291 /* SceneDelegate.swift in Sources */,
-				42C26AE72B8C980500F270F8 /* TicketListViewModel.swift in Sources */,
-				42C26AE32B8C8F2700F270F8 /* TicketList.swift in Sources */,
-				42C26AEA2B8C991A00F270F8 /* TicketListView.swift in Sources */,
+				42C26AE32B8C8F2700F270F8 /* TicketListModel.swift in Sources */,
+				42C26AEA2B8C991A00F270F8 /* TicketListViewController.swift in Sources */,
 				4243135B2B973DB2008DA612 /* Ticket+CoreDataClass.swift in Sources */,
 				420145F82B8DC26700A39403 /* TicketInfoViewController.swift in Sources */,
 				423C4A8E2B90FB830090A75A /* CoreDataModel.xcdatamodeld in Sources */,
@@ -283,8 +255,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				42BCA5692B87755200CF3291 /* Base */,
-				42BFD4A72B9A406400D4F424 /* ru */,
-				42BFD4AA2B9A407500D4F424 /* be */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -297,16 +267,6 @@
 				42BFD4AB2B9A407500D4F424 /* be */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		42BFD4A62B9A3FD300D4F424 /* Localization.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42BFD4A52B9A3FD300D4F424 /* en */,
-				42BFD4A92B9A406400D4F424 /* ru */,
-				42BFD4AC2B9A407500D4F424 /* be */,
-			);
-			name = Localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

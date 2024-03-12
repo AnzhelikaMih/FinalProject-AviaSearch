@@ -15,6 +15,8 @@ final class FavouriteTicketInfoViewController: UIViewController {
     
     private var ticketInfo: TicketInfo?
     
+    weak var delegate: FavouriteTicketInfoDelegate?
+    
     @IBOutlet private weak var departureCode: UILabel!
     @IBOutlet private weak var departure: UILabel!
     @IBOutlet private weak var journeyTime: UILabel!
@@ -38,10 +40,8 @@ final class FavouriteTicketInfoViewController: UIViewController {
     @IBOutlet private weak var payment: UILabel!
     @IBOutlet private weak var price: UILabel!
     
-    @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
-    
-    weak var delegate: FavouriteTicketInfoDelegate?
+    @IBOutlet private weak var deleteButton: UIButton!
+    @IBOutlet private weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,16 +74,15 @@ final class FavouriteTicketInfoViewController: UIViewController {
         guard let ticketInfo = ticketInfo else { return }
         CoreDataService.shared.deleteTicket(ticket: ticketInfo)
         delegate?.didDeleteTicket()
+        
+        let alert = UIAlertController(title: "✕", message: "Ваш квiток выдален", preferredStyle: .alert)
+        present(alert, animated: true)
+        
         dismiss(animated: true)
     }
-
 
     @IBAction private func cancelButtonDidTap(_ sender: Any) {
         dismiss(animated: true)
     }
-        
-    
-    
-
 }
 

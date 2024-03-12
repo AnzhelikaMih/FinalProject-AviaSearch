@@ -14,7 +14,7 @@ final class TicketListTableViewCell: UITableViewCell {
     private var selectedDate: Date?
     
     
-    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet private weak var dataLabel: UILabel!
     @IBOutlet private weak var departure: UILabel!
     @IBOutlet private weak var departureCode: UILabel!
     @IBOutlet private weak var destination: UILabel!

@@ -31,8 +31,9 @@ final class TicketListViewController: UIViewController {
         setupTableView()
         datePicker = generateDatePicker(with: .date)
         textFieldDate.inputView = datePicker
-        fetchTicketList()
+        loadTicketList()
         selectedDate = Date()
+        segmentedControl.selectedSegmentIndex = 1
     }
     
     private func generateDatePicker(with mode: UIDatePicker.Mode) -> UIDatePicker {
@@ -61,12 +62,21 @@ final class TicketListViewController: UIViewController {
                            forCellReuseIdentifier: "TicketListTableViewCell")
     }
     
-    private func fetchTicketList() {
-        let fetcher = TicketListFetcher()
+    private func loadTicketList() {
+        let fetcher = NetworkService()
         
-        fetcher.fetch { [weak self] (data) in
+        fetcher.loadFlights { [weak self] data in
             self?.ticketList = data
         }
+    }
+    
+    private func resetFilter() {
+        loadTicketList()
+        tableView.reloadData()
+    }
+    
+    private func displayFilteredTickets(_ tickets: [TicketInfo]) {
+        ticketList = tickets
     }
     
     @IBAction private func heartButtonDidTap () {
@@ -101,16 +111,6 @@ final class TicketListViewController: UIViewController {
             break
         }
     }
-
-    private func resetFilter() {
-        fetchTicketList()
-        tableView.reloadData()
-    }
-    
-    private func displayFilteredTickets(_ tickets: [TicketInfo]) {
-        ticketList = tickets
-    }
-    
 }
 
 extension TicketListViewController: UITableViewDataSource {
@@ -146,7 +146,7 @@ extension TicketListViewController: UITableViewDelegate {
                 let dateString = dateFormatter.string(from: selectedDate)
                 vc.selectedDate = dateString }
             
-                vc.configureTicketInfo(with: ticketInfo)
+            vc.configureTicketInfo(with: ticketInfo)
             present(vc, animated: true)
         }
     }

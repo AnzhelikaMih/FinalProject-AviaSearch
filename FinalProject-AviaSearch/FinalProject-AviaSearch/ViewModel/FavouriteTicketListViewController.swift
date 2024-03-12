@@ -9,33 +9,32 @@ import UIKit
 
 final class FavouriteTicketListViewController: UIViewController {
     
-    @IBOutlet private weak var tableViewFavourite: UITableView!
-
     private var ticketList = [TicketInfo]() {
         didSet {
-            tableViewFavourite.reloadData()
+            tableViewFavouriteTickets.reloadData()
         }
     }
     
+    @IBOutlet private weak var tableViewFavouriteTickets: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         fetchData()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetchData()
     }
     
-    
     private func setupTableView() {
         let nib = UINib(nibName: "TicketListTableViewCell", bundle: nil)
-        tableViewFavourite.register(nib, forCellReuseIdentifier: "TicketListTableViewCell")
+        tableViewFavouriteTickets.register(nib, forCellReuseIdentifier: "TicketListTableViewCell")
     }
     
     private func fetchData() {
         ticketList = CoreDataService.shared.fetchFavouriteTickets()
-            
         }
     }
 
@@ -54,7 +53,6 @@ extension FavouriteTicketListViewController: UITableViewDataSource {
         cell.configure(with: ticketInfo)
         return cell
     }
-
 }
 
 extension FavouriteTicketListViewController: UITableViewDelegate {
@@ -62,12 +60,10 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
         let ticketInfo = ticketList[indexPath.row]
         let storyboard = UIStoryboard(name: "FavouriteTicketInfo", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "FavouriteTicketInfoViewController") as? FavouriteTicketInfoViewController {
-            
-           vc.loadView()
+            vc.loadView()
             vc.delegate = self
-           vc.configureTicketInfo(with: ticketInfo)
+            vc.configureTicketInfo(with: ticketInfo)
             present(vc, animated: true)
-
         }
     }
 }

@@ -9,47 +9,29 @@ import Foundation
 
 final class NetworkService {
     
-    func searchLiveFlights () {
+    func loadFlights(completion: @escaping ([TicketInfo]) -> Void) {
         
-        let accessKey = "9109f0a750addb2fff858d7bb78c2091"
-        let url = URL(string: "https://api.aviationstack.com/v1/flights?access_key=\(accessKey)")!
+        guard let url = URL(string: "https://raw.githubusercontent.com/AnzhelikaMih/API-flights/main/TicketList.json") else { return }
         var request = URLRequest(url: url)
-        
         request.httpMethod = "GET"
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else
             
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let results = json["results"] as? [[String: Any]] {
-                    
-                    for flight in results {
-                        
-                        if let live = flight["live"] as? [String: Any],
-                           let isGround = live["is_ground"] as? Bool, !isGround,
-                           let airline = flight["airline"] as? [String: Any],
-                           let airlineName = airline["name"] as? String,
-                           let flightDetails = flight["flight"] as? [String: Any],
-                           let iata = flightDetails["iata"] as? String,
-                           let departure = flight["departure"] as? [String: Any],
-                           let departureAirport = departure["airport"] as? String,
-                           let departureIata = departure["iata"] as? String,
-                           let arrival = flight["arrival"] as? [String: Any],
-                           let arrivalAirport = arrival["airport"] as? String,
-                           let arrivalIata = arrival["iata"] as? String {
-                            
-                           print("\(airlineName) flight \(iata) from \(departureAirport) (\(departureIata)) to \(arrivalAirport) (\(arrivalIata)) is in the air.")
-                        }
-                    }
+            if let jsonData = data {
+                let ticketListData = try? JSONDecoder().decode(TicketList.self, from: jsonData)
+                DispatchQueue.main.async {
+                    completion(ticketListData?.data ?? [])
                 }
-            } catch {
-                print("Error parsing JSON: \(error)")
             }
-        }
-        .resume()
+        }.resume()
     }
 }
+    
+    
+
+    
+    
+    

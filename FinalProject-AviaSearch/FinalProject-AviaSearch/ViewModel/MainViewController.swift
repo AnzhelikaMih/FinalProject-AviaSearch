@@ -11,7 +11,8 @@ final class MainViewController: UIViewController {
     
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var airplane: UIImageView!
-
+    @IBOutlet private weak var blueView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,26 +23,27 @@ final class MainViewController: UIViewController {
     }
     
     private func resetAirplanePosition() {
-            airplane.transform = .identity
-            airplane.frame = CGRect(x: 50, 
-                                    y: 50,
-                                    width: 293,
-                                    height: 326)
+        airplane.transform = .identity
+        airplane.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            airplane.centerXAnchor.constraint(equalTo: blueView.centerXAnchor),
+            airplane.centerYAnchor.constraint(equalTo: blueView.centerYAnchor),
+            airplane.widthAnchor.constraint(equalToConstant: 300),
+            airplane.heightAnchor.constraint(equalToConstant: 300)
+        ])
     }
     
     private func navigateToTicketList() {
-            let storyboard = UIStoryboard(name: "TicketList", 
-                                          bundle: nil)
-            guard let ticketListViewController = storyboard.instantiateViewController(identifier: "TicketListViewController") as? TicketListViewController else {
-                return
-            }
-            navigationController?.pushViewController(ticketListViewController, animated: true)
+        let storyboard = UIStoryboard(name: "TicketList",
+                                      bundle: nil)
+        guard let ticketListViewController = storyboard.instantiateViewController(identifier: "TicketListViewController") as? TicketListViewController else { return }
+        navigationController?.pushViewController(ticketListViewController, animated: true)
     }
     
     @IBAction private func startButtonDidTap () {
-            UIView.animate(withDuration: 1.0, 
+        UIView.animate(withDuration: 1.0,
                            animations: {
-                    self.airplane.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6.3)
+                self.airplane.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6.3)
                 }) { _ in
                     UIView.animate(withDuration: 1.0, 
                                    animations: {

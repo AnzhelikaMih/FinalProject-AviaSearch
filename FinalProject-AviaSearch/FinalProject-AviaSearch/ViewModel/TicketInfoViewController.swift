@@ -22,7 +22,7 @@ final class TicketInfoViewController: UIViewController {
     @IBOutlet private weak var terminal: UILabel!
     @IBOutlet private weak var airplane: UILabel!
     
-    @IBOutlet weak var date: UILabel!
+    @IBOutlet private weak var date: UILabel!
     @IBOutlet private weak var departureTime: UILabel!
     @IBOutlet private weak var seatNumber: UILabel!
     
@@ -89,6 +89,10 @@ final class TicketInfoViewController: UIViewController {
         let myTicket = TicketInfo(departure: departure, departureCode: departureCode, destination: destination, destinationCode: destinationCode, aviaOperator: aviaOperator, flightNumber: flightNumber, terminal: terminal, airplane: airplane, date: date, departureTime: departureTime, arrivalTime: "", journeyTime: journeyTime, seatNumber: seatNumber, passenger: passenger, passportNumber: passport, eTicketNumber: ticketNum, payment: payment, price: price)
         
         CoreDataService.shared.saveTicketToFavourite(with: myTicket)
+        
+        let alert = UIAlertController(title: "♡", message: "Ваш квiток захаван", preferredStyle: .alert)
+        present(alert, animated: true)
+        
         dismiss(animated: true)
         
     }
