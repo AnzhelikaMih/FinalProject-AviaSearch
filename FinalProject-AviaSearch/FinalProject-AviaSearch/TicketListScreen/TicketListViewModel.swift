@@ -5,23 +5,34 @@
 //  Created by Анжелика on 12.03.24.
 //
 
-import UIKit
+import Foundation
 
-class TicketListViewModel: UIViewController {
-
-    var selectedDate: Date?  // вью модель ти
-    var dateString: String?
+final class TicketListViewModel {
     
+    var ticketList: [TicketInfo] = []
 
-    //var selectedDate = Date()
+    var selectedDate: Date?
     
-    @objc func dateDidChanged(_ sender: UIDatePicker) {
-        let selectedDate = sender.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        let string = dateFormatter.string(from: selectedDate)
-        //textFieldDate.text = dateFormatter.string(from: selectedDate)
-        self.selectedDate = selectedDate
+    func setupCurrentDate() {
+        selectedDate = Date()
+    }
+
+    func loadTicketList(completion: @escaping () -> Void) {
+        
+        let fetcher = NetworkService()
+        fetcher.loadFlights { [weak self] data in
+            self?.ticketList = data
+            completion()
         }
+    }
+    
+    func filterTicketsByDepartureCode(with code: String) -> [TicketInfo] {
+            return ticketList.filter { $0.departureCode == code }
+    }
+        
+    func filterTicketsByDestinationCode(with code: String) -> [TicketInfo] {
+            return ticketList.filter { $0.destinationCode == code }
+    }
+    
 }
 

@@ -12,10 +12,12 @@ final class LocationService {
     
     let locationManager = CLLocationManager()
     
-    var locationServiceEnabled: Bool { return CLLocationManager.locationServicesEnabled() }
+    var locationServiceEnabled: Bool {
+        return CLLocationManager.locationServicesEnabled()
+    }
 
     func checkAuthorization(with map: MKMapView) {
-        switch CLLocationManager.authorizationStatus() {
+        switch locationManager.authorizationStatus {
         case .authorizedAlways:
             break
         case .authorizedWhenInUse:
@@ -30,8 +32,9 @@ final class LocationService {
         case .restricted:
             break
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            
+            DispatchQueue.global().async {
+                self.locationManager.requestWhenInUseAuthorization()
+            }
         @unknown default:
             break
         }

@@ -23,39 +23,39 @@ final class MapEarthViewController: UIViewController {
         super.viewDidAppear(animated)
         checkLocationEnabled()
     }
+    
+    private func setupManager() {
+        locationService.locationManager.delegate = self
+        locationService.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+   }
 
     private func checkLocationEnabled() {
         if locationService.locationServiceEnabled {
             setupManager()
             locationService.checkAuthorization(with: mapView)
         } else {
-            showAlertLocation(title: "У вас выключана служба геалакацii", message: "Хочаце ўключыць?", url: URL(string: "App-Prefs:root=LOCATION_SERVICES"))
+            showAlertLocation(title: Alerts.geolocationTurnedOff.title.rawValue,
+                              message: Alerts.geolocationTurnedOff.message.rawValue,
+                              url: URL(string: Alerts.geolocationTurnedOff.url.rawValue))
         }
     }
-    
-    private func setupManager() {
-        locationService.locationManager.delegate = self
-        locationService.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-   }
-    
     private func showAlertLocation(title: String,
                                    message: String?,
                                    url: URL?) {
         let alert = UIAlertController(title: title, 
                                       message: message,
                                       preferredStyle: .alert)
-        let settingsAction = UIAlertAction(title: "Наладкі", 
-                                           style: .default) 
+        let settingsAction = UIAlertAction(title: Alerts.Action.settings.rawValue,
+                                           style: .default)
         { (alert) in
             if let url = url {
                 UIApplication.shared.open(url, 
                                           options: [:],
                                           completionHandler: nil) }
         }
-        let cancelAction = UIAlertAction(title: "Адмена", 
+        let cancelAction = UIAlertAction(title: Alerts.Action.cancel.rawValue,
                                          style: .cancel,
                                          handler: nil)
-        
         alert.addAction(settingsAction)
         alert.addAction(cancelAction)
         present(alert, animated: true)
@@ -63,12 +63,17 @@ final class MapEarthViewController: UIViewController {
 }
 
 extension MapEarthViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, 
+                         didUpdateLocations locations: [CLLocation]) {
+        
         if let location = locations.last?.coordinate {
-            let region = MKCoordinateRegion(center: location, latitudinalMeters: 5000, longitudinalMeters: 5000)
+            let region = MKCoordinateRegion(center: location, 
+                                            latitudinalMeters: 5000,
+                                            longitudinalMeters: 5000)
             mapView.setRegion(region, animated: true)
         }
     }
+    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         locationService.checkAuthorization(with: mapView)
     }

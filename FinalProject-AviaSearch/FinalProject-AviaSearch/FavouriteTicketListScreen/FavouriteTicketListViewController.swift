@@ -9,59 +9,60 @@ import UIKit
 
 final class FavouriteTicketListViewController: UIViewController {
     
-    private var ticketList = [TicketInfo]() {
-        didSet {
-            tableViewFavouriteTickets.reloadData()
-        }
-    }
+    private var viewModel = FavouriteTicketListViewModel()
     
-    @IBOutlet private weak var tableViewFavouriteTickets: UITableView!
+    @IBOutlet private weak var favouriteTicketsTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        fetchData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        fetchData()
+        setupViewModel()
     }
     
     private func setupTableView() {
-        let nib = UINib(nibName: "TicketListTableViewCell", bundle: nil)
-        tableViewFavouriteTickets.register(nib, forCellReuseIdentifier: "TicketListTableViewCell")
+        let nib = UINib(nibName: String(describing: TicketListTableViewCell.self),
+                        bundle: nil)
+        favouriteTicketsTableView.register(nib, forCellReuseIdentifier: String(describing: TicketListTableViewCell.self))
     }
     
-    private func fetchData() {
-        ticketList = CoreDataService.shared.fetchFavouriteTickets()
-        }
+    private func setupViewModel() {
+        viewModel.favouriteTicketListUpdated = { self.favouriteTicketsTableView.reloadData() }
+        viewModel.fetchData()
     }
+}
 
 extension FavouriteTicketListViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ticketList.count
+    func tableView(_ tableView: UITableView, 
+                   numberOfRowsInSection section: Int) -> Int {
+        return viewModel.ticketList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TicketListTableViewCell", for: indexPath) as! TicketListTableViewCell
-        let ticketInfo = ticketList[indexPath.row]
+    func tableView(_ tableView: UITableView, 
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TicketListTableViewCell.self), for: indexPath) as! TicketListTableViewCell
+        let ticketInfo = viewModel.ticketList[indexPath.row]
         cell.configure(with: ticketInfo)
         return cell
     }
 }
 
 extension FavouriteTicketListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let ticketInfo = ticketList[indexPath.row]
-        let storyboard = UIStoryboard(name: "FavouriteTicketInfo", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "FavouriteTicketInfoViewController") as? FavouriteTicketInfoViewController {
+    
+    func tableView(_ tableView: UITableView, 
+                   didSelectRowAt indexPath: IndexPath) {
+        
+        let ticketInfo = viewModel.ticketList[indexPath.row]
+        let storyboard = UIStoryboard(name: Screens.FavouriteTicketInfo.rawValue,
+                                      bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: String(describing: FavouriteTicketInfoViewController.self)) as? FavouriteTicketInfoViewController {
             present(vc, animated: true)
-            vc.delegate = self
+            vc.delegate = self // не удалять а то не обновляется при удалении список любимых билетов
             vc.configureTicketInfo(with: ticketInfo)
         }
     }
@@ -69,6 +70,9 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
 
 extension FavouriteTicketListViewController: FavouriteTicketInfoDelegate {
     func didDeleteTicket() {
-        fetchData()
-    }
+            viewModel.fetchData()
+        favouriteTicketsTableView.reloadData()
+                
+            }
+        
 }

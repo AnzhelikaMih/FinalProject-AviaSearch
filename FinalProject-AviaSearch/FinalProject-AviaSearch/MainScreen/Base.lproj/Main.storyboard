@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H4I-bd-Uq9">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,15 +12,15 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainScreen" id="BYZ-38-t0r" customClass="MainViewController" customModule="FinalProject_AviaSearch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3if-MP-uQo">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="683"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane.com" translatesAutoresizingMaskIntoConstraints="NO" id="wUm-gX-kL2">
-                                        <rect key="frame" x="362" y="191.5" width="300" height="300"/>
+                                        <rect key="frame" x="46.666666666666657" y="63" width="300" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="FIi-V6-MUx"/>
                                             <constraint firstAttribute="width" constant="300" id="J9P-wD-3ei"/>
@@ -34,28 +34,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-g3-xYW">
-                                <rect key="frame" x="0.0" y="683" width="1024" height="683"/>
+                                <rect key="frame" x="0.0" y="426" width="393" height="426"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Даследуйце Новыя Месцы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3L-fW-ZgO">
-                                        <rect key="frame" x="55" y="40" width="914" height="100"/>
+                                        <rect key="frame" x="55" y="40" width="283" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="blN-5V-4yi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Нішто так не развівае розум, як падарожжа&quot; - Эмiль Зaля" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-q2-B4Y">
-                                        <rect key="frame" x="40" y="160" width="944" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="WWo-Ss-dfg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                        <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cf-If-hfj">
-                                        <rect key="frame" x="25" y="586" width="974" height="42"/>
+                                        <rect key="frame" x="25" y="329" width="343" height="42"/>
                                         <color key="backgroundColor" red="0.098039209840000002" green="0.1215686351" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="C16-cK-6Y5"/>
@@ -74,19 +65,27 @@
                                             <action selector="startButtonDidTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ghq-oC-6jH"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Нішто так не развівае розум, як падарожжа&quot; - Эмiль Зaля" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-q2-B4Y">
+                                        <rect key="frame" x="41.666666666666657" y="160" width="310" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ECa-kP-FAL"/>
+                                            <constraint firstAttribute="width" constant="310" id="xuq-i5-FBC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99607843159999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Cf-If-hfj" secondAttribute="trailing" constant="25" id="6mB-Nf-pY9"/>
-                                    <constraint firstItem="XbU-q2-B4Y" firstAttribute="centerX" secondItem="UzA-g3-xYW" secondAttribute="centerX" id="ELx-dr-GCw"/>
+                                    <constraint firstItem="XbU-q2-B4Y" firstAttribute="top" secondItem="Q3L-fW-ZgO" secondAttribute="bottom" constant="20" id="Bw3-oF-Ayx"/>
                                     <constraint firstItem="Q3L-fW-ZgO" firstAttribute="leading" secondItem="UzA-g3-xYW" secondAttribute="leading" constant="55" id="FSg-jy-jws"/>
                                     <constraint firstItem="9Cf-If-hfj" firstAttribute="leading" secondItem="UzA-g3-xYW" secondAttribute="leading" constant="25" id="HmJ-Ph-xfD"/>
                                     <constraint firstItem="Q3L-fW-ZgO" firstAttribute="top" secondItem="UzA-g3-xYW" secondAttribute="top" constant="40" id="JS7-vn-2NH"/>
-                                    <constraint firstItem="XbU-q2-B4Y" firstAttribute="top" secondItem="Q3L-fW-ZgO" secondAttribute="bottom" constant="20" id="Jbs-zx-BvH"/>
-                                    <constraint firstItem="XbU-q2-B4Y" firstAttribute="leading" secondItem="UzA-g3-xYW" secondAttribute="leading" constant="40" id="KdM-Lw-qK0"/>
                                     <constraint firstAttribute="bottom" secondItem="9Cf-If-hfj" secondAttribute="bottom" constant="55" id="LQ1-d6-rUJ"/>
                                     <constraint firstItem="9Cf-If-hfj" firstAttribute="centerX" secondItem="UzA-g3-xYW" secondAttribute="centerX" id="ODB-yd-ZjX"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XbU-q2-B4Y" secondAttribute="trailing" constant="40" id="mWA-HA-47r"/>
+                                    <constraint firstItem="XbU-q2-B4Y" firstAttribute="centerX" secondItem="UzA-g3-xYW" secondAttribute="centerX" id="VrR-wZ-h0J"/>
                                     <constraint firstAttribute="trailing" secondItem="Q3L-fW-ZgO" secondAttribute="trailing" constant="55" id="skd-PD-0iq"/>
                                 </constraints>
                             </view>
@@ -122,7 +121,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H4I-bd-Uq9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8nz-cL-ZIg">
-                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -141,9 +140,6 @@
     </scenes>
     <resources>
         <image name="airplane.com" width="1000" height="1000"/>
-        <systemColor name="scrollViewTexturedBackgroundColor">
-            <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

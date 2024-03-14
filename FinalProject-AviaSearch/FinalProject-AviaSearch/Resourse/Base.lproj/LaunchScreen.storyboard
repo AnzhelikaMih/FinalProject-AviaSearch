@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,10 +22,18 @@
                                     <constraint firstAttribute="width" constant="128" id="IeU-xO-hZX"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AviaApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-KJ-IxC">
+                                <rect key="frame" x="142.33333333333334" y="548" width="108.33333333333334" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="0.098039209840000002" green="0.1176470518" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="oEe-KJ-IxC" firstAttribute="top" secondItem="4jr-81-uB2" secondAttribute="bottom" constant="58" id="V03-kb-5Y2"/>
+                            <constraint firstItem="oEe-KJ-IxC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lRl-ls-V1w"/>
                             <constraint firstItem="4jr-81-uB2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pE8-xJ-6sg"/>
                             <constraint firstItem="4jr-81-uB2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yE7-T2-zdN"/>
                         </constraints>
@@ -34,13 +41,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
     <resources>
         <image name="airplane.com" width="1000" height="1000"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

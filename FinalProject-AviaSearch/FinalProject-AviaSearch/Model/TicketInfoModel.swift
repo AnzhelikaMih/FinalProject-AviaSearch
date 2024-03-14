@@ -50,8 +50,8 @@ struct TicketInfo: Decodable {
     }
 }
 
-let sampleTicketData: [TicketInfo] = [
-    TicketInfo(departure: "MINSK", departureCode: "MSK",
+let sampleTicketData: TicketInfo =
+    TicketInfo(departure: "MINSK", departureCode: "MSQ",
                destination: "DUBAI", destinationCode: "DXB",
                aviaOperator: "Belavia", flightNumber: "B2 717",
                terminal: "А", airplane: "Boeing 737-8",date: "", departureTime: "08:45", arrivalTime: "13:20",
@@ -59,4 +59,4 @@ let sampleTicketData: [TicketInfo] = [
                passenger: "Анжалiка Мiхальчэня", passportNumber: "МР0123456",
                eTicketNumber: "0120 345 6789", 
                payment: "VISA *** **77", price: "$1099.99")
-]
+

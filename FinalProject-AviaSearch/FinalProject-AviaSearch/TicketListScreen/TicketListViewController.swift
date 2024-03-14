@@ -1,5 +1,5 @@
 //
-//  TicketListView.swift
+//  TicketListViewController.swift
 //  FinalProject-AviaSearch
 //
 //  Created by Анжелика on 26.02.24.
@@ -9,17 +9,9 @@ import UIKit
 
 final class TicketListViewController: UIViewController {
     
+    private var viewModel = TicketListViewModel()
+    
     private var datePicker: UIDatePicker!
-    
-    private var ticketList = [TicketInfo]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    // вью модель ти
-    
-    private var selectedDate: Date?  // вью модель ти
-    private var dateString: String? // вью модель ти
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var heartButton: UIButton!
@@ -30,65 +22,77 @@ final class TicketListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        datePicker = generateDatePicker(with: .date)
-        textFieldDate.inputView = datePicker
-        loadTicketList()  // вью модель ти
-        selectedDate = Date()
-        segmentedControl.selectedSegmentIndex = 1
+        setupCurrentDate()
+        setupViewModel()
+        setupDatePicker()
+        
+        segmentedControl.selectedSegmentIndex = 1 // название
     }
     
-    private func generateDatePicker(with mode: UIDatePicker.Mode) -> UIDatePicker {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = mode
+    private func setupTableView() {
+        let nib = UINib(nibName: String(describing: TicketListTableViewCell.self),
+                        bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: String(describing: TicketListTableViewCell.self))
+    }
+    
+    private func setupCurrentDate() {
+        viewModel.setupCurrentDate()
+    }
+    
+    private func setupViewModel() {
+        viewModel.loadTicketList {
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func setupDatePicker() {
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .inline
         datePicker.minimumDate = Date()
         datePicker.addTarget(self,
                              action: #selector(dateDidChanged(_:)),
                              for: .valueChanged)
-        return datePicker
+        textFieldDate.inputView = datePicker
     }
-    
-    @objc private func dateDidChanged(_ sender: UIDatePicker) {  // вью модель ти
-        let selectedDate = sender.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        textFieldDate.text = dateFormatter.string(from: selectedDate)
-        self.selectedDate = selectedDate
+
+    @objc private func dateDidChanged(_ sender: UIDatePicker) {
+        viewModel.selectedDate = sender.date
+        textFieldDate.text = String.formatDate(with: sender.date)
         }
     
-    private func setupTableView() {
-        let nib = UINib(nibName: "TicketListTableViewCell", 
-                        bundle: nil)
-        tableView.register(nib, 
-                           forCellReuseIdentifier: "TicketListTableViewCell")
+    private func navigateToFavouriteTicketList() {
+        let storyboard = UIStoryboard(name: Screens.FavouriteTicketList.rawValue,
+                                      bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: String(describing: FavouriteTicketListViewController.self)) as? FavouriteTicketListViewController else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func loadTicketList() {  // вью модель ти
-        let fetcher = NetworkService()
-        fetcher.loadFlights { [weak self] data in
-            self?.ticketList = data
+    private func navigateToMapEarth() {
+        let storyboard = UIStoryboard(name: Screens.MapEarth.rawValue,
+                                      bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: String(describing: MapEarthViewController.self)) as? MapEarthViewController
+        else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func updateTableView(with tickets: [TicketInfo]) {
+            viewModel.ticketList = tickets
+            tableView.reloadData()
         }
-    }
-    
-    private func resetFilter() {
-        loadTicketList()  // вью модель ти
-        tableView.reloadData()
-    }
-    
-    private func displayFilteredTickets(_ tickets: [TicketInfo]) {
-        ticketList = tickets  // вью модель ти
-    }
     
     @IBAction private func heartButtonDidTap () {
-        let storyboard = UIStoryboard(name: "FavouriteTicketList", 
-                                      bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: "FavouriteTicketListViewController") as? FavouriteTicketListViewController else { return }
-        navigationController?.pushViewController(vc, animated: true)
+        navigateToFavouriteTicketList()
+    }
+    
+    @IBAction private func mapButtonDidTap () {
+        navigateToMapEarth()
     }
     
     @IBAction private func checkMarkButtonDidTap() {
             textFieldDate.resignFirstResponder()
-        if let selectedDate = self.selectedDate {
+        
+        if let selectedDate = self.viewModel.selectedDate {
                     for cell in tableView.visibleCells {
                         if let cell = cell as? TicketListTableViewCell {
                             cell.setDataLabel(with: selectedDate)
@@ -98,63 +102,60 @@ final class TicketListViewController: UIViewController {
             }
     
     @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            let filteredTickets = ticketList.filter { $0.departureCode == "MSQ" }
-            displayFilteredTickets(filteredTickets)
-        case 1:
-            resetFilter()
-        case 2:
-            let filteredTickets = ticketList.filter { $0.destinationCode == "MSQ" }
-            displayFilteredTickets(filteredTickets)
-        default:
-            break
+            switch sender.selectedSegmentIndex {
+            case 0: // хорошее название
+                let filteredTickets = viewModel.filterTicketsByDepartureCode(with: sampleTicketData.departureCode)
+                updateTableView(with: filteredTickets)
+            case 1:
+                viewModel.loadTicketList {
+                    self.tableView.reloadData()
+                }
+            case 2:
+                let filteredTickets = viewModel.filterTicketsByDestinationCode(with: sampleTicketData.departureCode)
+                updateTableView(with: filteredTickets)
+            default:
+                break
+            }
         }
-    }
-    
-    @IBAction private func mapButtonDidTap () {
-        let storyboard = UIStoryboard(name: "MapEarth",
-                                      bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: "MapEarthViewController") as? MapEarthViewController
-        else { return }
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 extension TicketListViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ticketList.count
+    func tableView(_ tableView: UITableView, 
+                   numberOfRowsInSection section: Int) -> Int {
+        return viewModel.ticketList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TicketListTableViewCell", for: indexPath) as! TicketListTableViewCell
-        let ticketInfo = ticketList[indexPath.row]
+    func tableView(_ tableView: UITableView, 
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TicketListTableViewCell.self), for: indexPath) as! TicketListTableViewCell
+        let ticketInfo = viewModel.ticketList[indexPath.row]
         cell.configure(with: ticketInfo)
-        if let selectedDate = self.selectedDate {
+        if let selectedDate = self.viewModel.selectedDate {
             cell.setDataLabel(with: selectedDate) }
         return cell
     }
 }
 
 extension TicketListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let ticketInfo = ticketList[indexPath.row]
-        let storyboard = UIStoryboard(name: "TicketInfo", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "TicketInfoViewController") as? TicketInfoViewController {
+    
+    func tableView(_ tableView: UITableView, 
+                   didSelectRowAt indexPath: IndexPath) {
+        
+        let ticketInfo = viewModel.ticketList[indexPath.row]
+        let selectedDate = self.viewModel.selectedDate ?? Date()
+        
+        let storyboard = UIStoryboard(name: Screens.TicketInfo.rawValue,
+                                      bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: String(describing: TicketInfoViewController.self)) as? TicketInfoViewController {
             
-           vc.loadView()
-
-            if let selectedDate = self.selectedDate {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd.MM.yyyy"
-                let dateString = dateFormatter.string(from: selectedDate)
-                vc.selectedDate = dateString }  // вью модель ти
-            
-            vc.configureTicketInfo(with: ticketInfo)
+            let ticketInfoViewModel = TicketInfoViewModel(ticketInfo: ticketInfo, selectedDate: selectedDate)
+            vc.viewModel = ticketInfoViewModel
             present(vc, animated: true)
         }
     }

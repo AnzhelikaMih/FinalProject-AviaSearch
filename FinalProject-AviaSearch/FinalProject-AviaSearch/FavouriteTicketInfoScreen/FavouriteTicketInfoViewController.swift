@@ -43,9 +43,9 @@ final class FavouriteTicketInfoViewController: UIViewController {
     @IBOutlet private weak var deleteButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    //override func viewDidLoad() {
+    //    super.viewDidLoad()
+    //}
     
     func configureTicketInfo(with ticketInfo: TicketInfo) {
         
@@ -70,14 +70,26 @@ final class FavouriteTicketInfoViewController: UIViewController {
         self.ticketInfo = ticketInfo
     }
     
+    private func closeWithAnimation() {
+        UIView.animate(withDuration: 1, animations: {
+            let rotationTransform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+            let translationTransform = CGAffineTransform(translationX: -self.view.frame.size.width*2, y: 0)
+            self.view.transform = rotationTransform.concatenating(translationTransform)
+        }) { (_) in
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+    
     @IBAction private func deleteButtonDidTap(_ sender: Any) {
         guard let ticketInfo = ticketInfo else { return } // вью модель ти
         CoreDataService.shared.deleteTicket(ticket: ticketInfo) // вью модель ти
         delegate?.didDeleteTicket()
         
-        let alert = UIAlertController(title: "✕", message: "Ваш квiток выдален", preferredStyle: .alert)
+        let alert = UIAlertController(title: Alerts.TicketIsDeleted.title.rawValue,
+                                      message: Alerts.TicketIsDeleted.message.rawValue,
+                                      preferredStyle: .alert)
         present(alert, animated: true)
-        
+        closeWithAnimation()
         dismiss(animated: true)
     }
 

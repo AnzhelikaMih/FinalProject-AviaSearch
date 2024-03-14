@@ -9,8 +9,7 @@ import UIKit
 
 final class TicketInfoViewController: UIViewController {
     
-    private var ticketInfo: TicketInfo?  // вью модель ти
-    var selectedDate: String?  // вью модель ти
+    var viewModel:TicketInfoViewModel!
     
     @IBOutlet private weak var departureCode: UILabel!
     @IBOutlet private weak var departure: UILabel!
@@ -38,63 +37,51 @@ final class TicketInfoViewController: UIViewController {
     @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
     }
     
-    
-    func configureTicketInfo(with ticketInfo: TicketInfo) {
+    private func configureUI() {
+        let displayModel = viewModel.displayModel
         
-        departureCode.text = ticketInfo.departureCode
-        departure.text = ticketInfo.departure
-        journeyTime.text = ticketInfo.journeyTime
-        destinationCode.text = ticketInfo.destinationCode
-        destination.text = ticketInfo.destination
-        flightNumber.text = ticketInfo.flightNumber
-        terminal.text = ticketInfo.terminal
-        airplane.text = ticketInfo.airplane
-        departureTime.text = ticketInfo.departureTime
-        seatNumber.text = ticketInfo.seatNumber
-        passenger.text = ticketInfo.passenger
-        passport.text = ticketInfo.passportNumber
-        ticketNum.text = ticketInfo.eTicketNumber
-        aviaOperator.text = ticketInfo.aviaOperator
-        payment.text = ticketInfo.payment
-        price.text = ticketInfo.price
-        date.text = selectedDate
+        departureCode.text = displayModel.departureCode
+        departure.text = displayModel.departure
+        journeyTime.text = displayModel.journeyTime
+        destinationCode.text = displayModel.destinationCode
+        destination.text = displayModel.destination
+        flightNumber.text = displayModel.flightNumber
+        terminal.text = displayModel.terminal
+        airplane.text = displayModel.airplane
+        departureTime.text = displayModel.departureTime
+        seatNumber.text = displayModel.seatNumber
+        passenger.text = displayModel.passenger
+        passport.text = displayModel.passport
+        ticketNum.text = displayModel.ticketNum
+        aviaOperator.text = displayModel.aviaOperator
+        payment.text = displayModel.payment
+        price.text = displayModel.price
+        date.text = displayModel.date
     }
      
-    
     @IBAction private func saveButtonDidTap(_ sender: Any) {
+        viewModel.saveTicketToFavourite()
         
-        guard let departure = departure.text, // вью модель ти
-              let departureCode = departureCode.text,
-              let journeyTime = journeyTime.text,
-              let destinationCode = destinationCode.text,
-              let destination = destination.text,
-              let flightNumber = flightNumber.text,
-              let terminal = terminal.text,
-              let airplane = airplane.text,
-              let departureTime = departureTime.text,
-              let seatNumber = seatNumber.text,
-              let passenger = passenger.text,
-              let passport = passport.text,
-              let ticketNum = ticketNum.text,
-              let aviaOperator = aviaOperator.text,
-              let payment = payment.text,
-              let price = price.text,
-              let date = date.text
-        else { return }
-        
-        let myTicket = TicketInfo(departure: departure, departureCode: departureCode, destination: destination, destinationCode: destinationCode, aviaOperator: aviaOperator, flightNumber: flightNumber, terminal: terminal, airplane: airplane, date: date, departureTime: departureTime, arrivalTime: "", journeyTime: journeyTime, seatNumber: seatNumber, passenger: passenger, passportNumber: passport, eTicketNumber: ticketNum, payment: payment, price: price)
-        
-        CoreDataService.shared.saveTicketToFavourite(with: myTicket)
-        
-        let alert = UIAlertController(title: "♡", message: "Ваш квiток захаван", preferredStyle: .alert)
+        let alert = UIAlertController(title: Alerts.TicketIsSaved.title.rawValue,
+                                      message: Alerts.TicketIsSaved.message.rawValue,
+                                      preferredStyle: .alert)
         present(alert, animated: true)
-        
+        closeWithAnimation()
         dismiss(animated: true)
-        
+    }
+    
+    private func closeWithAnimation() {
+        UIView.animate(withDuration: 1, animations: {
+                self.view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            }) { ( finished ) in
+                self.dismiss(animated: false, completion: nil)
+            }
     }
     
     @IBAction private func cancelButtonDidTap(_ sender: Any) {
