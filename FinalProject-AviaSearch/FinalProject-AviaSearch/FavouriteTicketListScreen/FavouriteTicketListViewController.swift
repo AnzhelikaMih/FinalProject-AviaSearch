@@ -62,7 +62,7 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
                                       bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: String(describing: FavouriteTicketInfoViewController.self)) as? FavouriteTicketInfoViewController {
             present(vc, animated: true)
-            vc.delegate = self // не удалять а то не обновляется при удалении список любимых билетов
+            vc.delegate = self
             vc.configureTicketInfo(with: ticketInfo)
         }
     }

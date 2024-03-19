@@ -21,24 +21,30 @@ final class MapEarthViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkLocationEnabled()
+        checkLocationPermissions()
     }
     
     private func setupManager() {
         locationService.locationManager.delegate = self
         locationService.locationManager.desiredAccuracy = kCLLocationAccuracyBest
    }
-
-    private func checkLocationEnabled() {
-        if locationService.locationServiceEnabled {
-            setupManager()
-            locationService.checkAuthorization(with: mapView)
-        } else {
-            showAlertLocation(title: Alerts.geolocationTurnedOff.title.rawValue,
-                              message: Alerts.geolocationTurnedOff.message.rawValue,
-                              url: URL(string: Alerts.geolocationTurnedOff.url.rawValue))
+    
+    private func checkLocationPermissions() {
+        switch locationService.locationManager.authorizationStatus {
+            case .authorizedAlways, .authorizedWhenInUse:
+                setupManager()
+                locationService.checkAuthorization(with: mapView)
+            case .denied:
+                showAlertLocation(title: "Вы забаранілі выкарыстанне месцазнаходжання",
+                                 message: "Мабыць змянiць?",
+                                 url: URL(string: UIApplication.openSettingsURLString))
+            case .restricted, .notDetermined:
+                break
+            @unknown default:
+                break
+            }
         }
-    }
+    
     private func showAlertLocation(title: String,
                                    message: String?,
                                    url: URL?) {

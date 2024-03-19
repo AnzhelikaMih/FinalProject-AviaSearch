@@ -15,22 +15,14 @@ final class LocationService {
     var locationServiceEnabled: Bool {
         return CLLocationManager.locationServicesEnabled()
     }
-
+    
     func checkAuthorization(with map: MKMapView) {
         switch locationManager.authorizationStatus {
-        case .authorizedAlways:
+        case .authorizedAlways, .denied, .restricted:
             break
         case .authorizedWhenInUse:
             map.showsUserLocation = true
             locationManager.startUpdatingLocation()
-            break
-        case .denied:
-            //showAlertLocation(title: "Вы забаранілі выкарыстанне месцазнаходжання",
-            //                  message: "Мабыць змянiць?",
-            //                  url: URL(string: UIApplication.openSettingsURLString))
-            break
-        case .restricted:
-            break
         case .notDetermined:
             DispatchQueue.global().async {
                 self.locationManager.requestWhenInUseAuthorization()

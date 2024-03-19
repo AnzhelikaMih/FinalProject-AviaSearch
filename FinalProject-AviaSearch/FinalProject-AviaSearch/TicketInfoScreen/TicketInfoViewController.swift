@@ -64,7 +64,7 @@ final class TicketInfoViewController: UIViewController {
         price.text = displayModel.price
         date.text = displayModel.date
     }
-     
+    
     @IBAction private func saveButtonDidTap(_ sender: Any) {
         viewModel.saveTicketToFavourite()
         
@@ -72,16 +72,9 @@ final class TicketInfoViewController: UIViewController {
                                       message: Alerts.TicketIsSaved.message.rawValue,
                                       preferredStyle: .alert)
         present(alert, animated: true)
-        closeWithAnimation()
+        
+        self.saveTicketWithAnimation()
         dismiss(animated: true)
-    }
-    
-    private func closeWithAnimation() {
-        UIView.animate(withDuration: 1, animations: {
-                self.view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            }) { ( finished ) in
-                self.dismiss(animated: false, completion: nil)
-            }
     }
     
     @IBAction private func cancelButtonDidTap(_ sender: Any) {

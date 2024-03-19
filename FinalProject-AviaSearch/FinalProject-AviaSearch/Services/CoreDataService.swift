@@ -59,7 +59,7 @@ final class CoreDataService {
         return ticketViewModels
     }
     
-    func deleteTicket(ticket: TicketInfo) {
+    func deleteFavouriteTicket(ticket: TicketInfo) {
         let request = NSFetchRequest<Ticket>(entityName: "Ticket")
         request.predicate = NSPredicate(format: "flightNumber == %@", ticket.flightNumber)
 

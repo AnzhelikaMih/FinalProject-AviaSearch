@@ -11,7 +11,9 @@ final class NetworkService {
     
     func loadFlights(completion: @escaping ([TicketInfo]) -> Void) {
         
-        guard let url = URL(string: "https://raw.githubusercontent.com/AnzhelikaMih/API-flights/main/TicketList.json") else { return }
+        guard let url = URL(string: "https://raw.githubusercontent.com/AnzhelikaMih/API-flights/main/TicketList.json")
+        else { return }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         

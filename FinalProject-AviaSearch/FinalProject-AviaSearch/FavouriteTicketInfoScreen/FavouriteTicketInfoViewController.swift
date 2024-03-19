@@ -13,7 +13,7 @@ protocol FavouriteTicketInfoDelegate: AnyObject {
 
 final class FavouriteTicketInfoViewController: UIViewController {
     
-    private var ticketInfo: TicketInfo?
+    private var viewModel = FavouriteTicketInfoViewModel()
     
     weak var delegate: FavouriteTicketInfoDelegate?
     
@@ -43,11 +43,8 @@ final class FavouriteTicketInfoViewController: UIViewController {
     @IBOutlet private weak var deleteButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     
-    //override func viewDidLoad() {
-    //    super.viewDidLoad()
-    //}
-    
     func configureTicketInfo(with ticketInfo: TicketInfo) {
+        viewModel.configureTicketInfo(with: ticketInfo)
         
         departureCode.text = ticketInfo.departureCode
         departure.text = ticketInfo.departure
@@ -66,30 +63,17 @@ final class FavouriteTicketInfoViewController: UIViewController {
         aviaOperator.text = ticketInfo.aviaOperator
         payment.text = ticketInfo.payment
         price.text = ticketInfo.price
-        
-        self.ticketInfo = ticketInfo
-    }
-    
-    private func closeWithAnimation() {
-        UIView.animate(withDuration: 1, animations: {
-            let rotationTransform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-            let translationTransform = CGAffineTransform(translationX: -self.view.frame.size.width*2, y: 0)
-            self.view.transform = rotationTransform.concatenating(translationTransform)
-        }) { (_) in
-            self.dismiss(animated: false, completion: nil)
-        }
     }
     
     @IBAction private func deleteButtonDidTap(_ sender: Any) {
-        guard let ticketInfo = ticketInfo else { return } // вью модель ти
-        CoreDataService.shared.deleteTicket(ticket: ticketInfo) // вью модель ти
+        viewModel.deleteTicket()
         delegate?.didDeleteTicket()
         
         let alert = UIAlertController(title: Alerts.TicketIsDeleted.title.rawValue,
                                       message: Alerts.TicketIsDeleted.message.rawValue,
                                       preferredStyle: .alert)
         present(alert, animated: true)
-        closeWithAnimation()
+        self.deleteTicketWithAnimation()
         dismiss(animated: true)
     }
 

@@ -21,12 +21,14 @@ final class TicketListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupBackBarButton()
         setupTableView()
+        setupBackBarButton()
         setupCurrentDate()
         setupViewModel()
         setupDatePicker()
         
-        segmentedControl.selectedSegmentIndex = 1 // название
+        segmentedControl.selectedSegmentIndex = SegmentedControlCases.allFlights.rawValue
     }
     
     private func setupTableView() {
@@ -102,15 +104,15 @@ final class TicketListViewController: UIViewController {
             }
     
     @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-            switch sender.selectedSegmentIndex {
-            case 0: // хорошее название
+        switch sender.selectedSegmentIndex {
+            case SegmentedControlCases.flightsFromMinsk.rawValue:
                 let filteredTickets = viewModel.filterTicketsByDepartureCode(with: sampleTicketData.departureCode)
                 updateTableView(with: filteredTickets)
-            case 1:
+            case SegmentedControlCases.allFlights.rawValue:
                 viewModel.loadTicketList {
                     self.tableView.reloadData()
                 }
-            case 2:
+            case SegmentedControlCases.flightsToMinsk.rawValue:
                 let filteredTickets = viewModel.filterTicketsByDestinationCode(with: sampleTicketData.departureCode)
                 updateTableView(with: filteredTickets)
             default:

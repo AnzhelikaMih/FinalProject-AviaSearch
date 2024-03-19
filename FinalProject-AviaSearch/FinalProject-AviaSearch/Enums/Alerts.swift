@@ -17,7 +17,7 @@ enum Alerts {
     
     enum Action: String {
         case settings = "Наладкі"
-        case cancel = "Адмена"
+        case cancel = "Вярнуцца"
     }
     
     enum TicketIsSaved: String {

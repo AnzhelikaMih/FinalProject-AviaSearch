@@ -54,9 +54,9 @@ let sampleTicketData: TicketInfo =
     TicketInfo(departure: "MINSK", departureCode: "MSQ",
                destination: "DUBAI", destinationCode: "DXB",
                aviaOperator: "Belavia", flightNumber: "B2 717",
-               terminal: "А", airplane: "Boeing 737-8",date: "", departureTime: "08:45", arrivalTime: "13:20",
+               terminal: "А", airplane: "Boeing 737-8",date: "10.03.2024", departureTime: "08:45", arrivalTime: "13:20",
                journeyTime: "4г 35хв", seatNumber: "29A",
-               passenger: "Анжалiка Мiхальчэня", passportNumber: "МР0123456",
-               eTicketNumber: "0120 345 6789", 
+               passenger: "Anzhalika Mikhalchenia", passportNumber: "МР0123456",
+               eTicketNumber: "0120 345 6789",
                payment: "VISA *** **77", price: "$1099.99")
 

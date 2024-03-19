@@ -15,6 +15,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupBackBarButton()
         prepareInitialAnimation()
     }
     
@@ -32,11 +33,7 @@ final class MainViewController: UIViewController {
             blueView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         view.layoutIfNeeded()
-        
-        UIView.animate(withDuration: 1.0) {
-            self.blueView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5).isActive = true
-            self.view.layoutIfNeeded()
-        }
+        self.animateBlueViewHeight(blueView, to: 0.5)
     }
     
     private func resetAirplanePosition() {
@@ -58,28 +55,12 @@ final class MainViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func rotateAirplane(completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 1.0) {
-            self.airplane.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6.3)
-        } completion: { (finished) in
-            completion()
-        }
-    }
-
-    private func translateAirplane(completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 1.0) {
-            self.airplane.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
-        } completion: { (finished) in
-            completion()
-        }
-    }
-    
     @IBAction private func startButtonDidTap () {
-        rotateAirplane {
-            self.translateAirplane {
+        self.rotateAirplane(self.airplane) {
+            self.translateAirplane(self.airplane) {
                     self.navigateToTicketList()
-                }
             }
+        }
     }
 }
 
