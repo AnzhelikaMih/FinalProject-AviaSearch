@@ -63,7 +63,8 @@
                     <navigationItem key="navigationItem" id="IeV-3z-8Nq"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="favouriteTicketsTableView" destination="uSb-Hi-6zh" id="VgL-Fj-kU4"/>
+                        <outlet property="tableView" destination="uSb-Hi-6zh" id="SR1-ah-iHS"/>
+                        <outlet property="titleLabel" destination="9vM-hk-GdR" id="20p-HT-FmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90V-Jc-HZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

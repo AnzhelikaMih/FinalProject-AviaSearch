@@ -101,14 +101,15 @@
                             <constraint firstItem="3if-MP-uQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZCc-CU-Kxo"/>
                             <constraint firstItem="UzA-g3-xYW" firstAttribute="height" secondItem="3if-MP-uQo" secondAttribute="height" id="dUD-X9-Gl0"/>
                             <constraint firstItem="UzA-g3-xYW" firstAttribute="top" secondItem="3if-MP-uQo" secondAttribute="bottom" id="jbL-Zh-mT6"/>
-                            <constraint firstItem="UzA-g3-xYW" firstAttribute="top" secondItem="3if-MP-uQo" secondAttribute="bottom" id="uTc-Fj-Iqj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o4t-d3-QSk"/>
                     <connections>
                         <outlet property="airplane" destination="wUm-gX-kL2" id="Kta-NW-4mV"/>
                         <outlet property="blueView" destination="3if-MP-uQo" id="QlX-1o-U7C"/>
+                        <outlet property="mainLabel" destination="Q3L-fW-ZgO" id="dey-Js-dMX"/>
                         <outlet property="startButton" destination="9Cf-If-hfj" id="bQM-fF-78n"/>
+                        <outlet property="subLabel" destination="XbU-q2-B4Y" id="qc6-tT-bpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

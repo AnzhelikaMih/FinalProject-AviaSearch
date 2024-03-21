@@ -11,23 +11,31 @@ final class FavouriteTicketListViewController: UIViewController {
     
     private var viewModel = FavouriteTicketListViewModel()
     
-    @IBOutlet private weak var favouriteTicketsTableView: UITableView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupViewModel()
+        bind()
+        setupLocalization()
     }
     
     private func setupTableView() {
-        let nib = UINib(nibName: String(describing: TicketListTableViewCell.self),
-                        bundle: nil)
-        favouriteTicketsTableView.register(nib, forCellReuseIdentifier: String(describing: TicketListTableViewCell.self))
+        tableView.register(TicketListTableViewCell.self)
     }
     
     private func setupViewModel() {
-        viewModel.favouriteTicketListUpdated = { self.favouriteTicketsTableView.reloadData() }
         viewModel.fetchData()
+    }
+    
+    private func bind() {
+        viewModel.favouriteTicketListUpdated = { self.tableView.reloadData() }
+    }
+    
+    private func setupLocalization() {
+        titleLabel.text = Localization.myTickets.localized
     }
 }
 
@@ -45,7 +53,7 @@ extension FavouriteTicketListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, 
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TicketListTableViewCell.self), for: indexPath) as! TicketListTableViewCell
+        let cell: TicketListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let ticketInfo = viewModel.ticketList[indexPath.row]
         cell.configure(with: ticketInfo)
         return cell
@@ -60,7 +68,7 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
         let ticketInfo = viewModel.ticketList[indexPath.row]
         let storyboard = UIStoryboard(name: Screens.FavouriteTicketInfo.rawValue,
                                       bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: String(describing: FavouriteTicketInfoViewController.self)) as? FavouriteTicketInfoViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: FavouriteTicketInfoViewController.identifier) as? FavouriteTicketInfoViewController {
             present(vc, animated: true)
             vc.delegate = self
             vc.configureTicketInfo(with: ticketInfo)
@@ -70,9 +78,6 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
 
 extension FavouriteTicketListViewController: FavouriteTicketInfoDelegate {
     func didDeleteTicket() {
-            viewModel.fetchData()
-        favouriteTicketsTableView.reloadData()
-                
-            }
-        
+        setupViewModel()
+    }
 }

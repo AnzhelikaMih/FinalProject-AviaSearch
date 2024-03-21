@@ -143,6 +143,7 @@
                         <outlet property="segmentedControl" destination="bSS-L6-9De" id="Orv-AW-3DN"/>
                         <outlet property="tableView" destination="CxK-M5-iFk" id="bbd-CB-fFc"/>
                         <outlet property="textFieldDate" destination="5Ih-0y-zZ0" id="XZJ-ld-Cal"/>
+                        <outlet property="titleLabel" destination="KcS-3H-a0v" id="b9l-tK-HVB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

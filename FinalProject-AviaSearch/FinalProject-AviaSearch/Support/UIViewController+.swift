@@ -11,7 +11,11 @@ extension UIViewController {
 
     func setupBackBarButton() {
         let backButton = UIBarButtonItem()
-        backButton.title = "Назад"
+        backButton.title = Localization.backButton.localized
         navigationItem.backBarButtonItem = backButton
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
     }
 }

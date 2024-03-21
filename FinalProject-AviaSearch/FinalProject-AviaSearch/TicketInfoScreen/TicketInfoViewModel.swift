@@ -14,6 +14,7 @@ final class TicketInfoViewModel {
     var displayModel: TicketInfoDisplayModel
     
     init(ticketInfo: TicketInfo, selectedDate: Date) {
+        
        self.ticketInfo = ticketInfo
        self.selectedDate = selectedDate
        self.displayModel = TicketInfoDisplayModel(

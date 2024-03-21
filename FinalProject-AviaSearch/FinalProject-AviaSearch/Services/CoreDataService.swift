@@ -55,7 +55,7 @@ final class CoreDataService {
     func fetchFavouriteTickets() -> [TicketInfo] {
         let request = Ticket.fetchRequest()
         guard let myTickets = try? context.fetch(request) else { return [] }
-        let ticketViewModels = myTickets.compactMap { return TicketInfo(departure: $0.departure ?? "nil", departureCode: $0.departureCode ?? "nil", destination: $0.destination ?? "nil", destinationCode: $0.destinationCode ?? "nil", aviaOperator: $0.aviaOperator ?? "nil", flightNumber: $0.flightNumber ?? "nil", terminal: $0.terminal ?? "nil", airplane: $0.airplane ?? "nil", date: $0.date ?? "nil", departureTime: $0.departureTime ?? "nil", arrivalTime: $0.arrivalTime ?? "nil", journeyTime: $0.journeyTime ?? "nil", seatNumber: $0.seatNumber ?? "nil", passenger: $0.passenger ?? "nil", passportNumber: $0.passportNumber ?? "nil", eTicketNumber: $0.eTicketNumber ?? "nil", payment: $0.payment ?? "nil", price: $0.price ?? "nil") }
+        let ticketViewModels = myTickets.compactMap { return TicketInfo(departure: $0.departure, departureCode: $0.departureCode, destination: $0.destination, destinationCode: $0.destinationCode, aviaOperator: $0.aviaOperator, flightNumber: $0.flightNumber, terminal: $0.terminal, airplane: $0.airplane, date: $0.date, departureTime: $0.departureTime, arrivalTime: $0.arrivalTime, journeyTime: $0.journeyTime, seatNumber: $0.seatNumber, passenger: $0.passenger, passportNumber: $0.passportNumber, eTicketNumber: $0.eTicketNumber, payment: $0.payment, price: $0.price) }
         return ticketViewModels
     }
     
@@ -71,7 +71,7 @@ final class CoreDataService {
                 saveContext()
             }
         } catch {
-            print("Ошибка при удалении билета: \(error.localizedDescription)")
+            print("Unresolved error \(error.localizedDescription)")
         }
     }
     

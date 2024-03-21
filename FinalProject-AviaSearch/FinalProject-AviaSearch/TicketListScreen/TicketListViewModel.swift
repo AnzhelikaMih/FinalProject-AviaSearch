@@ -9,20 +9,24 @@ import Foundation
 
 final class TicketListViewModel {
     
-    var ticketList: [TicketInfo] = []
+    var ticketList: [TicketInfo] = [] {
+        didSet {
+            ticketListUpdated?()
+        }
+    }
 
     var selectedDate: Date?
+    
+    var ticketListUpdated: (() -> ())?
     
     func setupCurrentDate() {
         selectedDate = Date()
     }
 
-    func loadTicketList(completion: @escaping () -> Void) {
-        
+    func loadTicketList() {
         let fetcher = NetworkService()
         fetcher.loadFlights { [weak self] data in
             self?.ticketList = data
-            completion()
         }
     }
     

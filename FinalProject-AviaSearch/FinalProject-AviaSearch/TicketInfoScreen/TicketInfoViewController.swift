@@ -11,26 +11,23 @@ final class TicketInfoViewController: UIViewController {
     
     var viewModel:TicketInfoViewModel!
     
+    @IBOutlet private weak var titleLabel: UILabel!
+    
     @IBOutlet private weak var departureCode: UILabel!
     @IBOutlet private weak var departure: UILabel!
     @IBOutlet private weak var journeyTime: UILabel!
     @IBOutlet private weak var destinationCode: UILabel!
     @IBOutlet private weak var destination: UILabel!
-    
     @IBOutlet private weak var flightNumber: UILabel!
     @IBOutlet private weak var terminal: UILabel!
     @IBOutlet private weak var airplane: UILabel!
-    
     @IBOutlet private weak var date: UILabel!
     @IBOutlet private weak var departureTime: UILabel!
     @IBOutlet private weak var seatNumber: UILabel!
-    
     @IBOutlet private weak var passenger: UILabel!
     @IBOutlet private weak var passport: UILabel!
-    
     @IBOutlet private weak var ticketNum: UILabel!
     @IBOutlet private weak var aviaOperator: UILabel!
-    
     @IBOutlet private weak var payment: UILabel!
     @IBOutlet private weak var price: UILabel!
     
@@ -41,6 +38,13 @@ final class TicketInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setupLocalization()
+    }
+    
+    private func setupLocalization() {
+        titleLabel.text = Localization.ticketInfo.localized
+        saveButton.setTitle(Localization.saveTicketButton.localized, for: .normal)
+        cancelButton.setTitle(Localization.cancelButton.localized, for: .normal)
     }
     
     private func configureUI() {
@@ -68,8 +72,8 @@ final class TicketInfoViewController: UIViewController {
     @IBAction private func saveButtonDidTap(_ sender: Any) {
         viewModel.saveTicketToFavourite()
         
-        let alert = UIAlertController(title: Alerts.TicketIsSaved.title.rawValue,
-                                      message: Alerts.TicketIsSaved.message.rawValue,
+        let alert = UIAlertController(title: Localization.alertTitleSaved.localized,
+                                      message: Localization.alertMessageSaved.localized,
                                       preferredStyle: .alert)
         present(alert, animated: true)
         

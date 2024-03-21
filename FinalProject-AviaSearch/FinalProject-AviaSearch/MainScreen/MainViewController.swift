@@ -9,12 +9,15 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    @IBOutlet private weak var mainLabel: UILabel!
+    @IBOutlet private weak var subLabel: UILabel!
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var airplane: UIImageView!
     @IBOutlet private weak var blueView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocalization()
         self.setupBackBarButton()
         prepareInitialAnimation()
     }
@@ -22,6 +25,12 @@ final class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         resetAirplanePosition()
+    }
+    
+    private func setupLocalization() {
+        mainLabel.text = Localization.mainLabel.localized
+        subLabel.text = Localization.subLabel.localized
+        startButton.setTitle(Localization.startButton.localized, for: .normal)
     }
     
     private func prepareInitialAnimation() {
@@ -51,7 +60,8 @@ final class MainViewController: UIViewController {
     private func navigateToTicketList() {
         let storyboard = UIStoryboard(name: Screens.TicketList.rawValue,
                                       bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: String(describing: TicketListViewController.self)) as? TicketListViewController else { return }
+        guard let vc = storyboard.instantiateViewController(identifier: TicketListViewController.identifier) as? TicketListViewController 
+        else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
     

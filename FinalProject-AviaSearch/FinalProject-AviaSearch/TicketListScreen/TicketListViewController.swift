@@ -13,6 +13,7 @@ final class TicketListViewController: UIViewController {
     
     private var datePicker: UIDatePicker!
     
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var heartButton: UIButton!
     @IBOutlet private weak var textFieldDate: UITextField!
@@ -22,19 +23,23 @@ final class TicketListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupBackBarButton()
+        setupLocalization()
         setupTableView()
-        setupBackBarButton()
         setupCurrentDate()
         setupViewModel()
+        bind()
         setupDatePicker()
-        
-        segmentedControl.selectedSegmentIndex = SegmentedControlCases.allFlights.rawValue
+        setupSegmentedControl()
+    }
+    
+    private func setupLocalization() {
+        titleLabel.text = Localization.titleLabelAllFlights.localized
+        textFieldDate.placeholder = Localization.selectDate.localized
+        segmentedControl.setTitle(Localization.segment1.localized, forSegmentAt: 1)
     }
     
     private func setupTableView() {
-        let nib = UINib(nibName: String(describing: TicketListTableViewCell.self),
-                        bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: String(describing: TicketListTableViewCell.self))
+        tableView.register(TicketListTableViewCell.self)
     }
     
     private func setupCurrentDate() {
@@ -42,9 +47,11 @@ final class TicketListViewController: UIViewController {
     }
     
     private func setupViewModel() {
-        viewModel.loadTicketList {
-            self.tableView.reloadData()
-        }
+        viewModel.loadTicketList() 
+    }
+    
+    private func bind() {
+        viewModel.ticketListUpdated = { self.tableView.reloadData() }
     }
     
     private func setupDatePicker() {
@@ -57,31 +64,35 @@ final class TicketListViewController: UIViewController {
                              for: .valueChanged)
         textFieldDate.inputView = datePicker
     }
+    
+    private func setupSegmentedControl() {
+        segmentedControl.selectedSegmentIndex = SegmentedControlCases.allFlights.rawValue
+    }
 
     @objc private func dateDidChanged(_ sender: UIDatePicker) {
         viewModel.selectedDate = sender.date
         textFieldDate.text = String.formatDate(with: sender.date)
-        }
+    }
     
     private func navigateToFavouriteTicketList() {
         let storyboard = UIStoryboard(name: Screens.FavouriteTicketList.rawValue,
                                       bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: String(describing: FavouriteTicketListViewController.self)) as? FavouriteTicketListViewController else { return }
+        guard let vc = storyboard.instantiateViewController(identifier: FavouriteTicketListViewController.identifier) as? FavouriteTicketListViewController else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
     
     private func navigateToMapEarth() {
-        let storyboard = UIStoryboard(name: Screens.MapEarth.rawValue,
+        let storyboard = UIStoryboard(name: Screens.Map.rawValue,
                                       bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: String(describing: MapEarthViewController.self)) as? MapEarthViewController
+        guard let vc = storyboard.instantiateViewController(identifier: MapViewController.identifier) as? MapViewController
         else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
     
     private func updateTableView(with tickets: [TicketInfo]) {
-            viewModel.ticketList = tickets
-            tableView.reloadData()
-        }
+        viewModel.ticketList = tickets
+        tableView.reloadData()
+    }
     
     @IBAction private func heartButtonDidTap () {
         navigateToFavouriteTicketList()
@@ -95,30 +106,31 @@ final class TicketListViewController: UIViewController {
             textFieldDate.resignFirstResponder()
         
         if let selectedDate = self.viewModel.selectedDate {
-                    for cell in tableView.visibleCells {
-                        if let cell = cell as? TicketListTableViewCell {
-                            cell.setDataLabel(with: selectedDate)
-                        }
-                    }
+            for cell in tableView.visibleCells {
+                guard let cell = cell as? TicketListTableViewCell else {
+                    continue
                 }
-            }
-    
-    @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-            case SegmentedControlCases.flightsFromMinsk.rawValue:
-                let filteredTickets = viewModel.filterTicketsByDepartureCode(with: sampleTicketData.departureCode)
-                updateTableView(with: filteredTickets)
-            case SegmentedControlCases.allFlights.rawValue:
-                viewModel.loadTicketList {
-                    self.tableView.reloadData()
-                }
-            case SegmentedControlCases.flightsToMinsk.rawValue:
-                let filteredTickets = viewModel.filterTicketsByDestinationCode(with: sampleTicketData.departureCode)
-                updateTableView(with: filteredTickets)
-            default:
-                break
+                cell.setDataLabel(with: selectedDate)
             }
         }
+    }
+    
+    @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        guard let type = SegmentedControlCases(rawValue: sender.selectedSegmentIndex) else { return }
+        
+        switch type {
+            case .flightsFromMinsk:
+                let filteredTickets = viewModel.filterTicketsByDepartureCode(with: sampleTicketData.departureCode)
+                updateTableView(with: filteredTickets)
+            
+            case .allFlights:
+                setupViewModel()
+            
+            case .flightsToMinsk:
+                let filteredTickets = viewModel.filterTicketsByDestinationCode(with: sampleTicketData.departureCode)
+                updateTableView(with: filteredTickets)
+        }
+    }
 }
 
 extension TicketListViewController: UITableViewDataSource {
@@ -135,11 +147,12 @@ extension TicketListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, 
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TicketListTableViewCell.self), for: indexPath) as! TicketListTableViewCell
+        let cell: TicketListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let ticketInfo = viewModel.ticketList[indexPath.row]
         cell.configure(with: ticketInfo)
         if let selectedDate = self.viewModel.selectedDate {
-            cell.setDataLabel(with: selectedDate) }
+            cell.setDataLabel(with: selectedDate)
+        }
         return cell
     }
 }
@@ -154,7 +167,7 @@ extension TicketListViewController: UITableViewDelegate {
         
         let storyboard = UIStoryboard(name: Screens.TicketInfo.rawValue,
                                       bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: String(describing: TicketInfoViewController.self)) as? TicketInfoViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: TicketInfoViewController.identifier) as? TicketInfoViewController {
             
             let ticketInfoViewModel = TicketInfoViewModel(ticketInfo: ticketInfo, selectedDate: selectedDate)
             vc.viewModel = ticketInfoViewModel
