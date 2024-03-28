@@ -12,9 +12,9 @@
 		423C4A8E2B90FB830090A75A /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 423C4A8C2B90FB830090A75A /* CoreDataModel.xcdatamodeld */; };
 		4243135B2B973DB2008DA612 /* Ticket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */; };
 		4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */; };
-		4243135E2B9742F5008DA612 /* FavouriteTicketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */; };
+		4243135E2B9742F5008DA612 /* FavouriteTicketListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4243135D2B9742F5008DA612 /* FavouriteTicketListViewController.storyboard */; };
 		424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */; };
-		424313642B9758E1008DA612 /* FavouriteTicketInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */; };
+		424313642B9758E1008DA612 /* FavouriteTicketInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424313632B9758E1008DA612 /* FavouriteTicketInfoViewController.storyboard */; };
 		424313662B975A30008DA612 /* FavouriteTicketInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */; };
 		42A0C6902BA316D400263632 /* TicketInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C68F2BA316D400263632 /* TicketInfoViewModel.swift */; };
 		42A0C6942BA31B9400263632 /* TicketInfoDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C6932BA31B9400263632 /* TicketInfoDisplayModel.swift */; };
@@ -28,15 +28,14 @@
 		42A0C6A62BAA10AE00263632 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C6A52BAA10AE00263632 /* UITableView+.swift */; };
 		42A0C6AA2BAC66E100263632 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42A0C6AC2BAC66E100263632 /* Localizable.strings */; };
 		42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA5622B87755200CF3291 /* AppDelegate.swift */; };
-		42BCA5652B87755200CF3291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA5642B87755200CF3291 /* SceneDelegate.swift */; };
 		42BCA5672B87755200CF3291 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA5662B87755200CF3291 /* MainViewController.swift */; };
-		42BCA56A2B87755200CF3291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA5682B87755200CF3291 /* Main.storyboard */; };
+		42BCA56A2B87755200CF3291 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA5682B87755200CF3291 /* MainViewController.storyboard */; };
 		42BCA56F2B87755400CF3291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA56E2B87755400CF3291 /* Assets.xcassets */; };
 		42BCA5722B87755400CF3291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA5702B87755400CF3291 /* LaunchScreen.storyboard */; };
 		42BCA57C2B87A9B800CF3291 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCA57B2B87A9B800CF3291 /* NetworkService.swift */; };
-		42BCA57E2B87AF3100CF3291 /* TicketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */; };
-		42BFD4AE2B9C84E500D4F424 /* TicketInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BFD4AD2B9C84E500D4F424 /* TicketInfo.storyboard */; };
-		42BFD4B02BA082F300D4F424 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BFD4AF2BA082F300D4F424 /* Map.storyboard */; };
+		42BCA57E2B87AF3100CF3291 /* TicketListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BCA57D2B87AF3100CF3291 /* TicketListViewController.storyboard */; };
+		42BFD4AE2B9C84E500D4F424 /* TicketInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BFD4AD2B9C84E500D4F424 /* TicketInfoViewController.storyboard */; };
+		42BFD4B02BA082F300D4F424 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BFD4AF2BA082F300D4F424 /* MapViewController.storyboard */; };
 		42BFD4B22BA084A500D4F424 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BFD4B12BA084A500D4F424 /* MapViewController.swift */; };
 		42BFD4BA2BA0BD0C00D4F424 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BFD4B92BA0BD0C00D4F424 /* LocationService.swift */; };
 		42BFD4BC2BA0CF3600D4F424 /* TicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BFD4BB2BA0CF3600D4F424 /* TicketListViewModel.swift */; };
@@ -46,6 +45,9 @@
 		42C26AEA2B8C991A00F270F8 /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */; };
 		42C26AEC2B8C99A600F270F8 /* TicketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AEB2B8C99A600F270F8 /* TicketListTableViewCell.swift */; };
 		42C26AF02B8CD25000F270F8 /* TicketListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C26AEF2B8CD25000F270F8 /* TicketListTableViewCell.xib */; };
+		42F0B50F2BB5CFEB009FE847 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0B50E2BB5CFEB009FE847 /* Coordinator.swift */; };
+		42F0B5112BB5D069009FE847 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0B5102BB5D069009FE847 /* AppCoordinator.swift */; };
+		42F0B5132BB5D102009FE847 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0B5122BB5D102009FE847 /* Storyboardable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +56,9 @@
 		423C4A8D2B90FB830090A75A /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketList.storyboard; sourceTree = "<group>"; };
+		4243135D2B9742F5008DA612 /* FavouriteTicketListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketListViewController.storyboard; sourceTree = "<group>"; };
 		4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketListViewController.swift; sourceTree = "<group>"; };
-		424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketInfo.storyboard; sourceTree = "<group>"; };
+		424313632B9758E1008DA612 /* FavouriteTicketInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteTicketInfoViewController.storyboard; sourceTree = "<group>"; };
 		424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketInfoViewController.swift; sourceTree = "<group>"; };
 		42A0C68F2BA316D400263632 /* TicketInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoViewModel.swift; sourceTree = "<group>"; };
 		42A0C6932BA31B9400263632 /* TicketInfoDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoDisplayModel.swift; sourceTree = "<group>"; };
@@ -73,18 +75,17 @@
 		42A0C6AE2BAC66E300263632 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; usesTabs = 0; };
 		42BCA55F2B87755200CF3291 /* FinalProject-AviaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FinalProject-AviaSearch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BCA5622B87755200CF3291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42BCA5642B87755200CF3291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		42BCA5662B87755200CF3291 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		42BCA5692B87755200CF3291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42BCA5692B87755200CF3291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
 		42BCA56E2B87755400CF3291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42BCA5712B87755400CF3291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42BCA5732B87755400CF3291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42BCA57B2B87A9B800CF3291 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TicketList.storyboard; sourceTree = "<group>"; };
+		42BCA57D2B87AF3100CF3291 /* TicketListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TicketListViewController.storyboard; sourceTree = "<group>"; };
 		42BFD4A82B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		42BFD4AB2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		42BFD4AD2B9C84E500D4F424 /* TicketInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TicketInfo.storyboard; sourceTree = "<group>"; };
-		42BFD4AF2BA082F300D4F424 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		42BFD4AD2B9C84E500D4F424 /* TicketInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TicketInfoViewController.storyboard; sourceTree = "<group>"; };
+		42BFD4AF2BA082F300D4F424 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		42BFD4B12BA084A500D4F424 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		42BFD4B92BA0BD0C00D4F424 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		42BFD4BB2BA0CF3600D4F424 /* TicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewModel.swift; sourceTree = "<group>"; };
@@ -94,6 +95,9 @@
 		42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		42C26AEB2B8C99A600F270F8 /* TicketListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListTableViewCell.swift; sourceTree = "<group>"; };
 		42C26AEF2B8CD25000F270F8 /* TicketListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketListTableViewCell.xib; sourceTree = "<group>"; };
+		42F0B50E2BB5CFEB009FE847 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		42F0B5102BB5D069009FE847 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		42F0B5122BB5D102009FE847 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +124,6 @@
 		422502FD2B90EC9000A7281A /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
-				42BCA5642B87755200CF3291 /* SceneDelegate.swift */,
 				42BCA5622B87755200CF3291 /* AppDelegate.swift */,
 				42BCA56E2B87755400CF3291 /* Assets.xcassets */,
 				42BCA5702B87755400CF3291 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 		42A0C6982BA3630F00263632 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				42F0B5122BB5D102009FE847 /* Storyboardable.swift */,
 				42A0C6952BA361A300263632 /* String+.swift */,
 				42A0C6A12BA9F34600263632 /* Animations.swift */,
 				42A0C6A32BA9F7D400263632 /* UIViewController+.swift */,
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				42BCA5732B87755400CF3291 /* Info.plist */,
+				42F0B50C2BB5CD3A009FE847 /* Coordinator */,
 				42A0C6A72BAC668C00263632 /* Localization */,
 				422502FD2B90EC9000A7281A /* Resourse */,
 				422502FC2B90EC6C00A7281A /* Services */,
@@ -197,7 +202,7 @@
 		42BFD4B32BA0B82D00D4F424 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				42BCA5682B87755200CF3291 /* Main.storyboard */,
+				42BCA5682B87755200CF3291 /* MainViewController.storyboard */,
 				42BCA5662B87755200CF3291 /* MainViewController.swift */,
 			);
 			path = MainScreen;
@@ -206,7 +211,7 @@
 		42BFD4B42BA0BBE700D4F424 /* TicketListScreen */ = {
 			isa = PBXGroup;
 			children = (
-				42BCA57D2B87AF3100CF3291 /* TicketList.storyboard */,
+				42BCA57D2B87AF3100CF3291 /* TicketListViewController.storyboard */,
 				42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */,
 				42BFD4BB2BA0CF3600D4F424 /* TicketListViewModel.swift */,
 			);
@@ -225,7 +230,7 @@
 		42BFD4B62BA0BC5100D4F424 /* TicketInfoScreen */ = {
 			isa = PBXGroup;
 			children = (
-				42BFD4AD2B9C84E500D4F424 /* TicketInfo.storyboard */,
+				42BFD4AD2B9C84E500D4F424 /* TicketInfoViewController.storyboard */,
 				420145F72B8DC26700A39403 /* TicketInfoViewController.swift */,
 				42A0C68F2BA316D400263632 /* TicketInfoViewModel.swift */,
 			);
@@ -235,7 +240,7 @@
 		42BFD4B72BA0BC7500D4F424 /* FavouriteTicketListScreen */ = {
 			isa = PBXGroup;
 			children = (
-				4243135D2B9742F5008DA612 /* FavouriteTicketList.storyboard */,
+				4243135D2B9742F5008DA612 /* FavouriteTicketListViewController.storyboard */,
 				4243135F2B97442C008DA612 /* FavouriteTicketListViewController.swift */,
 				42A0C69B2BA3704F00263632 /* FavouriteTicketListViewModel.swift */,
 			);
@@ -245,7 +250,7 @@
 		42BFD4B82BA0BCA300D4F424 /* FavouriteTicketInfoScreen */ = {
 			isa = PBXGroup;
 			children = (
-				424313632B9758E1008DA612 /* FavouriteTicketInfo.storyboard */,
+				424313632B9758E1008DA612 /* FavouriteTicketInfoViewController.storyboard */,
 				424313652B975A30008DA612 /* FavouriteTicketInfoViewController.swift */,
 				42A0C69F2BA9F02200263632 /* FavouriteTicketInfoViewModel.swift */,
 			);
@@ -268,10 +273,27 @@
 		42C26AE82B8C981700F270F8 /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
-				42BFD4AF2BA082F300D4F424 /* Map.storyboard */,
+				42BFD4AF2BA082F300D4F424 /* MapViewController.storyboard */,
 				42BFD4B12BA084A500D4F424 /* MapViewController.swift */,
 			);
 			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		42F0B50C2BB5CD3A009FE847 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				42F0B50D2BB5CD48009FE847 /* Protocols */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		42F0B50D2BB5CD48009FE847 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				42F0B50E2BB5CFEB009FE847 /* Coordinator.swift */,
+				42F0B5102BB5D069009FE847 /* AppCoordinator.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,15 +357,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				42BCA5722B87755400CF3291 /* LaunchScreen.storyboard in Resources */,
-				42BCA57E2B87AF3100CF3291 /* TicketList.storyboard in Resources */,
-				42BFD4B02BA082F300D4F424 /* Map.storyboard in Resources */,
-				424313642B9758E1008DA612 /* FavouriteTicketInfo.storyboard in Resources */,
-				4243135E2B9742F5008DA612 /* FavouriteTicketList.storyboard in Resources */,
+				42BCA57E2B87AF3100CF3291 /* TicketListViewController.storyboard in Resources */,
+				42BFD4B02BA082F300D4F424 /* MapViewController.storyboard in Resources */,
+				424313642B9758E1008DA612 /* FavouriteTicketInfoViewController.storyboard in Resources */,
+				4243135E2B9742F5008DA612 /* FavouriteTicketListViewController.storyboard in Resources */,
 				42A0C6AA2BAC66E100263632 /* Localizable.strings in Resources */,
 				42BCA56F2B87755400CF3291 /* Assets.xcassets in Resources */,
 				42C26AF02B8CD25000F270F8 /* TicketListTableViewCell.xib in Resources */,
-				42BCA56A2B87755200CF3291 /* Main.storyboard in Resources */,
-				42BFD4AE2B9C84E500D4F424 /* TicketInfo.storyboard in Resources */,
+				42BCA56A2B87755200CF3291 /* MainViewController.storyboard in Resources */,
+				42BFD4AE2B9C84E500D4F424 /* TicketInfoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +378,9 @@
 			files = (
 				42BFD4BC2BA0CF3600D4F424 /* TicketListViewModel.swift in Sources */,
 				42BCA57C2B87A9B800CF3291 /* NetworkService.swift in Sources */,
+				42F0B50F2BB5CFEB009FE847 /* Coordinator.swift in Sources */,
 				42A0C6A02BA9F02200263632 /* FavouriteTicketInfoViewModel.swift in Sources */,
+				42F0B5112BB5D069009FE847 /* AppCoordinator.swift in Sources */,
 				42A0C69E2BA8710200263632 /* SegmentedControlCases.swift in Sources */,
 				42A0C6942BA31B9400263632 /* TicketInfoDisplayModel.swift in Sources */,
 				42C26AEC2B8C99A600F270F8 /* TicketListTableViewCell.swift in Sources */,
@@ -364,6 +388,7 @@
 				42BCA5672B87755200CF3291 /* MainViewController.swift in Sources */,
 				42A0C69A2BA366D300263632 /* Localization.swift in Sources */,
 				42A0C6A42BA9F7D400263632 /* UIViewController+.swift in Sources */,
+				42F0B5132BB5D102009FE847 /* Storyboardable.swift in Sources */,
 				4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */,
 				422502FF2B90ECEA00A7281A /* CoreDataService.swift in Sources */,
 				42C26AE52B8C8F3E00F270F8 /* TicketInfoModel.swift in Sources */,
@@ -373,7 +398,6 @@
 				42BFD4B22BA084A500D4F424 /* MapViewController.swift in Sources */,
 				42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */,
 				42A0C6902BA316D400263632 /* TicketInfoViewModel.swift in Sources */,
-				42BCA5652B87755200CF3291 /* SceneDelegate.swift in Sources */,
 				42A0C6962BA361A300263632 /* String+.swift in Sources */,
 				42C26AE32B8C8F2700F270F8 /* TicketListModel.swift in Sources */,
 				42C26AEA2B8C991A00F270F8 /* TicketListViewController.swift in Sources */,
@@ -399,12 +423,12 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		42BCA5682B87755200CF3291 /* Main.storyboard */ = {
+		42BCA5682B87755200CF3291 /* MainViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				42BCA5692B87755200CF3291 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		42BCA5702B87755400CF3291 /* LaunchScreen.storyboard */ = {
@@ -553,7 +577,6 @@
 				INFOPLIST_FILE = "FinalProject-AviaSearch/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -581,7 +604,6 @@
 				INFOPLIST_FILE = "FinalProject-AviaSearch/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

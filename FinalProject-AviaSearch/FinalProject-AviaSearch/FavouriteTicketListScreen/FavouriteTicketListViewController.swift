@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class FavouriteTicketListViewController: UIViewController {
+final class FavouriteTicketListViewController: UIViewController, Storyboardable {
+    
+    weak var coordinator: AppCoordinator?
     
     private var viewModel = FavouriteTicketListViewModel()
     

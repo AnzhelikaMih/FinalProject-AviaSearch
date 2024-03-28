@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class TicketListViewController: UIViewController {
+final class TicketListViewController: UIViewController, Storyboardable {
+    
+    weak var coordinator: AppCoordinator?
     
     private var viewModel = TicketListViewModel()
     
@@ -74,32 +76,17 @@ final class TicketListViewController: UIViewController {
         textFieldDate.text = String.formatDate(with: sender.date)
     }
     
-    private func navigateToFavouriteTicketList() {
-        let storyboard = UIStoryboard(name: Screens.FavouriteTicketList.rawValue,
-                                      bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: FavouriteTicketListViewController.identifier) as? FavouriteTicketListViewController else { return }
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    private func navigateToMapEarth() {
-        let storyboard = UIStoryboard(name: Screens.Map.rawValue,
-                                      bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: MapViewController.identifier) as? MapViewController
-        else { return }
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     private func updateTableView(with tickets: [TicketInfo]) {
         viewModel.ticketList = tickets
         tableView.reloadData()
     }
     
     @IBAction private func heartButtonDidTap () {
-        navigateToFavouriteTicketList()
+        coordinator?.navigateToFavouriteTicketList()
     }
     
     @IBAction private func mapButtonDidTap () {
-        navigateToMapEarth()
+        coordinator?.navigateToMapEarth()
     }
     
     @IBAction private func checkMarkButtonDidTap() {
@@ -165,14 +152,7 @@ extension TicketListViewController: UITableViewDelegate {
         let ticketInfo = viewModel.ticketList[indexPath.row]
         let selectedDate = self.viewModel.selectedDate ?? Date()
         
-        let storyboard = UIStoryboard(name: Screens.TicketInfo.rawValue,
-                                      bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: TicketInfoViewController.identifier) as? TicketInfoViewController {
-            
-            let ticketInfoViewModel = TicketInfoViewModel(ticketInfo: ticketInfo, selectedDate: selectedDate)
-            vc.viewModel = ticketInfoViewModel
-            present(vc, animated: true)
-        }
+        coordinator?.navigateToTicketInfo(ticketInfo: ticketInfo, selectedDate: selectedDate)
     }
 }
 

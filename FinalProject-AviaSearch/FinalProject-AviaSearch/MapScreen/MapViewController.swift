@@ -8,7 +8,9 @@
 import UIKit
 import MapKit
 
-final class MapViewController: UIViewController {
+final class MapViewController: UIViewController, Storyboardable {
+    
+    weak var coordinator: AppCoordinator?
     
     let locationService = LocationService()
     

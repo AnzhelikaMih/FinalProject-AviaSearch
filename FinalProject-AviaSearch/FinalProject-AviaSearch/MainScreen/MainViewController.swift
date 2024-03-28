@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: UIViewController, Storyboardable {
+    
+    weak var coordinator: AppCoordinator?
     
     @IBOutlet private weak var mainLabel: UILabel!
     @IBOutlet private weak var subLabel: UILabel!
@@ -58,11 +60,7 @@ final class MainViewController: UIViewController {
     }
     
     private func navigateToTicketList() {
-        let storyboard = UIStoryboard(name: Screens.TicketList.rawValue,
-                                      bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: TicketListViewController.identifier) as? TicketListViewController 
-        else { return }
-        navigationController?.pushViewController(vc, animated: true)
+        coordinator?.navigateToTicketList()
     }
     
     @IBAction private func startButtonDidTap () {

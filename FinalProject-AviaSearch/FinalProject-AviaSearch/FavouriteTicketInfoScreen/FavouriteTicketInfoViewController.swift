@@ -11,7 +11,9 @@ protocol FavouriteTicketInfoDelegate: AnyObject {
     func didDeleteTicket ()
 }
 
-final class FavouriteTicketInfoViewController: UIViewController {
+final class FavouriteTicketInfoViewController: UIViewController, Storyboardable {
+    
+    weak var coordinator: AppCoordinator?
     
     private var viewModel = FavouriteTicketInfoViewModel()
     

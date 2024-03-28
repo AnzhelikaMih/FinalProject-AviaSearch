@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class TicketInfoViewController: UIViewController {
+final class TicketInfoViewController: UIViewController, Storyboardable {
+    
+    weak var coordinator: AppCoordinator?
     
     var viewModel:TicketInfoViewModel!
     

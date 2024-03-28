@@ -7,6 +7,7 @@
 
 
 enum Screens: String {
+    case Main
     case Map
     case TicketList
     case TicketInfo
