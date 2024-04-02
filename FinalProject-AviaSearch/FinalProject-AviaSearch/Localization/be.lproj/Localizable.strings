@@ -10,7 +10,7 @@
 "cancel_button" = "Вярнуцца";
 "my_tickets" = "Мае Квіткі";
 "my_ticket" = "Мой Квiток";
-"delete_ticket" = "Выдалiць квіток";
+"delete_ticket_button" = "Выдалiць квіток";
 "alert_title_geolocation" = "У вас выключана служба геалакацii";
 "alert_message_geolocation" = "Хочаце ўключыць?";
 "settings" = "Наладкі";

@@ -33,6 +33,7 @@ final class MainViewController: UIViewController, Storyboardable {
         mainLabel.text = Localization.mainLabel.localized
         subLabel.text = Localization.subLabel.localized
         startButton.setTitle(Localization.startButton.localized, for: .normal)
+        startButton.applyCustomFont()
     }
     
     private func prepareInitialAnimation() {

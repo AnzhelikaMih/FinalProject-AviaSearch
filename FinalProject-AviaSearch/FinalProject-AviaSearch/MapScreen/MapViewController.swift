@@ -24,9 +24,9 @@ final class MapViewController: UIViewController, Storyboardable {
         super.viewDidAppear(animated)
         locationService.checkLocationPermissions(with: mapView, 
                                                  completion:
-                                                    { showAlertLocation(title: Localization.alertTitleGeolocation.localized,
-                            message: Localization.alertMessageGeolocation.localized,
-                            url: URL(string: UIApplication.openSettingsURLString)) }
+            { showAlertLocation(title: Localization.alertTitleGeolocation.localized,
+                                message: Localization.alertMessageGeolocation.localized,
+                                url: URL(string: UIApplication.openSettingsURLString)) }
     )}
     
     private func showAlertLocation(title: String,

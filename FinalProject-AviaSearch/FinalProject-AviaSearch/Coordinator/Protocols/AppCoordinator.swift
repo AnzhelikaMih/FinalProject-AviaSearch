@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
@@ -33,7 +33,7 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-   func navigateToMapEarth() {
+   func navigateToMap() {
        let vc = MapViewController.createObject()
        vc.coordinator = self
        navigationController.pushViewController(vc, animated: true)
@@ -44,6 +44,14 @@ class AppCoordinator: Coordinator {
         let ticketInfoViewModel = TicketInfoViewModel(ticketInfo: ticketInfo, selectedDate: selectedDate)
         vc.coordinator = self
         vc.viewModel = ticketInfoViewModel
-        navigationController.present(vc, animated: true, completion: nil)
+        navigationController.present(vc, animated: true)
+    }
+    
+   func navigateToFavouriteTicketInfo(ticketInfo: TicketInfo, delegate: FavouriteTicketInfoDelegate) {
+       let vc = FavouriteTicketInfoViewController.createObject()
+       vc.coordinator = self
+       navigationController.present(vc, animated: true)
+       vc.delegate = delegate
+       vc.configureTicketInfo(with: ticketInfo)
     }
 }

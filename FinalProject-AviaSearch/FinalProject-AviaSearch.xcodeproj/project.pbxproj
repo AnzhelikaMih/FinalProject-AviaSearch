@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		420145F82B8DC26700A39403 /* TicketInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420145F72B8DC26700A39403 /* TicketInfoViewController.swift */; };
 		422502FF2B90ECEA00A7281A /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422502FE2B90ECEA00A7281A /* CoreDataService.swift */; };
+		422FAC7A2BBC00FD0063C354 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422FAC792BBC00FD0063C354 /* UIButton+.swift */; };
 		423C4A8E2B90FB830090A75A /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 423C4A8C2B90FB830090A75A /* CoreDataModel.xcdatamodeld */; };
 		4243135B2B973DB2008DA612 /* Ticket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */; };
 		4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		420145F72B8DC26700A39403 /* TicketInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoViewController.swift; sourceTree = "<group>"; };
 		422502FE2B90ECEA00A7281A /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		422FAC792BBC00FD0063C354 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		422FAC7C2BBC65540063C354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		423C4A8D2B90FB830090A75A /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 				42A0C6952BA361A300263632 /* String+.swift */,
 				42A0C6A12BA9F34600263632 /* Animations.swift */,
 				42A0C6A32BA9F7D400263632 /* UIViewController+.swift */,
+				422FAC792BBC00FD0063C354 /* UIButton+.swift */,
 				42A0C6A52BAA10AE00263632 /* UITableView+.swift */,
 			);
 			path = Support;
@@ -391,6 +395,7 @@
 				42F0B5132BB5D102009FE847 /* Storyboardable.swift in Sources */,
 				4243135C2B973DB2008DA612 /* Ticket+CoreDataProperties.swift in Sources */,
 				422502FF2B90ECEA00A7281A /* CoreDataService.swift in Sources */,
+				422FAC7A2BBC00FD0063C354 /* UIButton+.swift in Sources */,
 				42C26AE52B8C8F3E00F270F8 /* TicketInfoModel.swift in Sources */,
 				424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */,
 				42BFD4BE2BA0DAF500D4F424 /* Screens.swift in Sources */,
@@ -437,6 +442,7 @@
 				42BCA5712B87755400CF3291 /* Base */,
 				42BFD4A82B9A406400D4F424 /* ru */,
 				42BFD4AB2B9A407500D4F424 /* be */,
+				422FAC7C2BBC65540063C354 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

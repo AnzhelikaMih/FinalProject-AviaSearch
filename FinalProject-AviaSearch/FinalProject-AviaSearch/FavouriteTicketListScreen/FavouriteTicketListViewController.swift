@@ -68,13 +68,7 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
                    didSelectRowAt indexPath: IndexPath) {
         
         let ticketInfo = viewModel.ticketList[indexPath.row]
-        let storyboard = UIStoryboard(name: Screens.FavouriteTicketInfo.rawValue,
-                                      bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: FavouriteTicketInfoViewController.identifier) as? FavouriteTicketInfoViewController {
-            present(vc, animated: true)
-            vc.delegate = self
-            vc.configureTicketInfo(with: ticketInfo)
-        }
+        coordinator?.navigateToFavouriteTicketInfo(ticketInfo: ticketInfo, delegate: self)
     }
 }
 

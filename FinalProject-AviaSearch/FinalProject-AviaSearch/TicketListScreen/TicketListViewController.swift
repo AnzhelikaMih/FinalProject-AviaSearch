@@ -10,9 +10,7 @@ import UIKit
 final class TicketListViewController: UIViewController, Storyboardable {
     
     weak var coordinator: AppCoordinator?
-    
-    private var viewModel = TicketListViewModel()
-    
+    private let viewModel = TicketListViewModel()
     private var datePicker: UIDatePicker!
     
     @IBOutlet private weak var titleLabel: UILabel!
@@ -81,12 +79,12 @@ final class TicketListViewController: UIViewController, Storyboardable {
         tableView.reloadData()
     }
     
-    @IBAction private func heartButtonDidTap () {
+    @IBAction private func heartButtonDidTap() {
         coordinator?.navigateToFavouriteTicketList()
     }
     
-    @IBAction private func mapButtonDidTap () {
-        coordinator?.navigateToMapEarth()
+    @IBAction private func mapButtonDidTap() {
+        coordinator?.navigateToMap()
     }
     
     @IBAction private func checkMarkButtonDidTap() {
@@ -151,7 +149,6 @@ extension TicketListViewController: UITableViewDelegate {
         
         let ticketInfo = viewModel.ticketList[indexPath.row]
         let selectedDate = self.viewModel.selectedDate ?? Date()
-        
         coordinator?.navigateToTicketInfo(ticketInfo: ticketInfo, selectedDate: selectedDate)
     }
 }

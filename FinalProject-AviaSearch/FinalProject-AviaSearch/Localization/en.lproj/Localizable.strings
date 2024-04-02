@@ -10,7 +10,7 @@
 "cancel_button" = "Cancel";
 "my_tickets" = "My Tickets";
 "my_ticket" = "My Ticket";
-"delete_ticket" = "Delete Ticket";
+"delete_ticket_button" = "Delete Ticket";
 "alert_title_geolocation" = "Location services disabled";
 "alert_message_geolocation" = "Would you like to enable?";
 "settings" = "Settings";

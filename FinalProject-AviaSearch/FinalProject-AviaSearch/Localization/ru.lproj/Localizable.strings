@@ -10,7 +10,7 @@
 "cancel_button" = "Отменить";
 "my_tickets" = "Мои Билеты";
 "my_ticket" = "Мой Билет";
-"delete_ticket" = "Удалить билет";
+"delete_ticket_button" = "Удалить билет";
 "alert_title_geolocation" = "У вас выключена служба геолокации";
 "alert_message_geolocation" = "Хотите включить?";
 "settings" = "Настройки";

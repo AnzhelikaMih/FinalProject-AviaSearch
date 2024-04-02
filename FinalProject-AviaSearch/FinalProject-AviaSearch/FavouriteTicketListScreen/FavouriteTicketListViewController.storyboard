@@ -19,8 +19,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1Y-5E-Ple">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мае Квіткі" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vM-hk-GdR">
-                                        <rect key="frame" x="145.33333333333334" y="75" width="102.66666666666666" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my_tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vM-hk-GdR">
+                                        <rect key="frame" x="146" y="83" width="101.33333333333331" height="28"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                         <color key="textColor" red="1" green="0.99607843159999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -28,7 +28,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.098039209840000002" green="0.1215686351" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="9vM-hk-GdR" firstAttribute="top" secondItem="U1Y-5E-Ple" secondAttribute="top" constant="75" id="FOK-DR-wO4"/>
+                                    <constraint firstAttribute="bottom" secondItem="9vM-hk-GdR" secondAttribute="bottom" constant="9" id="5b8-Pk-MQ4"/>
                                     <constraint firstAttribute="height" constant="120" id="YTl-yE-pDc"/>
                                     <constraint firstItem="9vM-hk-GdR" firstAttribute="centerX" secondItem="U1Y-5E-Ple" secondAttribute="centerX" id="nwd-aQ-GZ1"/>
                                 </constraints>

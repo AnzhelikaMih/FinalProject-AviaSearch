@@ -36,7 +36,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-g3-xYW">
                                 <rect key="frame" x="0.0" y="426" width="393" height="426"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Даследуйце Новыя Месцы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3L-fW-ZgO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mail_Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3L-fW-ZgO">
                                         <rect key="frame" x="55" y="40" width="283" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="blN-5V-4yi"/>
@@ -45,27 +45,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cf-If-hfj">
-                                        <rect key="frame" x="25" y="329" width="343" height="42"/>
-                                        <color key="backgroundColor" red="0.098039209840000002" green="0.1215686351" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="C16-cK-6Y5"/>
-                                        </constraints>
-                                        <color key="tintColor" red="1" green="0.99607843159999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Пачаць">
-                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="startButtonDidTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ghq-oC-6jH"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Нішто так не развівае розум, як падарожжа&quot; - Эмiль Зaля" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-q2-B4Y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sub_label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-q2-B4Y">
                                         <rect key="frame" x="41.666666666666657" y="160" width="310" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ECa-kP-FAL"/>
@@ -75,17 +55,32 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oru-Tt-zhi">
+                                        <rect key="frame" x="25" y="329" width="343" height="42"/>
+                                        <color key="backgroundColor" red="0.078431375319999996" green="0.094117648900000003" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="2bb-KZ-aiQ"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="start_button">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startButtonDidTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="9uo-Bl-gdh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99607843159999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Cf-If-hfj" secondAttribute="trailing" constant="25" id="6mB-Nf-pY9"/>
+                                    <constraint firstItem="oru-Tt-zhi" firstAttribute="leading" secondItem="UzA-g3-xYW" secondAttribute="leading" constant="25" id="0Z4-tb-cbf"/>
+                                    <constraint firstItem="oru-Tt-zhi" firstAttribute="centerX" secondItem="UzA-g3-xYW" secondAttribute="centerX" id="6YR-VF-eI3"/>
                                     <constraint firstItem="XbU-q2-B4Y" firstAttribute="top" secondItem="Q3L-fW-ZgO" secondAttribute="bottom" constant="20" id="Bw3-oF-Ayx"/>
+                                    <constraint firstAttribute="bottom" secondItem="oru-Tt-zhi" secondAttribute="bottom" constant="55" id="DHn-vD-od3"/>
                                     <constraint firstItem="Q3L-fW-ZgO" firstAttribute="leading" secondItem="UzA-g3-xYW" secondAttribute="leading" constant="55" id="FSg-jy-jws"/>
-                                    <constraint firstItem="9Cf-If-hfj" firstAttribute="leading" secondItem="UzA-g3-xYW" secondAttribute="leading" constant="25" id="HmJ-Ph-xfD"/>
                                     <constraint firstItem="Q3L-fW-ZgO" firstAttribute="top" secondItem="UzA-g3-xYW" secondAttribute="top" constant="40" id="JS7-vn-2NH"/>
-                                    <constraint firstAttribute="bottom" secondItem="9Cf-If-hfj" secondAttribute="bottom" constant="55" id="LQ1-d6-rUJ"/>
-                                    <constraint firstItem="9Cf-If-hfj" firstAttribute="centerX" secondItem="UzA-g3-xYW" secondAttribute="centerX" id="ODB-yd-ZjX"/>
                                     <constraint firstItem="XbU-q2-B4Y" firstAttribute="centerX" secondItem="UzA-g3-xYW" secondAttribute="centerX" id="VrR-wZ-h0J"/>
+                                    <constraint firstAttribute="trailing" secondItem="oru-Tt-zhi" secondAttribute="trailing" constant="25" id="cRG-tR-wdt"/>
                                     <constraint firstAttribute="trailing" secondItem="Q3L-fW-ZgO" secondAttribute="trailing" constant="55" id="skd-PD-0iq"/>
                                 </constraints>
                             </view>
@@ -108,7 +103,7 @@
                         <outlet property="airplane" destination="wUm-gX-kL2" id="Kta-NW-4mV"/>
                         <outlet property="blueView" destination="3if-MP-uQo" id="QlX-1o-U7C"/>
                         <outlet property="mainLabel" destination="Q3L-fW-ZgO" id="dey-Js-dMX"/>
-                        <outlet property="startButton" destination="9Cf-If-hfj" id="bQM-fF-78n"/>
+                        <outlet property="startButton" destination="oru-Tt-zhi" id="CMY-fY-dU1"/>
                         <outlet property="subLabel" destination="XbU-q2-B4Y" id="qc6-tT-bpI"/>
                     </connections>
                 </viewController>

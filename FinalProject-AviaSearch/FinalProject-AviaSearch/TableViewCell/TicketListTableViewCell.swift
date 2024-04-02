@@ -9,7 +9,7 @@ import UIKit
 
 final class TicketListTableViewCell: UITableViewCell {
     
-    let viewModel = TicketListViewModel()
+    private let viewModel = TicketListViewModel()
     
     @IBOutlet private weak var dataLabel: UILabel!
     @IBOutlet private weak var departure: UILabel!
@@ -17,15 +17,15 @@ final class TicketListTableViewCell: UITableViewCell {
     @IBOutlet private weak var destination: UILabel!
     @IBOutlet private weak var destinationCode: UILabel!
     
-    func setDataLabel(with selectedDate: Date) {
-        let dateString = String.formatDate(with: selectedDate)
-        dataLabel.text = dateString
-    }
-    
-    func setDate() {
+    private func setCurrentDate() {
         let selectedDate = Date()
         let currentDateString = String.formatDate(with: selectedDate)
         dataLabel.text = currentDateString
+    }
+    
+    func setDataLabel(with selectedDate: Date) {
+        let dateString = String.formatDate(with: selectedDate)
+        dataLabel.text = dateString
     }
     
     func configure(with ticketInfo: TicketInfo) {

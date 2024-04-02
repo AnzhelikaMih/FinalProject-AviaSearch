@@ -19,8 +19,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-Bl-KnJ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бліжэйшыя рэйсы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-3H-a0v">
-                                        <rect key="frame" x="104.66666666666669" y="84" width="184" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nearest_flights_label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-3H-a0v">
+                                        <rect key="frame" x="100.66666666666667" y="84" width="191.66666666666663" height="27"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                         <color key="textColor" red="1" green="0.99607843159999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                                     <action selector="segmentedControlValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="2wa-kP-JKa"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выбраць дату" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ih-0y-zZ0">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select_date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ih-0y-zZ0">
                                 <rect key="frame" x="65" y="130" width="113" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CwD-7h-mdI"/>
@@ -130,7 +130,7 @@
                             <constraint firstItem="CxK-M5-iFk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="dgi-AH-qHX"/>
                             <constraint firstItem="CKZ-Bl-KnJ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="gFC-ID-gdE"/>
                             <constraint firstItem="CKZ-Bl-KnJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="h6Q-6A-bVJ"/>
-                            <constraint firstItem="bSS-L6-9De" firstAttribute="leading" secondItem="w4D-NN-KMV" secondAttribute="trailing" constant="8" symbolic="YES" id="hiH-Ll-171"/>
+                            <constraint firstItem="w4D-NN-KMV" firstAttribute="leading" secondItem="1f8-lw-4ys" secondAttribute="trailing" constant="121" id="ogs-Sp-pUR"/>
                             <constraint firstItem="CxK-M5-iFk" firstAttribute="centerX" secondItem="CKZ-Bl-KnJ" secondAttribute="centerX" id="snu-9J-oC6"/>
                         </constraints>
                     </view>

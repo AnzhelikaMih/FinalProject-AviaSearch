@@ -21,7 +21,7 @@ enum Localization: String {
     case cancelButton = "cancel_button"
     case myTickets = "my_tickets"
     case myTicketInfo = "my_ticket"
-    case deleteTicketButton = "delete_ticket"
+    case deleteTicketButton = "delete_ticket_button"
     case alertTitleGeolocation = "alert_title_geolocation"
     case alertMessageGeolocation = "alert_message_geolocation"
     case settings = "settings"

@@ -37,6 +37,5 @@ final class TicketListViewModel {
     func filterTicketsByDestinationCode(with code: String) -> [TicketInfo] {
             return ticketList.filter { $0.destinationCode == code }
     }
-    
 }
 
