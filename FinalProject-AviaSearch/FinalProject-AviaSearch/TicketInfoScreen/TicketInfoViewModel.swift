@@ -40,7 +40,24 @@ final class TicketInfoViewModel {
     
     func saveTicketToFavourite() {
         
-        let myTicket = TicketInfo(departure: displayModel.departure, departureCode: displayModel.departureCode, destination: displayModel.destination, destinationCode: displayModel.destinationCode, aviaOperator: displayModel.aviaOperator, flightNumber: displayModel.flightNumber, terminal: displayModel.terminal, airplane: displayModel.airplane, date: displayModel.date ?? "", departureTime: displayModel.departureTime, arrivalTime: "", journeyTime: displayModel.journeyTime, seatNumber: displayModel.seatNumber, passenger: displayModel.passenger, passportNumber: displayModel.passport, eTicketNumber: displayModel.ticketNum, payment: displayModel.payment, price: displayModel.price)
+        let myTicket = TicketInfo(departure: displayModel.departure, 
+                                  departureCode: displayModel.departureCode,
+                                  destination: displayModel.destination,
+                                  destinationCode: displayModel.destinationCode,
+                                  aviaOperator: displayModel.aviaOperator,
+                                  flightNumber: displayModel.flightNumber,
+                                  terminal: displayModel.terminal,
+                                  airplane: displayModel.airplane,
+                                  date: displayModel.date ?? "",
+                                  departureTime: displayModel.departureTime,
+                                  arrivalTime: "", 
+                                  journeyTime:displayModel.journeyTime,
+                                  seatNumber: displayModel.seatNumber,
+                                  passenger: displayModel.passenger,
+                                  passportNumber: displayModel.passport,
+                                  eTicketNumber: displayModel.ticketNum,
+                                  payment: displayModel.payment,
+                                  price: displayModel.price)
         
         CoreDataService.shared.saveTicketToFavourite(with: myTicket)
     }

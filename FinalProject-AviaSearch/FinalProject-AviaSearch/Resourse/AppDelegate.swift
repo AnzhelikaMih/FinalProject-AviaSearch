@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
+
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
@@ -27,4 +28,5 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
+
 

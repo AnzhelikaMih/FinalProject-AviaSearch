@@ -55,8 +55,26 @@ final class CoreDataService {
     func fetchFavouriteTickets() -> [TicketInfo] {
         let request = Ticket.fetchRequest()
         guard let myTickets = try? context.fetch(request) else { return [] }
-        let ticketViewModels = myTickets.compactMap { return TicketInfo(departure: $0.departure, departureCode: $0.departureCode, destination: $0.destination, destinationCode: $0.destinationCode, aviaOperator: $0.aviaOperator, flightNumber: $0.flightNumber, terminal: $0.terminal, airplane: $0.airplane, date: $0.date, departureTime: $0.departureTime, arrivalTime: $0.arrivalTime, journeyTime: $0.journeyTime, seatNumber: $0.seatNumber, passenger: $0.passenger, passportNumber: $0.passportNumber, eTicketNumber: $0.eTicketNumber, payment: $0.payment, price: $0.price) }
-        return ticketViewModels
+        let ticketViewModels = myTickets.compactMap 
+            { return TicketInfo(departure: $0.departure,
+                                departureCode: $0.departureCode,
+                                destination: $0.destination,
+                                destinationCode: $0.destinationCode,
+                                aviaOperator: $0.aviaOperator,
+                                flightNumber: $0.flightNumber,
+                                terminal: $0.terminal,
+                                airplane: $0.airplane,
+                                date: $0.date,
+                                departureTime: $0.departureTime,
+                                arrivalTime: $0.arrivalTime,
+                                journeyTime: $0.journeyTime,
+                                seatNumber: $0.seatNumber,
+                                passenger: $0.passenger,
+                                passportNumber: $0.passportNumber,
+                                eTicketNumber: $0.eTicketNumber,
+                                payment: $0.payment,
+                                price: $0.price) }
+            return ticketViewModels
     }
     
     func deleteFavouriteTicket(ticket: TicketInfo) {

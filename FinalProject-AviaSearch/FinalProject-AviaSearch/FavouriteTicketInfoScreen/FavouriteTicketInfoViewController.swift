@@ -48,8 +48,8 @@ final class FavouriteTicketInfoViewController: UIViewController, Storyboardable 
     
     private func setupLocalization() {
         titleLabel.text = Localization.myTicketInfo.localized
-        deleteButton.setTitle(Localization.deleteTicketButton.localized, for: .normal)
-        cancelButton.setTitle(Localization.cancelButton.localized, for: .normal)
+        deleteButton.setLocalizedTitle(with: Localization.deleteTicketButton.localized)
+        cancelButton.setLocalizedTitle(with: Localization.cancelButton.localized)
     }
     
     func configureTicketInfo(with ticketInfo: TicketInfo) {

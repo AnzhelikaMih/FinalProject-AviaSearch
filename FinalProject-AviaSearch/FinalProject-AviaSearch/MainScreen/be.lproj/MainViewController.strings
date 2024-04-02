@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "mail_Label"; ObjectID = "Q3L-fW-ZgO"; */
+"Q3L-fW-ZgO.text" = "mail_Label";
+
+/* Class = "UILabel"; text = "sub_label"; ObjectID = "XbU-q2-B4Y"; */
+"XbU-q2-B4Y.text" = "sub_label";
+
+/* Class = "UIButton"; configuration.title = "start_button"; ObjectID = "oru-Tt-zhi"; */
+"oru-Tt-zhi.configuration.title" = "start_button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oru-Tt-zhi"; */
+"oru-Tt-zhi.normalTitle" = "Button";

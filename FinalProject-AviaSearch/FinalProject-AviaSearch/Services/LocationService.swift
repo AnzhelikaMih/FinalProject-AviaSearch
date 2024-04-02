@@ -11,10 +11,6 @@ import MapKit
 final class LocationService {
     
     let locationManager = CLLocationManager()
-
-    var locationServiceEnabled: Bool {
-        return CLLocationManager.locationServicesEnabled()
-    }
     
     func checkLocationPermissions(with map: MKMapView, completion: () -> Void) {
         switch locationManager.authorizationStatus {
@@ -31,5 +27,16 @@ final class LocationService {
                 break
         }
     }
+}
+
+extension CLLocationManager {
+    static func locationServicesEnabledThreadSafe(completion: @escaping (Bool) -> Void) {
+        DispatchQueue.global().async {
+            let result = CLLocationManager.locationServicesEnabled()
+                DispatchQueue.main.async {
+                    completion(result)
+         }
+      }
+   }
 }
 

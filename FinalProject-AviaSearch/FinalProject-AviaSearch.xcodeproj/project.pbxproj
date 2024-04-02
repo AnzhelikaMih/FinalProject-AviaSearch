@@ -24,7 +24,7 @@
 		42A0C69C2BA3704F00263632 /* FavouriteTicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C69B2BA3704F00263632 /* FavouriteTicketListViewModel.swift */; };
 		42A0C69E2BA8710200263632 /* SegmentedControlCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C69D2BA8710200263632 /* SegmentedControlCases.swift */; };
 		42A0C6A02BA9F02200263632 /* FavouriteTicketInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C69F2BA9F02200263632 /* FavouriteTicketInfoViewModel.swift */; };
-		42A0C6A22BA9F34600263632 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C6A12BA9F34600263632 /* Animations.swift */; };
+		42A0C6A22BA9F34600263632 /* UIViewController+(animations).swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C6A12BA9F34600263632 /* UIViewController+(animations).swift */; };
 		42A0C6A42BA9F7D400263632 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C6A32BA9F7D400263632 /* UIViewController+.swift */; };
 		42A0C6A62BAA10AE00263632 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0C6A52BAA10AE00263632 /* UITableView+.swift */; };
 		42A0C6AA2BAC66E100263632 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42A0C6AC2BAC66E100263632 /* Localizable.strings */; };
@@ -40,7 +40,6 @@
 		42BFD4B22BA084A500D4F424 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BFD4B12BA084A500D4F424 /* MapViewController.swift */; };
 		42BFD4BA2BA0BD0C00D4F424 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BFD4B92BA0BD0C00D4F424 /* LocationService.swift */; };
 		42BFD4BC2BA0CF3600D4F424 /* TicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BFD4BB2BA0CF3600D4F424 /* TicketListViewModel.swift */; };
-		42BFD4BE2BA0DAF500D4F424 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BFD4BD2BA0DAF500D4F424 /* Screens.swift */; };
 		42C26AE32B8C8F2700F270F8 /* TicketListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE22B8C8F2700F270F8 /* TicketListModel.swift */; };
 		42C26AE52B8C8F3E00F270F8 /* TicketInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE42B8C8F3E00F270F8 /* TicketInfoModel.swift */; };
 		42C26AEA2B8C991A00F270F8 /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */; };
@@ -70,7 +69,7 @@
 		42A0C69B2BA3704F00263632 /* FavouriteTicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketListViewModel.swift; sourceTree = "<group>"; };
 		42A0C69D2BA8710200263632 /* SegmentedControlCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlCases.swift; sourceTree = "<group>"; };
 		42A0C69F2BA9F02200263632 /* FavouriteTicketInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTicketInfoViewModel.swift; sourceTree = "<group>"; };
-		42A0C6A12BA9F34600263632 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		42A0C6A12BA9F34600263632 /* UIViewController+(animations).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+(animations).swift"; sourceTree = "<group>"; };
 		42A0C6A32BA9F7D400263632 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		42A0C6A52BAA10AE00263632 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		42A0C6AB2BAC66E100263632 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 		42BFD4B12BA084A500D4F424 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		42BFD4B92BA0BD0C00D4F424 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		42BFD4BB2BA0CF3600D4F424 /* TicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewModel.swift; sourceTree = "<group>"; };
-		42BFD4BD2BA0DAF500D4F424 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Screens.swift; path = "FinalProject-AviaSearch/Enums/Screens.swift"; sourceTree = SOURCE_ROOT; };
 		42C26AE22B8C8F2700F270F8 /* TicketListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListModel.swift; sourceTree = "<group>"; };
 		42C26AE42B8C8F3E00F270F8 /* TicketInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoModel.swift; sourceTree = "<group>"; };
 		42C26AE92B8C991A00F270F8 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 		42A0C6972BA3630000263632 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				42BFD4BD2BA0DAF500D4F424 /* Screens.swift */,
 				42A0C6992BA366D300263632 /* Localization.swift */,
 				42A0C69D2BA8710200263632 /* SegmentedControlCases.swift */,
 			);
@@ -149,7 +146,7 @@
 			children = (
 				42F0B5122BB5D102009FE847 /* Storyboardable.swift */,
 				42A0C6952BA361A300263632 /* String+.swift */,
-				42A0C6A12BA9F34600263632 /* Animations.swift */,
+				42A0C6A12BA9F34600263632 /* UIViewController+(animations).swift */,
 				42A0C6A32BA9F7D400263632 /* UIViewController+.swift */,
 				422FAC792BBC00FD0063C354 /* UIButton+.swift */,
 				42A0C6A52BAA10AE00263632 /* UITableView+.swift */,
@@ -286,6 +283,7 @@
 		42F0B50C2BB5CD3A009FE847 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				42F0B5102BB5D069009FE847 /* AppCoordinator.swift */,
 				42F0B50D2BB5CD48009FE847 /* Protocols */,
 			);
 			path = Coordinator;
@@ -295,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				42F0B50E2BB5CFEB009FE847 /* Coordinator.swift */,
-				42F0B5102BB5D069009FE847 /* AppCoordinator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -398,8 +395,7 @@
 				422FAC7A2BBC00FD0063C354 /* UIButton+.swift in Sources */,
 				42C26AE52B8C8F3E00F270F8 /* TicketInfoModel.swift in Sources */,
 				424313602B97442C008DA612 /* FavouriteTicketListViewController.swift in Sources */,
-				42BFD4BE2BA0DAF500D4F424 /* Screens.swift in Sources */,
-				42A0C6A22BA9F34600263632 /* Animations.swift in Sources */,
+				42A0C6A22BA9F34600263632 /* UIViewController+(animations).swift in Sources */,
 				42BFD4B22BA084A500D4F424 /* MapViewController.swift in Sources */,
 				42BCA5632B87755200CF3291 /* AppDelegate.swift in Sources */,
 				42A0C6902BA316D400263632 /* TicketInfoViewModel.swift in Sources */,

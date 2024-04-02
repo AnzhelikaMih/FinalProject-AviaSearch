@@ -22,7 +22,8 @@ final class MapViewController: UIViewController, Storyboardable {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        locationService.checkLocationPermissions(with: mapView, 
+        
+        locationService.checkLocationPermissions(with: mapView,
                                                  completion:
             { showAlertLocation(title: Localization.alertTitleGeolocation.localized,
                                 message: Localization.alertMessageGeolocation.localized,
@@ -53,7 +54,8 @@ final class MapViewController: UIViewController, Storyboardable {
 }
 
 extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, 
+    
+    func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         
         if let location = locations.last?.coordinate {

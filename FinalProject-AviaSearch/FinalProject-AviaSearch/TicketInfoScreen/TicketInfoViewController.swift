@@ -45,8 +45,8 @@ final class TicketInfoViewController: UIViewController, Storyboardable {
     
     private func setupLocalization() {
         titleLabel.text = Localization.ticketInfo.localized
-        saveButton.setTitle(Localization.saveTicketButton.localized, for: .normal)
-        cancelButton.setTitle(Localization.cancelButton.localized, for: .normal)
+        saveButton.setLocalizedTitle(with: Localization.saveTicketButton.localized)
+        cancelButton.setLocalizedTitle(with: Localization.cancelButton.localized)
     }
     
     private func configureUI() {
