@@ -8,7 +8,11 @@
 import UIKit
 import MapKit
 
-final class LocationService {
+protocol LocationServiceProtocol {
+    func checkLocationPermissions(with map: MKMapView, completion: @escaping () -> Void)
+}
+
+final class LocationService: LocationServiceProtocol {
     
     let locationManager = CLLocationManager()
     

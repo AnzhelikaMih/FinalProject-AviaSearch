@@ -4,7 +4,7 @@
 "back_button" = "Back";
 "nearest_flights_label" = "Nearest Flights";
 "select_date" = "Select Date";
-"all" = "ALL";
+"segment1" = "ALL";
 "ticket_info" = "Ticket Information";
 "save_ticket_button" = "Save Ticket";
 "cancel_button" = "Cancel";

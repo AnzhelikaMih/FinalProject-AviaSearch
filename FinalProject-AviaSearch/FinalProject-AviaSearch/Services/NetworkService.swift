@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class NetworkService {
+protocol NetworkServiceProtocol {
+    func loadFlights(completion: @escaping ([TicketInfo]) -> Void)
+}
+
+final class NetworkService: NetworkServiceProtocol {
     
     func loadFlights(completion: @escaping ([TicketInfo]) -> Void) {
         

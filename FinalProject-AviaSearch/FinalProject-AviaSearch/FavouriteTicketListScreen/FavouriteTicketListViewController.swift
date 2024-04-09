@@ -11,7 +11,7 @@ final class FavouriteTicketListViewController: UIViewController, Storyboardable 
     
     weak var coordinator: AppCoordinator?
     
-    private var viewModel = FavouriteTicketListViewModel()
+    var viewModel: FavouriteTicketListViewModel!
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
@@ -68,7 +68,8 @@ extension FavouriteTicketListViewController: UITableViewDelegate {
                    didSelectRowAt indexPath: IndexPath) {
         
         let ticketInfo = viewModel.ticketList[indexPath.row]
-        coordinator?.navigateToFavouriteTicketInfo(ticketInfo: ticketInfo, delegate: self)
+        coordinator?.navigateToFavouriteTicketInfo(ticketInfo: ticketInfo, 
+                                                   delegate: self)
     }
 }
 

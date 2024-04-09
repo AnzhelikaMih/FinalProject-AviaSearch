@@ -4,7 +4,7 @@
 "back_button" = "Назад";
 "nearest_flights_label" = "Ближайшие рейсы";
 "select_date" = "Выбрать дату";
-"all" = "ВСЕ";
+"segment1" = "ВСЕ";
 "ticket_info" = "Информация о Билете";
 "save_ticket_button" = "Сохранить билет";
 "cancel_button" = "Отменить";

@@ -4,7 +4,7 @@
 "back_button" = "Назад";
 "nearest_flights_label" = "Бліжэйшыя рэйсы";
 "select_date" = "Выбраць дату";
-"all" = "УСЕ";
+"segment1" = "УСЕ";
 "ticket_info" = "Iнфармацыя аб Квiтке";
 "save_ticket_button" = "Захаваць квіток";
 "cancel_button" = "Вярнуцца";

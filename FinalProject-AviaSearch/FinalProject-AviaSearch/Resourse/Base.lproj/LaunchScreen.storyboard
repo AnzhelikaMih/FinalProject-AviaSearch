@@ -22,9 +22,13 @@
                                     <constraint firstAttribute="width" constant="128" id="IeU-xO-hZX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP LABEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-KJ-IxC" propertyAccessControl="all">
-                                <rect key="frame" x="121.66666666666669" y="548" width="150" height="36.666666666666629"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVIA TICKETS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-KJ-IxC">
+                                <rect key="frame" x="118.33333333333333" y="495" width="156.66666666666669" height="32.333333333333371"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="28"/>
                                 <color key="textColor" red="0.098039209840000002" green="0.1176470518" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -32,7 +36,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oEe-KJ-IxC" firstAttribute="top" secondItem="4jr-81-uB2" secondAttribute="bottom" constant="58" id="V03-kb-5Y2"/>
+                            <constraint firstItem="oEe-KJ-IxC" firstAttribute="top" secondItem="4jr-81-uB2" secondAttribute="bottom" constant="5" id="V03-kb-5Y2"/>
                             <constraint firstItem="oEe-KJ-IxC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lRl-ls-V1w"/>
                             <constraint firstItem="4jr-81-uB2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pE8-xJ-6sg"/>
                             <constraint firstItem="4jr-81-uB2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yE7-T2-zdN"/>

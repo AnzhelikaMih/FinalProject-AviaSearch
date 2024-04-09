@@ -54,7 +54,6 @@
 		420145F72B8DC26700A39403 /* TicketInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoViewController.swift; sourceTree = "<group>"; };
 		422502FE2B90ECEA00A7281A /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		422FAC792BBC00FD0063C354 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
-		422FAC7C2BBC65540063C354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		423C4A8D2B90FB830090A75A /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		424313592B973DB2008DA612 /* Ticket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4243135A2B973DB2008DA612 /* Ticket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -84,8 +83,6 @@
 		42BCA5732B87755400CF3291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42BCA57B2B87A9B800CF3291 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		42BCA57D2B87AF3100CF3291 /* TicketListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TicketListViewController.storyboard; sourceTree = "<group>"; };
-		42BFD4A82B9A406400D4F424 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		42BFD4AB2B9A407500D4F424 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		42BFD4AD2B9C84E500D4F424 /* TicketInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TicketInfoViewController.storyboard; sourceTree = "<group>"; };
 		42BFD4AF2BA082F300D4F424 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		42BFD4B12BA084A500D4F424 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -436,9 +433,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				42BCA5712B87755400CF3291 /* Base */,
-				42BFD4A82B9A406400D4F424 /* ru */,
-				42BFD4AB2B9A407500D4F424 /* be */,
-				422FAC7C2BBC65540063C354 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -577,10 +571,11 @@
 				DEVELOPMENT_TEAM = 5QQ4PX79VS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FinalProject-AviaSearch/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Выберите вариант";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Выберите вариант";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,10 +599,11 @@
 				DEVELOPMENT_TEAM = 5QQ4PX79VS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FinalProject-AviaSearch/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Выберите вариант";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Выберите вариант";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

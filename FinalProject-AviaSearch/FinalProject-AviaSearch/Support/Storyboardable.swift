@@ -12,7 +12,6 @@ protocol Storyboardable {
 }
 
 extension Storyboardable where Self: UIViewController {
-    
     static func createObject() -> Self {
         let id = String(describing: self)
         let storyboard = UIStoryboard(name: id, bundle: nil)

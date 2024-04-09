@@ -21,37 +21,40 @@ final class AppCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func navigateToTicketList() {
-      let vc = TicketListViewController.createObject()
-      vc.coordinator = self
-      navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func navigateToFavouriteTicketList() {
-        let vc = FavouriteTicketListViewController.createObject()
+    func navigateToMap() {
+        let vc = MapViewController.createObject()
+        vc.locationServiceSetup(locationService: LocationService())
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
-   func navigateToMap() {
-       let vc = MapViewController.createObject()
-       vc.coordinator = self
-       navigationController.pushViewController(vc, animated: true)
+    func navigateToTicketList() {
+        let vc = TicketListViewController.createObject()
+        vc.viewModel = TicketListViewModel(networkService: NetworkService())
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
     
     func navigateToTicketInfo(ticketInfo: TicketInfo, selectedDate: Date) {
         let vc = TicketInfoViewController.createObject()
-        let ticketInfoViewModel = TicketInfoViewModel(ticketInfo: ticketInfo, selectedDate: selectedDate)
+        vc.viewModel = TicketInfoViewModel(ticketInfo: ticketInfo, selectedDate: selectedDate, databaseService: CoreDataService.shared)
         vc.coordinator = self
-        vc.viewModel = ticketInfoViewModel
         navigationController.present(vc, animated: true)
     }
     
-   func navigateToFavouriteTicketInfo(ticketInfo: TicketInfo, delegate: FavouriteTicketInfoDelegate) {
-       let vc = FavouriteTicketInfoViewController.createObject()
-       vc.coordinator = self
-       navigationController.present(vc, animated: true)
-       vc.delegate = delegate
-       vc.configureTicketInfo(with: ticketInfo)
+    func navigateToFavouriteTicketList() {
+        let vc = FavouriteTicketListViewController.createObject()
+        vc.viewModel = FavouriteTicketListViewModel(databaseService: CoreDataService.shared)
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToFavouriteTicketInfo(ticketInfo: TicketInfo, delegate: FavouriteTicketInfoDelegate) {
+        let vc = FavouriteTicketInfoViewController.createObject()
+        vc.viewModel = FavouriteTicketInfoViewModel(databaseService: CoreDataService.shared)
+        vc.coordinator = self
+        navigationController.present(vc, animated: true)
+        vc.delegate = delegate
+        vc.configureTicketInfo(with: ticketInfo)
     }
 }

@@ -17,7 +17,7 @@ extension UIViewController {
     }
     
     func rotateAirplane(_ airplane: UIImageView, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.5) {
             airplane.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6.3)
         } completion: { (finished) in
             completion()
@@ -25,7 +25,7 @@ extension UIViewController {
     }
 
     func translateAirplane(_ airplane: UIImageView, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.5) {
             airplane.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
         } completion: { (finished) in
             completion()

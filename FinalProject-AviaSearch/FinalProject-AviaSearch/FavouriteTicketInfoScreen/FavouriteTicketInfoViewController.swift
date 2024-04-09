@@ -15,9 +15,9 @@ final class FavouriteTicketInfoViewController: UIViewController, Storyboardable 
     
     weak var coordinator: AppCoordinator?
     
-    private var viewModel = FavouriteTicketInfoViewModel()
-    
     weak var delegate: FavouriteTicketInfoDelegate?
+    
+    var viewModel: FavouriteTicketInfoViewModel!
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var departureCode: UILabel!

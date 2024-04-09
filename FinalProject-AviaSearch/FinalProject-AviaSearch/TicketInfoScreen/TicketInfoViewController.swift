@@ -11,7 +11,7 @@ final class TicketInfoViewController: UIViewController, Storyboardable {
     
     weak var coordinator: AppCoordinator?
     
-    var viewModel:TicketInfoViewModel!
+    var viewModel: TicketInfoViewModel!
     
     @IBOutlet private weak var titleLabel: UILabel!
     

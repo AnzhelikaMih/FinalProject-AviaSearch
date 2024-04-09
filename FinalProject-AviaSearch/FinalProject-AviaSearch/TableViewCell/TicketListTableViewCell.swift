@@ -9,7 +9,7 @@ import UIKit
 
 final class TicketListTableViewCell: UITableViewCell {
     
-    private let viewModel = TicketListViewModel()
+    var viewModel: TicketListViewModel!
     
     @IBOutlet private weak var dataLabel: UILabel!
     @IBOutlet private weak var departure: UILabel!

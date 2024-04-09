@@ -10,6 +10,12 @@ import Foundation
 final class FavouriteTicketInfoViewModel {
 
     var ticketInfo: TicketInfo?
+    
+    var databaseService: DatabaseServiceProtocol
+    
+        init(databaseService: DatabaseServiceProtocol) {
+            self.databaseService = databaseService
+        }
         
     func configureTicketInfo(with ticketInfo: TicketInfo) {
         self.ticketInfo = ticketInfo
@@ -17,6 +23,6 @@ final class FavouriteTicketInfoViewModel {
         
     func deleteTicket() {
         guard let ticketInfo = ticketInfo else { return }
-        CoreDataService.shared.deleteFavouriteTicket(ticket: ticketInfo)
+        databaseService.deleteFavouriteTicket(ticket: ticketInfo)
     }
 }

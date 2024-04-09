@@ -17,7 +17,13 @@ final class FavouriteTicketListViewModel {
     
     var favouriteTicketListUpdated: (() -> ())?
     
+    var databaseService: DatabaseServiceProtocol
+    
+        init(databaseService: DatabaseServiceProtocol) {
+            self.databaseService = databaseService
+        }
+    
     func fetchData() {
-        ticketList = CoreDataService.shared.fetchFavouriteTickets()
+        ticketList = databaseService.fetchFavouriteTickets()
     }
 }

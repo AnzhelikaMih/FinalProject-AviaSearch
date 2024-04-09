@@ -10,11 +10,14 @@ import Foundation
 final class TicketInfoViewModel {
     
     var ticketInfo: TicketInfo
+    
     var selectedDate: Date
+    
     var displayModel: TicketInfoDisplayModel
     
-    init(ticketInfo: TicketInfo, selectedDate: Date) {
-        
+    var databaseService: DatabaseServiceProtocol
+    
+    init(ticketInfo: TicketInfo, selectedDate: Date, databaseService: DatabaseServiceProtocol) {
        self.ticketInfo = ticketInfo
        self.selectedDate = selectedDate
        self.displayModel = TicketInfoDisplayModel(
@@ -36,6 +39,7 @@ final class TicketInfoViewModel {
                 price: ticketInfo.price,
                 date: String.formatDate(with: selectedDate)
             )
+        self.databaseService = databaseService
         }
     
     func saveTicketToFavourite() {
@@ -59,6 +63,6 @@ final class TicketInfoViewModel {
                                   payment: displayModel.payment,
                                   price: displayModel.price)
         
-        CoreDataService.shared.saveTicketToFavourite(with: myTicket)
+        databaseService.saveTicketToFavourite(with: myTicket)
     }
 }

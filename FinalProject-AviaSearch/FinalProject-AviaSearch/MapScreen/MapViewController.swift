@@ -12,7 +12,7 @@ final class MapViewController: UIViewController, Storyboardable {
     
     weak var coordinator: AppCoordinator?
     
-    let locationService = LocationService()
+    private var locationService: LocationServiceProtocol!
     
     @IBOutlet private weak var mapView: MKMapView!
     
@@ -25,10 +25,15 @@ final class MapViewController: UIViewController, Storyboardable {
         
         locationService.checkLocationPermissions(with: mapView,
                                                  completion:
-            { showAlertLocation(title: Localization.alertTitleGeolocation.localized,
+                                { [weak self] in
+            self?.showAlertLocation(title: Localization.alertTitleGeolocation.localized,
                                 message: Localization.alertMessageGeolocation.localized,
                                 url: URL(string: UIApplication.openSettingsURLString)) }
     )}
+    
+    func locationServiceSetup(locationService: LocationServiceProtocol) {
+        self.locationService = locationService
+    }
     
     private func showAlertLocation(title: String,
                                    message: String?,
@@ -68,7 +73,9 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         locationService.checkLocationPermissions(with: mapView) {
-            showAlertLocation(title: Localization.alertTitleGeolocation.localized,
+            [weak self] in
+            guard let self = self else { return }
+            self.showAlertLocation(title: Localization.alertTitleGeolocation.localized,
                               message: Localization.alertMessageGeolocation.localized,
                               url: URL(string: UIApplication.openSettingsURLString))
         }

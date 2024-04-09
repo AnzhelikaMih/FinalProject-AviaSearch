@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIViewController {
-
     func setupBackBarButton() {
         let backButton = UIBarButtonItem()
         backButton.title = Localization.backButton.localized

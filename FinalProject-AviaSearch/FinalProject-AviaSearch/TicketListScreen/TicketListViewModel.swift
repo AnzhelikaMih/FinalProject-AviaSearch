@@ -19,23 +19,29 @@ final class TicketListViewModel {
     
     var ticketListUpdated: (() -> ())?
     
+    private var networkService: NetworkServiceProtocol
+    
+        init(networkService: NetworkServiceProtocol) {
+            self.networkService = networkService
+        }
+    
     func setupCurrentDate() {
         selectedDate = Date()
     }
 
     func loadTicketList() {
-        let fetcher = NetworkService()
-        fetcher.loadFlights { [weak self] data in
-            self?.ticketList = data
+        networkService.loadFlights { [weak self] data in
+            guard let self = self else { return }
+            self.ticketList = data
         }
     }
     
     func filterTicketsByDepartureCode(with code: String) -> [TicketInfo] {
-            return ticketList.filter { $0.departureCode == code }
+        return ticketList.filter { $0.departureCode == code }
     }
         
     func filterTicketsByDestinationCode(with code: String) -> [TicketInfo] {
-            return ticketList.filter { $0.destinationCode == code }
+        return ticketList.filter { $0.destinationCode == code }
     }
 }
 

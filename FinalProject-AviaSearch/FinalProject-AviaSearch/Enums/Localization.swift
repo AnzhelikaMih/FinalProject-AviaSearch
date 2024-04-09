@@ -15,7 +15,7 @@ enum Localization: String {
     case backButton = "back_button"
     case titleLabelAllFlights = "nearest_flights_label"
     case selectDate = "select_date"
-    case segment1 = "all";
+    case segment1 = "segment1";
     case ticketInfo = "ticket_info"
     case saveTicketButton = "save_ticket_button"
     case cancelButton = "cancel_button"

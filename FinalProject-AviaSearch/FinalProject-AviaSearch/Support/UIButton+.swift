@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIButton {
-    
     func setLocalizedTitle(with title: String) {
         let font = UIFont(name: "HelveticaNeue-Light", size: 23.0)
         let attributes: [NSAttributedString.Key: Any] = [

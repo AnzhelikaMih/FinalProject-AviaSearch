@@ -10,7 +10,9 @@ import UIKit
 final class TicketListViewController: UIViewController, Storyboardable {
     
     weak var coordinator: AppCoordinator?
-    private let viewModel = TicketListViewModel()
+    
+    var viewModel: TicketListViewModel!
+    
     private var datePicker: UIDatePicker!
     
     @IBOutlet private weak var titleLabel: UILabel!

@@ -7,7 +7,13 @@
 
 import CoreData
 
-final class CoreDataService {
+protocol DatabaseServiceProtocol {
+    func saveTicketToFavourite(with ticket: TicketInfo)
+    func fetchFavouriteTickets() -> [TicketInfo]
+    func deleteFavouriteTicket(ticket: TicketInfo)
+}
+
+final class CoreDataService: DatabaseServiceProtocol {
 
     static let shared = CoreDataService()
     
@@ -28,7 +34,6 @@ final class CoreDataService {
     }
     
     func saveTicketToFavourite(with ticket: TicketInfo) {
-        
         let myTicket = Ticket(context: self.context)
         myTicket.airplane = ticket.airplane
         myTicket.arrivalTime = ticket.arrivalTime
@@ -74,7 +79,7 @@ final class CoreDataService {
                                 eTicketNumber: $0.eTicketNumber,
                                 payment: $0.payment,
                                 price: $0.price) }
-            return ticketViewModels
+        return ticketViewModels
     }
     
     func deleteFavouriteTicket(ticket: TicketInfo) {
