@@ -46,12 +46,6 @@ final class FavouriteTicketInfoViewController: UIViewController, Storyboardable 
         setupLocalization()
     }
     
-    private func setupLocalization() {
-        titleLabel.text = Localization.myTicketInfo.localized
-        deleteButton.setLocalizedTitle(with: Localization.deleteTicketButton.localized)
-        cancelButton.setLocalizedTitle(with: Localization.cancelButton.localized)
-    }
-    
     func configureTicketInfo(with ticketInfo: TicketInfo) {
         viewModel.configureTicketInfo(with: ticketInfo)
         
@@ -72,6 +66,12 @@ final class FavouriteTicketInfoViewController: UIViewController, Storyboardable 
         aviaOperator.text = ticketInfo.aviaOperator
         payment.text = ticketInfo.payment
         price.text = ticketInfo.price
+    }
+    
+    private func setupLocalization() {
+        titleLabel.text = Localization.myTicketInfo.localized
+        deleteButton.setLocalizedTitle(with: Localization.deleteTicketButton.localized)
+        cancelButton.setLocalizedTitle(with: Localization.cancelButton.localized)
     }
     
     @IBAction private func deleteButtonDidTap(_ sender: Any) {

@@ -14,7 +14,6 @@ final class TicketInfoViewController: UIViewController, Storyboardable {
     var viewModel: TicketInfoViewModel!
     
     @IBOutlet private weak var titleLabel: UILabel!
-    
     @IBOutlet private weak var departureCode: UILabel!
     @IBOutlet private weak var departure: UILabel!
     @IBOutlet private weak var journeyTime: UILabel!
@@ -32,7 +31,6 @@ final class TicketInfoViewController: UIViewController, Storyboardable {
     @IBOutlet private weak var aviaOperator: UILabel!
     @IBOutlet private weak var payment: UILabel!
     @IBOutlet private weak var price: UILabel!
-    
     @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     

@@ -34,6 +34,7 @@ final class LocationService: LocationServiceProtocol {
 }
 
 extension CLLocationManager {
+    
     static func locationServicesEnabledThreadSafe(completion: @escaping (Bool) -> Void) {
         DispatchQueue.global().async {
             let result = CLLocationManager.locationServicesEnabled()

@@ -17,12 +17,6 @@ final class TicketListTableViewCell: UITableViewCell {
     @IBOutlet private weak var destination: UILabel!
     @IBOutlet private weak var destinationCode: UILabel!
     
-    private func setCurrentDate() {
-        let selectedDate = Date()
-        let currentDateString = String.formatDate(with: selectedDate)
-        dataLabel.text = currentDateString
-    }
-    
     func setDataLabel(with selectedDate: Date) {
         let dateString = String.formatDate(with: selectedDate)
         dataLabel.text = dateString
@@ -34,5 +28,11 @@ final class TicketListTableViewCell: UITableViewCell {
         destination.text = ticketInfo.destination
         destinationCode.text = ticketInfo.destinationCode
         dataLabel.text = ticketInfo.date
+    }
+    
+    private func setCurrentDate() {
+        let selectedDate = Date()
+        let currentDateString = String.formatDate(with: selectedDate)
+        dataLabel.text = currentDateString
     }
 }
