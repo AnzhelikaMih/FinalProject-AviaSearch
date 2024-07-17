@@ -66,7 +66,7 @@ final class MainViewController: UIViewController, Storyboardable {
     @IBAction private func startButtonDidTap () {
         self.rotateAirplane(self.airplane) {
             self.translateAirplane(self.airplane) {
-                    self.navigateToTicketList()
+                self.navigateToTicketList()
             }
         }
     }
